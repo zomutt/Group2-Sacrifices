@@ -2,15 +2,14 @@ using UnityEngine;
 
 public class CharacterBehavior : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    
+    
+    public void Sacrifice()
     {
+        // Remove from party controller
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // Remove from party holder and hide
+        transform.parent = transform.parent.parent;
+        gameObject.SetActive(false);
     }
 }

@@ -4,18 +4,21 @@ using UnityEngine;
 public class PaymentPanel : MonoBehaviour
 {
     private int cost;
+    private PayablePopup payablePopup;
     
     [SerializeField]
     private TextMeshProUGUI costText;
     
-    public void SetCost(int newCost)
+    public void SetCost(PayablePopup popup)
     {
-        cost = newCost;
-        costText.text = "-" + newCost;
+        payablePopup = popup;
+        cost = popup.SoulCost;
+        costText.text = "-" + popup.SoulCost;
     }
     
     public void ConfirmPayment()
     {
-        LevelManager.Instance.ConfirmPayment(cost);
+        if (LevelManager.Instance.ConfirmSoulPayment(cost))
+            payablePopup.PaidAction();
     }
 }

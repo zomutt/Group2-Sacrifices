@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using TMPro;
 using UnityEngine;
 
@@ -15,8 +14,10 @@ public class LevelManager : MonoBehaviour
     }
     
     public PopupTrigger currentPopup;
-    private PaymentPanel paymentPanel;
     private GameObject currentPopupPanel;
+    
+    private PaymentPanel paymentPanel;
+    private RitualPanel ritualPanel;
     
     public static LevelManager Instance;
     
@@ -27,7 +28,8 @@ public class LevelManager : MonoBehaviour
         paymentPanel = GameObject.Find("PurchasePanel").GetComponent<PaymentPanel>();
         paymentPanel.gameObject.SetActive(false);
         
-        
+        ritualPanel = GameObject.Find("RitualPanel").GetComponent<RitualPanel>();
+        ritualPanel.gameObject.SetActive(false);
         
         Instance = this;
     }
@@ -36,7 +38,7 @@ public class LevelManager : MonoBehaviour
     {
         levelTime = 180f;
         
-        souls = 100;
+        souls = 0;
     }
     
     void Update()
@@ -51,41 +53,47 @@ public class LevelManager : MonoBehaviour
         timerText.text = Mathf.CeilToInt(levelTime / 2f).ToString();
     }
     
-    #region Soul Payments
-    public bool ConfirmPayment(int amount)
+    public void GainSouls(int addedSouls)
+    {
+        souls += addedSouls;
+    }
+    
+    public bool ConfirmSoulPayment(int amount)
     {
         if (souls >= amount)
         {
             souls -= amount;
-            currentPopup.GetComponent<PayablePopup>().PaidAction();
             return true;
         }
         else
             return false;
     }
     
+    #region Panels
     public void SetPaymentPanel(PayablePopup popup)
     {
         currentPopup = popup;
         
         currentPopupPanel = paymentPanel.gameObject;
         
-        paymentPanel.SetCost(popup.SoulCost);
+        paymentPanel.gameObject.SetActive(true);
+        paymentPanel.SetCost(popup);
     }
-    #endregion
     
-    #region Sacrifices
     public void SetSacrificePanel(RitualPopup popup)
     {
         currentPopup = popup;
         
-        currentPopupPanel = paymentPanel.gameObject;
+        currentPopupPanel = ritualPanel.gameObject;
+        
+        ritualPanel.gameObject.SetActive(true);
+        ritualPanel.SetReward(popup);
     }
-    #endregion
     
     public void ClearPopupPanel()
     {
         currentPopup = null;
         currentPopupPanel.SetActive(false);
     }
+    #endregion
 }

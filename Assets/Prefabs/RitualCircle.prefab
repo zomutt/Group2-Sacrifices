@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5583121d561534a05a892ebdbba7239d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RitualTrigger
+  soulReward: 250
 --- !u!33 &9207254364787486625
 MeshFilter:
   m_ObjectHideFlags: 0
