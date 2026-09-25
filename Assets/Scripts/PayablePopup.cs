@@ -8,6 +8,11 @@ public abstract class PayablePopup : PopupTrigger
     {
         get => soulCost;
     }
+
+    protected override void PassPopupToLevelManagement()
+    {
+        LevelManager.Instance.SetPaymentPanel(this);
+    }
     
     public abstract void PaidAction();
 }

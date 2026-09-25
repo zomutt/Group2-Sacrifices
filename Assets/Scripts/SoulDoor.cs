@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SoulDoor : PayableTrigger
+public class SoulDoor : PayablePopup
 {
     [SerializeField]
     private Animator anim;
@@ -9,7 +9,7 @@ public class SoulDoor : PayableTrigger
     {
         anim.SetTrigger("Open");
         
-        LevelManager.Instance.SetTriggeredPanel(null);
+        LevelManager.Instance.ClearPopupPanel();
         gameObject.SetActive(false);
     }
 }
