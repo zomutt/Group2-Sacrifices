@@ -70,6 +70,19 @@ public class PartyController : MonoBehaviour
     }
     #endregion
     
+    #region Party Management
+    public void SacrificePartyMember(int index)
+    {
+        characters[index].Sacrifice();
+    }
+    
+    public void RemoveFromParty(CharacterBehavior character)
+    {
+        characters.Remove(character);
+        ChangeTrailLength(Mathf.CeilToInt(characters.Count / trailStep) + 1);
+    }
+    #endregion
+    
     #region Trail
     private void PullTrail()
     {
