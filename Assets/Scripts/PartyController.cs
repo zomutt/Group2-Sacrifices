@@ -19,7 +19,8 @@ public class PartyController : MonoBehaviour
     {
         PullTrail();
     }
-
+    
+    #region Trail
     private void PullTrail()
     {
         while (VectTrailToPrevTrail(0).magnitude > trailStep)
@@ -30,13 +31,18 @@ public class PartyController : MonoBehaviour
         
         pullAmount = VectTrailToPrevTrail(0).magnitude;
         
-        for (int i = 0; i < characters.Count; i++)
+        characters[0].transform.position = transform.position;
+        
+        for (int i = 1; i < characters.Count; i++)
         {
             float temp = i / trailStep - pullAmount;
             
+            int index = Mathf.CeilToInt(temp);
+            float remainder = (temp % 1 + 1) % 1;
+            
             characters[i].transform.position =
-                    trail[Mathf.CeilToInt(temp)]
-                    + VectTrailToPrevTrail(Mathf.CeilToInt(temp)).normalized * (temp % 1) / trailStep;
+                trail[index]
+                + VectTrailToPrevTrail(index).normalized * pullAmount;
         }
     }
     
@@ -68,4 +74,5 @@ public class PartyController : MonoBehaviour
             }
         }
     }
+    #endregion
 }
