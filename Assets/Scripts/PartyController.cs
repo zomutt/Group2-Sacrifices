@@ -18,12 +18,16 @@ public class PartyController : MonoBehaviour
     private List<Vector3> trail = new();
     private float pullAmount;
     private readonly float trailStep = 0.25f;
+    
+    public static PartyController Instance;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
         
         controls = new InputSystem_Actions();
+        
+        Instance = this;
     }
     
     void Start()
