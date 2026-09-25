@@ -66,7 +66,7 @@ public class PartyController : MonoBehaviour
     
     private void SetMoveDir(InputAction.CallbackContext ctx)
     {
-        moveDir = ctx.ReadValue<Vector2>();
+        moveDir = ctx.ReadValue<Vector2>().normalized;
     }
     #endregion
     
@@ -123,6 +123,23 @@ public class PartyController : MonoBehaviour
                 trail.RemoveAt(i - 1);
             }
         }
+    }
+    #endregion
+    
+    #region Triggers
+    void OnTriggerEnter(Collider other)
+    {
+        other.GetComponent<TriggerArea>().OnEnter();
+    }
+    
+    void OnTriggerExit(Collider other)
+    {
+        other.GetComponent<TriggerArea>().OnExit();
+    }
+    
+    void OnTriggerStay(Collider other)
+    {
+        other.GetComponent<TriggerArea>().OnStay();
     }
     #endregion
 }
