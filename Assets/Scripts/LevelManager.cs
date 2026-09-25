@@ -14,7 +14,7 @@ public class LevelManager : MonoBehaviour
     }
     
     public PayableTrigger currentPayable;
-    private GameObject paymentPanel;
+    private PaymentPanel paymentPanel;
     
     public static LevelManager Instance;
     
@@ -22,7 +22,7 @@ public class LevelManager : MonoBehaviour
     {
         timerText = GameObject.Find("LevelTimer").GetComponent<TextMeshProUGUI>();
         
-        paymentPanel = GameObject.Find("PurchasePanel");
+        paymentPanel = GameObject.Find("PurchasePanel").GetComponent<PaymentPanel>();
         
         Instance = this;
     }
@@ -31,22 +31,25 @@ public class LevelManager : MonoBehaviour
     {
         levelTime = 180f;
         
-        souls = 0;
+        souls = 100;
+        
+        SetPaymentPanel(null);
     }
     
     void Update()
     {
         if (levelTime > 0)
+            levelTime -= Time.deltaTime;
+        else
         {
             // End level, lose
         }
-        else
-            levelTime -= Time.deltaTime;
         
         timerText.text = Mathf.CeilToInt(levelTime / 2f).ToString();
     }
     
-    public bool RequestTakeSouls(int amount)
+    #region Soul Payments
+    public bool ConfirmPayment(int amount)
     {
         if (souls >= amount)
         {
@@ -58,15 +61,18 @@ public class LevelManager : MonoBehaviour
             return false;
     }
     
-    public void UpdatePaymentPanel()
+    public void SetPaymentPanel(PayableTrigger payable)
     {
+        currentPayable = payable;
         if (currentPayable == null)
         {
-            paymentPanel.SetActive(false);
+            paymentPanel.gameObject.SetActive(false);
         }
         else
         {
-            paymentPanel.SetActive(true);
+            paymentPanel.gameObject.SetActive(true);
+            paymentPanel.SetCost(currentPayable.SoulCost);
         }
     }
+    #endregion
 }

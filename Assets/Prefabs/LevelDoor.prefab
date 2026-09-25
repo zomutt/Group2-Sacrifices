@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a4180929c02b44b9b23ccdd4a28a558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoulDoor
-  soulCost: 0
-  anim: {fileID: 0}
+  soulCost: 100
+  anim: {fileID: 2327886233444343675}
 --- !u!33 &8695745516072726758
 MeshFilter:
   m_ObjectHideFlags: 0

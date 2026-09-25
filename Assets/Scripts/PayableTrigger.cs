@@ -12,13 +12,13 @@ public abstract class PayableTrigger : TriggerArea
     #region Trigger
     public override void OnEnter()
     {
-        LevelManager.Instance.currentPayable = this;
+        LevelManager.Instance.SetPaymentPanel(this);
     }
 
     public override void OnExit()
     {
         if (LevelManager.Instance.currentPayable == this)
-            LevelManager.Instance.currentPayable = null;
+            LevelManager.Instance.SetPaymentPanel(null);
     }
 
     public override void OnStay() {}

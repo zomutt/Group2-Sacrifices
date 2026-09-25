@@ -297,6 +297,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PurchasePanel
       objectReference: {fileID: 0}
+    - target: {fileID: 7399622444070300402, guid: 5ad0c53a80fb647d48a067f27918389d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

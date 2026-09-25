@@ -1,16 +1,21 @@
+using TMPro;
 using UnityEngine;
 
 public class PaymentPanel : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private int cost;
+    
+    [SerializeField]
+    private TextMeshProUGUI costText;
+    
+    public void SetCost(int newCost)
     {
-        
+        cost = newCost;
+        costText.text = "-" + newCost;
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    public void ConfirmPayment()
     {
-        
+        LevelManager.Instance.ConfirmPayment(cost);
     }
 }
