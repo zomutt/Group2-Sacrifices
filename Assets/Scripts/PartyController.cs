@@ -1,8 +1,17 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PartyController : MonoBehaviour
 {
+    private InputSystem_Actions controls;
+    
+    private Vector2 moveDir;
+    [SerializeField]
+    private float moveSpeed;
+    
+    private Rigidbody rb;
+    
     [SerializeField]
     private List<CharacterBehavior> characters;
     
@@ -10,14 +19,47 @@ public class PartyController : MonoBehaviour
     private float pullAmount;
     private readonly float trailStep = 0.25f;
 
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        
+        controls = new InputSystem_Actions();
+    }
+    
     void Start()
     {
         ChangeTrailLength(Mathf.CeilToInt(characters.Count / trailStep) + 1);
     }
 
+    void OnEnable()
+    {
+        controls.Enable();
+        controls.Player.Move.performed += SetMoveDir;
+        controls.Player.Move.canceled += SetMoveDir;
+    }
+
+    void OnDisable()
+    {
+        controls.Player.Move.performed -= SetMoveDir;
+        controls.Player.Move.canceled -= SetMoveDir;
+        controls.Disable();
+    }
+
     void Update()
     {
+        Move();
+        
         PullTrail();
+    }
+    
+    private void Move()
+    {
+        rb.linearVelocity = new Vector3(moveDir.x, 0, moveDir.y) * moveSpeed;
+    }
+    
+    private void SetMoveDir(InputAction.CallbackContext ctx)
+    {
+        moveDir = ctx.ReadValue<Vector2>();
     }
     
     #region Trail
