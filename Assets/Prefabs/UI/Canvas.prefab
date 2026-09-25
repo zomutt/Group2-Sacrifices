@@ -32,7 +32,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1578220707581225123}
-  - {fileID: 8363919432457133959}
+  - {fileID: 7225284991345949401}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -205,7 +205,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 713921915366553257, guid: 474450caebeef4bf3bcab33e770a6962, type: 3}
   m_PrefabInstance: {fileID: 2021741764125220362}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &5726730746828378191
+--- !u!1001 &6858609799273755921
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -279,7 +279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4281783246361677768, guid: 5ad0c53a80fb647d48a067f27918389d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 100
+      value: 99
       objectReference: {fileID: 0}
     - target: {fileID: 4281783246361677768, guid: 5ad0c53a80fb647d48a067f27918389d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -297,17 +297,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: PurchasePanel
       objectReference: {fileID: 0}
-    - target: {fileID: 7399622444070300402, guid: 5ad0c53a80fb647d48a067f27918389d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ad0c53a80fb647d48a067f27918389d, type: 3}
---- !u!224 &8363919432457133959 stripped
+--- !u!224 &7225284991345949401 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4281783246361677768, guid: 5ad0c53a80fb647d48a067f27918389d, type: 3}
-  m_PrefabInstance: {fileID: 5726730746828378191}
+  m_PrefabInstance: {fileID: 6858609799273755921}
   m_PrefabAsset: {fileID: 0}
