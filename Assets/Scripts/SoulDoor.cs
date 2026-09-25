@@ -9,7 +9,7 @@ public class SoulDoor : PayableTrigger
     {
         anim.SetTrigger("Open");
         
-        LevelManager.Instance.SetPaymentPanel(null);
+        LevelManager.Instance.SetTriggeredPanel(null);
         gameObject.SetActive(false);
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class PayableTrigger : TriggerArea
+public abstract class PayablePopup : PopupTrigger
 {
     [SerializeField]
     private int soulCost;
@@ -8,21 +8,6 @@ public abstract class PayableTrigger : TriggerArea
     {
         get => soulCost;
     }
-    
-    #region Trigger
-    public override void OnEnter()
-    {
-        LevelManager.Instance.SetPaymentPanel(this);
-    }
-
-    public override void OnExit()
-    {
-        if (LevelManager.Instance.currentPayable == this)
-            LevelManager.Instance.SetPaymentPanel(null);
-    }
-
-    public override void OnStay() {}
-    #endregion
     
     public abstract void PaidAction();
 }

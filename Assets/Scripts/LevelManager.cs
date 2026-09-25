@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using TMPro;
 using UnityEngine;
 
@@ -13,8 +14,9 @@ public class LevelManager : MonoBehaviour
         get => souls;
     }
     
-    public PayableTrigger currentPayable;
+    public PopupTrigger currentPopup;
     private PaymentPanel paymentPanel;
+    private GameObject currentPopupPanel;
     
     public static LevelManager Instance;
     
@@ -23,6 +25,9 @@ public class LevelManager : MonoBehaviour
         timerText = GameObject.Find("LevelTimer").GetComponent<TextMeshProUGUI>();
         
         paymentPanel = GameObject.Find("PurchasePanel").GetComponent<PaymentPanel>();
+        paymentPanel.gameObject.SetActive(false);
+        
+        
         
         Instance = this;
     }
@@ -32,8 +37,6 @@ public class LevelManager : MonoBehaviour
         levelTime = 180f;
         
         souls = 100;
-        
-        SetPaymentPanel(null);
     }
     
     void Update()
@@ -54,25 +57,35 @@ public class LevelManager : MonoBehaviour
         if (souls >= amount)
         {
             souls -= amount;
-            currentPayable.PaidAction();
+            currentPopup.GetComponent<PayablePopup>().PaidAction();
             return true;
         }
         else
             return false;
     }
     
-    public void SetPaymentPanel(PayableTrigger payable)
+    public void SetPaymentPanel(PayablePopup popup)
     {
-        currentPayable = payable;
-        if (currentPayable == null)
-        {
-            paymentPanel.gameObject.SetActive(false);
-        }
-        else
-        {
-            paymentPanel.gameObject.SetActive(true);
-            paymentPanel.SetCost(currentPayable.SoulCost);
-        }
+        currentPopup = popup;
+        
+        currentPopupPanel = paymentPanel.gameObject;
+        
+        paymentPanel.SetCost(popup.SoulCost);
     }
     #endregion
+    
+    #region Sacrifices
+    public void SetSacrificePanel(RitualPopup popup)
+    {
+        currentPopup = popup;
+        
+        currentPopupPanel = paymentPanel.gameObject;
+    }
+    #endregion
+    
+    public void ClearPopupPanel()
+    {
+        currentPopup = null;
+        currentPopupPanel.SetActive(false);
+    }
 }
