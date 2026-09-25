@@ -20,7 +20,7 @@ public class PartyController : MonoBehaviour
     private readonly float trailStep = 0.25f;
     
     public static PartyController Instance;
-
+    
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -34,7 +34,8 @@ public class PartyController : MonoBehaviour
     {
         ChangeTrailLength(Mathf.CeilToInt(characters.Count / trailStep) + 1);
     }
-
+    
+    #region ControlsEnableDisable
     void OnEnable()
     {
         controls.Enable();
@@ -48,7 +49,8 @@ public class PartyController : MonoBehaviour
         controls.Player.Move.canceled -= SetMoveDir;
         controls.Disable();
     }
-
+    #endregion
+    
     void Update()
     {
         Move();
@@ -56,6 +58,7 @@ public class PartyController : MonoBehaviour
         PullTrail();
     }
     
+    #region Movement
     private void Move()
     {
         rb.linearVelocity = new Vector3(moveDir.x, 0, moveDir.y) * moveSpeed;
@@ -65,6 +68,7 @@ public class PartyController : MonoBehaviour
     {
         moveDir = ctx.ReadValue<Vector2>();
     }
+    #endregion
     
     #region Trail
     private void PullTrail()
