@@ -7,6 +7,7 @@ public class PartyController : MonoBehaviour
     private InputSystem_Actions controls;
     
     private Vector2 moveDir;
+    private Vector3 lastMoveDir;
     [SerializeField]
     private float moveSpeed;
     public float CurrentVelocity
@@ -73,6 +74,11 @@ public class PartyController : MonoBehaviour
     private void Move()
     {
         rb.linearVelocity = new Vector3(moveDir.x, 0, moveDir.y) * moveSpeed;
+        
+        if (rb.linearVelocity.magnitude > 0)
+        {
+            lastMoveDir = rb.linearVelocity;
+        }
     }
     
     private void SetMoveDir(InputAction.CallbackContext ctx)
@@ -113,6 +119,7 @@ public class PartyController : MonoBehaviour
         pullAmount = VectTrailToPrevTrail(0).magnitude;
         
         characters[0].transform.position = transform.position;
+        characters[0].DesiredRotation = DirectionForModel(lastMoveDir);
         
         for (int i = 1; i < characters.Count; i++)
         {
@@ -121,9 +128,8 @@ public class PartyController : MonoBehaviour
             int index = Mathf.CeilToInt(temp);
             float remainder = (temp % 1 + 1) % 1;
             
-            characters[i].transform.position =
-                trail[index]
-                + VectTrailToPrevTrail(index).normalized * pullAmount;
+            characters[i].transform.position = trail[index] + VectTrailToPrevTrail(index).normalized * pullAmount;
+            characters[i].DesiredRotation = DirectionForModel(VectTrailToPrevTrail(index));
         }
     }
     
@@ -133,6 +139,11 @@ public class PartyController : MonoBehaviour
             return transform.position - trail[0];
         else
             return trail[index - 1] - trail[index];
+    }
+    
+    private float DirectionForModel(Vector3 facingVector)
+    {
+        return Vector3.SignedAngle(Vector3.forward, facingVector, Vector3.up);
     }
 
     private void ChangeTrailLength(int length)
