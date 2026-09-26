@@ -13,11 +13,17 @@ public class LevelManager : MonoBehaviour
         get => souls;
     }
     
+    [HideInInspector]
     public PopupTrigger currentPopup;
     private GameObject currentPopupPanel;
     
     private PaymentPanel paymentPanel;
     private RitualPanel ritualPanel;
+    
+    private int encounterIndex;
+    private float encounterTimer;
+    [SerializeField]
+    private EncounterInfo[] encounters;
     
     public static LevelManager Instance;
     
@@ -39,6 +45,9 @@ public class LevelManager : MonoBehaviour
         levelTime = 180f;
         
         souls = 0;
+        
+        encounterIndex = 0;
+        encounterTimer = encounters[encounterIndex].spawnTime;
     }
     
     void Update()
@@ -47,12 +56,13 @@ public class LevelManager : MonoBehaviour
             levelTime -= Time.deltaTime;
         else
         {
-            // End level, lose
+            // Lose level
         }
         
         timerText.text = Mathf.CeilToInt(levelTime / 2f).ToString();
     }
     
+    #region Souls
     public void GainSouls(int addedSouls)
     {
         souls += addedSouls;
@@ -68,6 +78,7 @@ public class LevelManager : MonoBehaviour
         else
             return false;
     }
+    #endregion
     
     #region Panels
     public void SetPaymentPanel(PayablePopup popup)
@@ -94,6 +105,26 @@ public class LevelManager : MonoBehaviour
     {
         currentPopup = null;
         currentPopupPanel.SetActive(false);
+    }
+    #endregion
+    
+    #region Encounters
+    public void ProgressEncounterTimer(float time)
+    {
+        encounterTimer -= time;
+        
+        if (encounterTimer <= 0)
+        {
+            TriggerEncounter(encounters[encounterIndex]);
+            
+            encounterIndex = (encounterIndex + 1) % encounters.Length;
+            encounterTimer = encounters[encounterIndex].spawnTime;
+        }
+    }
+    
+    private void TriggerEncounter(EncounterInfo encounter)
+    {
+        Debug.Log("Encounter was triggered");
     }
     #endregion
 }

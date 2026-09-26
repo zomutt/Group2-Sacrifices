@@ -47,6 +47,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6f0045704cdb4c81b141a8221493ca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
+  currentPopup: {fileID: 0}
+  encounters:
+  - spawnTime: 3
+    enemyPrefabs: []
+  - spawnTime: 5
+    enemyPrefabs: []
+  - spawnTime: 7
+    enemyPrefabs: []
 --- !u!1 &3719361090807576349
 GameObject:
   m_ObjectHideFlags: 0
