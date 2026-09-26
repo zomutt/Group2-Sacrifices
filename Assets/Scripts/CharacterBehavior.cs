@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class CharacterBehavior : MonoBehaviour
 {
-    
+    public void AddToParty()
+    {
+        PartyController.Instance.AddPartyMember(this);
+    }
     
     public void Sacrifice()
     {

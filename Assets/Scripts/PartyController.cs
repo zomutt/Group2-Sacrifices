@@ -15,6 +15,11 @@ public class PartyController : MonoBehaviour
     [SerializeField]
     private List<CharacterBehavior> characters;
     
+    public int PartySize
+    {
+        get => characters.Count;
+    }
+    
     private List<Vector3> trail = new();
     private float pullAmount;
     private readonly float trailStep = 0.25f;
@@ -71,6 +76,12 @@ public class PartyController : MonoBehaviour
     #endregion
     
     #region Party Management
+    public void AddPartyMember(CharacterBehavior character)
+    {
+        characters.Add(character);
+        ChangeTrailLength(Mathf.CeilToInt(characters.Count / trailStep) + 1);
+    }
+    
     public void SacrificePartyMember(int index)
     {
         characters[index].Sacrifice();

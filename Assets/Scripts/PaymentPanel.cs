@@ -13,11 +13,18 @@ public class PaymentPanel : MonoBehaviour
     {
         payablePopup = popup;
         cost = popup.SoulCost;
-        costText.text = "-" + popup.SoulCost;
+        
+        if (popup.IsAvailable)
+            costText.text = "-" + popup.SoulCost;
+        else
+            costText.text = popup.UnavailableText;
     }
     
     public void ConfirmPayment()
     {
+        if (!payablePopup.IsAvailable)
+            return;
+        
         if (LevelManager.Instance.ConfirmSoulPayment(cost))
             payablePopup.PaidAction();
     }
