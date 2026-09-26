@@ -122,7 +122,7 @@ public class LevelManager : MonoBehaviour
         }
     }
     
-    private void TriggerEncounter(EncounterInfo encounter)
+    public void TriggerEncounter(EncounterInfo encounter)
     {
         Debug.Log("Encounter was triggered");
     }
