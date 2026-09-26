@@ -598,6 +598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PaymentPanel
   costText: {fileID: 6994376161574497311}
+  confirmButton: {fileID: 3568308974523668869}
 --- !u!222 &5034619653223183575
 CanvasRenderer:
   m_ObjectHideFlags: 0

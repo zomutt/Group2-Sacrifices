@@ -24,7 +24,10 @@ public class EncounterTrigger : TriggerArea
     public override void OnStay()
     {
         if (!hasForcedEncounter)
-            LevelManager.Instance.ProgressEncounterTimer(Time.fixedDeltaTime);
+            LevelManager.Instance.ProgressEncounterTimer
+            (
+                Time.fixedDeltaTime * PartyController.Instance.CurrentVelocity
+            );
     }
     #endregion
 }

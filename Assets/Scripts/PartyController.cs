@@ -9,6 +9,8 @@ public class PartyController : MonoBehaviour
     private Vector2 moveDir;
     [SerializeField]
     private float moveSpeed;
+    public float CurrentVelocity
+        => moveDir.magnitude * moveSpeed;
     
     private Rigidbody rb;
     
@@ -24,6 +26,8 @@ public class PartyController : MonoBehaviour
     private float pullAmount;
     private readonly float trailStep = 0.25f;
     
+    private Transform partyHolder;
+    
     public static PartyController Instance;
     
     void Awake()
@@ -33,6 +37,8 @@ public class PartyController : MonoBehaviour
         controls = new InputSystem_Actions();
         
         Instance = this;
+        
+        partyHolder = GameObject.Find("Party").transform;
     }
     
     void Start()
@@ -79,6 +85,7 @@ public class PartyController : MonoBehaviour
     public void AddPartyMember(CharacterBehavior character)
     {
         characters.Add(character);
+        character.transform.parent = partyHolder.transform;
         ChangeTrailLength(Mathf.CeilToInt(characters.Count / trailStep) + 1);
     }
     

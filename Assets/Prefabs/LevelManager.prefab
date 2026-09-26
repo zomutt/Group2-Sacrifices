@@ -53,7 +53,7 @@ MonoBehaviour:
     enemyPrefabs: []
   - spawnTime: 5
     enemyPrefabs: []
-  - spawnTime: 7
+  - spawnTime: 5
     enemyPrefabs: []
 --- !u!1 &3719361090807576349
 GameObject:

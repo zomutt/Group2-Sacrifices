@@ -4,6 +4,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     private TextMeshProUGUI timerText;
+    private TextMeshProUGUI soulText;
     
     private float levelTime;
     
@@ -30,6 +31,7 @@ public class LevelManager : MonoBehaviour
     void Awake()
     {
         timerText = GameObject.Find("LevelTimer").GetComponent<TextMeshProUGUI>();
+        soulText = GameObject.Find("SoulCount").GetComponent<TextMeshProUGUI>();
         
         paymentPanel = GameObject.Find("PurchasePanel").GetComponent<PaymentPanel>();
         paymentPanel.gameObject.SetActive(false);
@@ -52,14 +54,26 @@ public class LevelManager : MonoBehaviour
     
     void Update()
     {
+        TickLevelTimer();
+        
+        UpdateUI();
+    }
+    
+    private void TickLevelTimer()
+    {
         if (levelTime > 0)
             levelTime -= Time.deltaTime;
         else
         {
             // Lose level
         }
-        
+    }
+    
+    private void UpdateUI()
+    {
         timerText.text = Mathf.CeilToInt(levelTime / 2f).ToString();
+        
+        soulText.text = souls.ToString();
     }
     
     #region Souls
@@ -127,4 +141,9 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Encounter was triggered");
     }
     #endregion
+    
+    public void EndLevel()
+    {
+        Debug.Log("Put end here!");
+    }
 }
