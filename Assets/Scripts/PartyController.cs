@@ -65,9 +65,17 @@ public class PartyController : MonoBehaviour
     
     void Update()
     {
-        Move();
-        
-        PullTrail();
+        if (LevelManager.LevelGameState == GameState.Exploring)
+        {
+            Move();
+            
+            PullTrail();
+        }
+        else
+        {
+            moveDir = Vector2.zero;
+            rb.linearVelocity = Vector3.zero;
+        }
     }
     
     #region Movement
@@ -190,11 +198,4 @@ public class PartyController : MonoBehaviour
     }
     #endregion
     
-    public void DisablePartyController()
-    {
-        moveDir = Vector2.zero;
-        rb.linearVelocity = Vector3.zero;
-        
-        enabled = false;
-    }
 }

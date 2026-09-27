@@ -3,15 +3,15 @@ using UnityEngine;
 
 public class CombatManager : MonoBehaviour
 {
-    public static CombatManager Instance;
-    
     private List<CharacterBehavior> partyCharacters;
     
     [SerializeField]
     private Transform partyLineup;
     [SerializeField]
     private Transform enemyLineup;
-
+    
+    public static CombatManager Instance;
+    
     void Awake()
     {
         Instance = this;
@@ -19,6 +19,8 @@ public class CombatManager : MonoBehaviour
     
     public void StartCombat(List<CharacterBehavior> party, EncounterInfo encounter)
     {
+        LevelManager.LevelGameState = GameState.Battle;
+        
         partyCharacters = party;
         
         PositionCharacters();

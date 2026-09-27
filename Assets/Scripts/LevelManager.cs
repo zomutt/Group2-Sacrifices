@@ -30,6 +30,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private bool skipEncounters;
     
+    public static GameState LevelGameState;
     public static LevelManager Instance;
     
     void Awake()
@@ -47,6 +48,7 @@ public class LevelManager : MonoBehaviour
         ritualPanel.gameObject.SetActive(false);
         #endregion
         
+        LevelGameState = GameState.Exploring;
         Instance = this;
     }
     
@@ -152,8 +154,6 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Encounter was triggered...");
         
         overworldUI.SetActive(false);
-        
-        PartyController.Instance.DisablePartyController();
         
         CombatManager.Instance.StartCombat(PartyController.Instance.GetPartyCharacters(), encounter);
     }
