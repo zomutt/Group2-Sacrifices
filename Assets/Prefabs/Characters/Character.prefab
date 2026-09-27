@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterBehavior
   modelPivot: {fileID: 3612160408842334496}
-  desiredRot: 0
+  maxTurnTimer: 4
 --- !u!1 &8815762113112565051
 GameObject:
   m_ObjectHideFlags: 0

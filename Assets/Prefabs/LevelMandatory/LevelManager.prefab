@@ -50,11 +50,23 @@ MonoBehaviour:
   currentPopup: {fileID: 0}
   encounters:
   - spawnTime: 3
-    enemyPrefabs: []
+    enemyPrefabs:
+    - {fileID: 0}
+    - {fileID: 4709240086951026532, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+    - {fileID: 4709240086951026532, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+    - {fileID: 0}
   - spawnTime: 5
-    enemyPrefabs: []
+    enemyPrefabs:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   - spawnTime: 5
-    enemyPrefabs: []
+    enemyPrefabs:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   skipEncounters: 1
 --- !u!1 &3719361090807576349
 GameObject:
