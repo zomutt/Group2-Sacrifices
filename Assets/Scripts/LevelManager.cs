@@ -4,6 +4,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     private TextMeshProUGUI timerText;
+    private TextMeshProUGUI soulText;
     
     private float levelTime;
     
@@ -13,24 +14,41 @@ public class LevelManager : MonoBehaviour
         get => souls;
     }
     
+    [HideInInspector]
     public PopupTrigger currentPopup;
     private GameObject currentPopupPanel;
     
+    private GameObject overworldUI;
     private PaymentPanel paymentPanel;
     private RitualPanel ritualPanel;
     
+    private int encounterIndex;
+    private float encounterTimer;
+    [SerializeField]
+    private EncounterInfo[] encounters;
+    
+    [SerializeField]
+    private bool skipEncounters;
+    
+    public static GameState LevelGameState;
     public static LevelManager Instance;
     
     void Awake()
     {
         timerText = GameObject.Find("LevelTimer").GetComponent<TextMeshProUGUI>();
+        soulText = GameObject.Find("SoulCount").GetComponent<TextMeshProUGUI>();
+        
+        #region Get Overworld UI
+        overworldUI = GameObject.Find("OverworldOnly");
         
         paymentPanel = GameObject.Find("PurchasePanel").GetComponent<PaymentPanel>();
         paymentPanel.gameObject.SetActive(false);
         
         ritualPanel = GameObject.Find("RitualPanel").GetComponent<RitualPanel>();
         ritualPanel.gameObject.SetActive(false);
+        #endregion
         
+        LevelGameState = GameState.Exploring;
         Instance = this;
     }
     
@@ -39,20 +57,36 @@ public class LevelManager : MonoBehaviour
         levelTime = 180f;
         
         souls = 0;
+        
+        encounterIndex = 0;
+        encounterTimer = encounters[encounterIndex].spawnTime;
     }
     
     void Update()
+    {
+        TickLevelTimer();
+        
+        UpdateUI();
+    }
+    
+    private void TickLevelTimer()
     {
         if (levelTime > 0)
             levelTime -= Time.deltaTime;
         else
         {
-            // End level, lose
+            // Lose level
         }
-        
-        timerText.text = Mathf.CeilToInt(levelTime / 2f).ToString();
     }
     
+    private void UpdateUI()
+    {
+        timerText.text = Mathf.CeilToInt(levelTime / 2f).ToString();
+        
+        soulText.text = souls.ToString();
+    }
+    
+    #region Souls
     public void GainSouls(int addedSouls)
     {
         souls += addedSouls;
@@ -68,6 +102,7 @@ public class LevelManager : MonoBehaviour
         else
             return false;
     }
+    #endregion
     
     #region Panels
     public void SetPaymentPanel(PayablePopup popup)
@@ -96,4 +131,45 @@ public class LevelManager : MonoBehaviour
         currentPopupPanel.SetActive(false);
     }
     #endregion
+    
+    #region Encounters
+    public void ProgressEncounterTimer(float time)
+    {
+        if (skipEncounters)
+            return;
+        
+        encounterTimer -= time;
+        
+        if (encounterTimer <= 0)
+        {
+            TriggerEncounter(encounters[encounterIndex]);
+            
+            encounterIndex = (encounterIndex + 1) % encounters.Length;
+            encounterTimer = encounters[encounterIndex].spawnTime;
+        }
+    }
+    
+    public void TriggerEncounter(EncounterInfo encounter)
+    {
+        Debug.Log("Encounter was triggered...");
+        
+        overworldUI.SetActive(false);
+        
+        CombatManager.Instance.StartCombat(PartyController.Instance.GetPartyCharacters(), encounter);
+    }
+    
+    public void ExitCombat()
+    {
+        Debug.Log("Returning to the real world...");
+        
+        overworldUI.SetActive(true);
+        
+        PartyController.Instance.enabled = true;
+    }
+    #endregion
+    
+    public void EndLevel()
+    {
+        Debug.Log("Put end here!");
+    }
 }

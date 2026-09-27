@@ -13,12 +13,7 @@ public class RitualPanel : MonoBehaviour
     private Transform[] selectButtons;
     
     private CharacterBehavior[] partyCharacters;
-
-    void OnEnable()
-    {
-        UpdatePartyButtons();
-    }
-
+    
     private void UpdatePartyButtons()
     {
         Transform partyHolder = GameObject.Find("Party").transform;
@@ -45,12 +40,16 @@ public class RitualPanel : MonoBehaviour
         ritualPopup = popup;
         reward = popup.SoulReward;
         rewardText.text = "+" + popup.SoulReward;
+        
+        UpdatePartyButtons();
     }
     
     public void ConfirmSacrifice(int partyIndex)
     {
         LevelManager.Instance.GainSouls(reward);
         ritualPopup.RewardAction();
+        
+        PartyController.Instance.SacrificePartyMember(partyIndex);
         
         UpdatePartyButtons();
     }
