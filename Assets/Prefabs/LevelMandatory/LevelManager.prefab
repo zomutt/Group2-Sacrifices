@@ -55,6 +55,7 @@ MonoBehaviour:
     enemyPrefabs: []
   - spawnTime: 5
     enemyPrefabs: []
+  skipEncounters: 1
 --- !u!1 &3719361090807576349
 GameObject:
   m_ObjectHideFlags: 0

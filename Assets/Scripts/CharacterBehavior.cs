@@ -15,7 +15,15 @@ public class CharacterBehavior : MonoBehaviour
 
     void Update()
     {
-        RotatePivot(desiredRot, pivotRotateSpeed * Time.deltaTime * PartyController.Instance.CurrentVelocity);
+        ModelOrientation();
+    }
+    
+    private void ModelOrientation()
+    {
+        if (PartyController.Instance.enabled)
+            RotatePivot(desiredRot, pivotRotateSpeed * Time.deltaTime * PartyController.Instance.CurrentVelocity);
+        else
+            RotatePivot(desiredRot, pivotRotateSpeed * Time.deltaTime * 6f);
     }
     
     void RotatePivot(float toRotation, float maxAmount)

@@ -105,6 +105,11 @@ public class PartyController : MonoBehaviour
         characters.Remove(character);
         ChangeTrailLength(Mathf.CeilToInt(characters.Count / trailStep) + 1);
     }
+    
+    public List<CharacterBehavior> GetPartyCharacters()
+    {
+        return characters;
+    }
     #endregion
     
     #region Trail
@@ -184,4 +189,12 @@ public class PartyController : MonoBehaviour
         other.GetComponent<TriggerArea>().OnStay();
     }
     #endregion
+    
+    public void DisablePartyController()
+    {
+        moveDir = Vector2.zero;
+        rb.linearVelocity = Vector3.zero;
+        
+        enabled = false;
+    }
 }

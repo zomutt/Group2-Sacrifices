@@ -18,6 +18,7 @@ public class LevelManager : MonoBehaviour
     public PopupTrigger currentPopup;
     private GameObject currentPopupPanel;
     
+    private GameObject overworldUI;
     private PaymentPanel paymentPanel;
     private RitualPanel ritualPanel;
     
@@ -26,6 +27,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private EncounterInfo[] encounters;
     
+    [SerializeField]
+    private bool skipEncounters;
+    
     public static LevelManager Instance;
     
     void Awake()
@@ -33,11 +37,15 @@ public class LevelManager : MonoBehaviour
         timerText = GameObject.Find("LevelTimer").GetComponent<TextMeshProUGUI>();
         soulText = GameObject.Find("SoulCount").GetComponent<TextMeshProUGUI>();
         
+        #region Get Overworld UI
+        overworldUI = GameObject.Find("OverworldOnly");
+        
         paymentPanel = GameObject.Find("PurchasePanel").GetComponent<PaymentPanel>();
         paymentPanel.gameObject.SetActive(false);
         
         ritualPanel = GameObject.Find("RitualPanel").GetComponent<RitualPanel>();
         ritualPanel.gameObject.SetActive(false);
+        #endregion
         
         Instance = this;
     }
@@ -125,6 +133,9 @@ public class LevelManager : MonoBehaviour
     #region Encounters
     public void ProgressEncounterTimer(float time)
     {
+        if (skipEncounters)
+            return;
+        
         encounterTimer -= time;
         
         if (encounterTimer <= 0)
@@ -138,7 +149,22 @@ public class LevelManager : MonoBehaviour
     
     public void TriggerEncounter(EncounterInfo encounter)
     {
-        Debug.Log("Encounter was triggered");
+        Debug.Log("Encounter was triggered...");
+        
+        overworldUI.SetActive(false);
+        
+        PartyController.Instance.DisablePartyController();
+        
+        CombatManager.Instance.StartCombat(PartyController.Instance.GetPartyCharacters(), encounter);
+    }
+    
+    public void ExitCombat()
+    {
+        Debug.Log("Returning to the real world...");
+        
+        overworldUI.SetActive(true);
+        
+        PartyController.Instance.enabled = true;
     }
     #endregion
     
