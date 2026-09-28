@@ -41,4 +41,9 @@ public class CameraController : MonoBehaviour
                 break;
         }
     }
+
+    public void JumpToOverworldTarget()
+    {
+        transform.position = partyTf.position;
+    }
 }

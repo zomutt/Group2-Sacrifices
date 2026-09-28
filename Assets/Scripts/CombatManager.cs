@@ -27,6 +27,9 @@ public class CombatManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
+
+        partyCharacters = new();
+        enemyCharacters = new();
     }
 
     void Update()
@@ -106,7 +109,7 @@ public class CombatManager : MonoBehaviour
     
     private void DoPlayerTurn(int index)
     {
-        if (partyCharacters.Count >= index && partyCharacters[index] != null)
+        if (index < partyCharacters.Count && partyCharacters[index] != null)
             partyCharacters[index].DoTurn();
         
         // Progress turn index
@@ -122,6 +125,7 @@ public class CombatManager : MonoBehaviour
             case CombatOutcome.PartyWin:
                 Debug.Log("Battle won!");
                 EndActiveCombat();
+                Invoke("LeaveBattle", 2f);
                 return true;
 
             case CombatOutcome.EnemyWin:
@@ -149,6 +153,11 @@ public class CombatManager : MonoBehaviour
     private void EndActiveCombat()
     {
         LevelManager.LevelGameState = GameState.EndOfBattle;
+    }
+
+    private void LeaveBattle()
+    {
+        LevelManager.Instance.ExitCombat();
     }
     #endregion
 

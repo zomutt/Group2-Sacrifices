@@ -118,6 +118,15 @@ public class PartyController : MonoBehaviour
     {
         return characters;
     }
+
+    public void ReturnPartyToHolder()
+    {
+        foreach (CharacterBehavior character in characters)
+        {
+            character.transform.parent = partyHolder.transform;
+            character.transform.SetAsLastSibling();
+        }
+    }
     #endregion
     
     #region Trail
