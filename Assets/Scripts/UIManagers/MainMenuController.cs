@@ -20,6 +20,8 @@ public class MainMenuController : MonoBehaviour
     [Header("Scenes")]
     [SerializeField] private string creditsScene = "CreditsScene";
 
+    [SerializeField] private string levelOne = "Level_1";
+
     private void Start()
     {
         ActivateAllInGroup();
@@ -44,8 +46,8 @@ public class MainMenuController : MonoBehaviour
 
     public void OnClickPlay()
     {
-        Debug.Log("Next scene (put scene here when we have it)");
-        // Logic here once we have an established scene.
+        Debug.Log("Starting level one");
+        SceneManager.LoadScene(levelOne);
     }
 
     public void OnClickToggleSettings()
