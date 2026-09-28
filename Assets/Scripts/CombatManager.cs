@@ -57,6 +57,7 @@ public class CombatManager : MonoBehaviour
             partyCharacters[i].transform.parent = partyLineup.GetChild(i);
             partyCharacters[i].transform.localPosition = Vector3.zero;
             partyCharacters[i].DesiredRotation = -90;
+            partyCharacters[i].ImmedatelyReorient();
         }
     }
     

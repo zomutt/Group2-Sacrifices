@@ -121,10 +121,14 @@ public class PartyController : MonoBehaviour
 
     public void ReturnPartyToHolder()
     {
+        PullTrail();
+
         foreach (CharacterBehavior character in characters)
         {
             character.transform.parent = partyHolder.transform;
             character.transform.SetAsLastSibling();
+
+            character.ImmedatelyReorient();
         }
     }
     #endregion

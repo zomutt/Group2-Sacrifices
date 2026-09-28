@@ -51,6 +51,11 @@ public class CharacterBehavior : MonoBehaviour
         else
             RotatePivot(desiredRot, pivotRotateSpeed * Time.deltaTime * 6f);
     }
+
+    public void ImmedatelyReorient()
+    {
+        RotatePivot(desiredRot, 180f);
+    }
     
     void RotatePivot(float toRotation, float maxAmount)
     {
