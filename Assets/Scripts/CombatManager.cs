@@ -3,6 +3,13 @@ using UnityEngine;
 
 public class CombatManager : MonoBehaviour
 {
+    public enum CombatOutcome
+    {
+        Ongoing,
+        PartyWin,
+        EnemyWin
+    }
+
     private List<CharacterBehavior> partyCharacters;
     private List<CharacterBehavior> enemyCharacters;
     
@@ -38,7 +45,8 @@ public class CombatManager : MonoBehaviour
         
         SpawnEnemyCharacters(encounter);
     }
-    
+
+    #region Character Management
     private void PositionCharacters()
     {
         for (int i = 0; i < partyCharacters.Count; i++)
@@ -69,9 +77,25 @@ public class CombatManager : MonoBehaviour
             }
         }
     }
-    
+
+    public void RemoveFromBattle(CharacterBehavior toRemove)
+    {
+        if (partyCharacters.Contains(toRemove))
+        {
+            partyCharacters.Remove(toRemove);
+        }
+        else if (enemyCharacters.Contains(toRemove))
+        {
+            enemyCharacters.Remove(toRemove);
+        }
+    }
+    #endregion
+
     private void TickBattle()
     {
+        if (TryEndBattle())
+            return;
+
         playerTurnTimer += Time.deltaTime * CombatSpeed;
         
         if (Mathf.FloorToInt(playerTurnTimer) > playerTurnTriggerIndex)
@@ -89,6 +113,44 @@ public class CombatManager : MonoBehaviour
         playerTurnTriggerIndex = (index + 1) % 4;
         playerTurnTimer = playerTurnTriggerIndex;
     }
+
+    #region End of Battle
+    private bool TryEndBattle()
+    {
+        switch (CheckRemainingAlive())
+        {
+            case CombatOutcome.PartyWin:
+                Debug.Log("Battle won!");
+                EndActiveCombat();
+                return true;
+
+            case CombatOutcome.EnemyWin:
+                Debug.Log("Battle lost!");
+                EndActiveCombat();
+                return true;
+
+            default:
+                break;
+        }
+
+        return false;
+    }
+
+    private CombatOutcome CheckRemainingAlive()
+    {
+        if (partyCharacters.Count == 0)
+            return CombatOutcome.EnemyWin;
+        else if (enemyCharacters.Count == 0)
+            return CombatOutcome.PartyWin;
+        else
+            return CombatOutcome.Ongoing;
+    }
+    
+    private void EndActiveCombat()
+    {
+        LevelManager.LevelGameState = GameState.EndOfBattle;
+    }
+    #endregion
 
     public CharacterBehavior RandomTarget(bool onEnemyTeam)
     {

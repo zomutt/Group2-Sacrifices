@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterBehavior : MonoBehaviour
 {
@@ -79,12 +80,7 @@ public class CharacterBehavior : MonoBehaviour
     
     public void Sacrifice()
     {
-        // Remove from party controller
-        PartyController.Instance.RemoveFromParty(this);
-        
-        // Remove from party holder and hide
-        transform.parent = transform.parent.parent;
-        gameObject.SetActive(false);
+        OnDeath();
     }
     #endregion
     
@@ -140,8 +136,18 @@ public class CharacterBehavior : MonoBehaviour
 
         if (!stats.HasHealthRemaining)
         {
-            Debug.Log("Character should die here! But by a miraculous lack of code, they lived.");
+            OnDeath();
         }
     }
 
+    private void OnDeath()
+    {
+        Debug.Log(gameObject.name + " died");
+
+        PartyController.Instance.RemoveFromParty(this);
+        CombatManager.Instance.RemoveFromBattle(this);
+
+        transform.parent = transform.root;
+        gameObject.SetActive(false);
+    }
 }
