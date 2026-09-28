@@ -13,9 +13,14 @@ public class CharacterBehavior : MonoBehaviour
     
     private readonly float pivotRotateSpeed = 100f;
     
-    private int health;
     [SerializeField]
-    private int maxHealth;
+    private CharacterStats stats;
+    public CharacterStats Stats
+        => stats;
+
+    private CharacterBehavior currentTarget;
+    [SerializeField]
+    private AttackBehavior attack;
     
     #region In Battle
     private bool amOnEnemyTeam;
@@ -27,7 +32,7 @@ public class CharacterBehavior : MonoBehaviour
 
     void Start()
     {
-        health = maxHealth;
+        stats.RefillHealth();
     }
 
     void Update()
@@ -124,9 +129,19 @@ public class CharacterBehavior : MonoBehaviour
     public void DoTurn()
     {
         Debug.Log(gameObject.name + " did turn");
-        
-        // To be implemented
+
+        attack.MoveOnTarget(this, CombatManager.Instance.RandomTarget(!amOnEnemyTeam));
     }
     #endregion
     
+    public void TakeDamage(int damage)
+    {
+        stats.health -= damage;
+
+        if (!stats.HasHealthRemaining)
+        {
+            Debug.Log("Character should die here! But by a miraculous lack of code, they lived.");
+        }
+    }
+
 }

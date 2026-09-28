@@ -4,6 +4,7 @@ using UnityEngine;
 public class CombatManager : MonoBehaviour
 {
     private List<CharacterBehavior> partyCharacters;
+    private List<CharacterBehavior> enemyCharacters;
     
     [SerializeField]
     private Transform partyLineup;
@@ -51,6 +52,7 @@ public class CombatManager : MonoBehaviour
     private void SpawnEnemyCharacters(EncounterInfo encounter)
     {
         GameObject[] enemies = encounter.enemyPrefabs;
+        enemyCharacters = new();
                 
         for (int i = 0; i < enemies.Length; i++)
         {
@@ -62,6 +64,8 @@ public class CombatManager : MonoBehaviour
                 CharacterBehavior enemyChara = newEnemy.GetComponent<CharacterBehavior>();
                 enemyChara.DesiredRotation = 90;
                 enemyChara.SetEnemyTurnTimer(2 - i);
+
+                enemyCharacters.Add(enemyChara);
             }
         }
     }
@@ -84,5 +88,17 @@ public class CombatManager : MonoBehaviour
         // Progress turn index
         playerTurnTriggerIndex = (index + 1) % 4;
         playerTurnTimer = playerTurnTriggerIndex;
+    }
+
+    public CharacterBehavior RandomTarget(bool onEnemyTeam)
+    {
+        if (onEnemyTeam)
+        {
+            return enemyCharacters[Random.Range(0, enemyCharacters.Count)];
+        }
+        else
+        {
+            return partyCharacters[Random.Range(0, partyCharacters.Count)];
+        }
     }
 }
