@@ -10,6 +10,6 @@ public class PlainAttack : AttackBehavior
 
     private int GetAttackPower(CharacterStats stats, int basePower)
     {
-        return basePower; // Not implemented yet
+        return stats.strength * basePower;
     }
 }
