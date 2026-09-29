@@ -5,8 +5,8 @@ public class MainMenuController : MonoBehaviour
 {
     [Header("Activate/Deactivate")]
     [Tooltip("Anything in activate group is set active in start, same logic for deactivate group.")]
-    [SerializeField] private GameObject[] activateGroup;    // Put anything here you want active in start.
-    [SerializeField] private GameObject[] deactivateGroup;  // See above, but inactive.
+    [SerializeField] private GameObject[] activateGroup;
+    [SerializeField] private GameObject[] deactivateGroup;
 
     [Header("Panels")]
     [SerializeField] private GameObject settingsPanel;
@@ -19,8 +19,9 @@ public class MainMenuController : MonoBehaviour
 
     [Header("Scenes")]
     [SerializeField] private string creditsScene = "CreditsScene";
-
     [SerializeField] private string levelOne = "Level_1";
+
+
 
     private void Start()
     {
@@ -32,6 +33,7 @@ public class MainMenuController : MonoBehaviour
     {
         foreach (var panel in activateGroup)
         {
+            if (!panel) continue;
             panel.SetActive(true);
         }
     }
@@ -40,6 +42,7 @@ public class MainMenuController : MonoBehaviour
     {
         foreach (var panel in deactivateGroup)
         {
+            if (!panel) continue;
             panel.SetActive(false);
         }
     }
@@ -52,17 +55,19 @@ public class MainMenuController : MonoBehaviour
 
     public void OnClickToggleSettings()
     {
+        if (!settingsPanel) return;
         settingsPanel.SetActive(!settingsPanel.activeSelf);
 
-        helpPanel.SetActive(false);   // Close help so they don't overlap
+        if (helpPanel) helpPanel.SetActive(false);   // Close help so they don't overlap
     }
 
     public void OnClickToggleHelp()
     {
+        if (!helpPanel) return;
         ResetHelpPages();   // Back to the first page when you open/close the panel
         helpPanel.SetActive(!helpPanel.activeSelf);
 
-        settingsPanel.SetActive(false);   // Close settings so they don't overlap
+        if (settingsPanel) settingsPanel.SetActive(false);   // Close settings so they don't overlap
     }
 
     public void OnClickCredits()
@@ -79,23 +84,26 @@ public class MainMenuController : MonoBehaviour
 
     public void OnClickCycleHelp()
     {
+        if (helpSubPanels.Length == 0) return;
         currentHelpPage++;
         if (currentHelpPage >= helpSubPanels.Length) currentHelpPage = 0;
         CloseAllHelpPanels();
-        helpSubPanels[currentHelpPage].SetActive(true);
+        if (helpSubPanels[currentHelpPage]) helpSubPanels[currentHelpPage].SetActive(true);
     }
 
     private void ResetHelpPages()
     {
+        if (helpSubPanels.Length == 0) return;
         currentHelpPage = 0;
         CloseAllHelpPanels();
-        helpSubPanels[currentHelpPage].SetActive(true);
+        if (helpSubPanels[currentHelpPage]) helpSubPanels[currentHelpPage].SetActive(true);
     }
 
     private void CloseAllHelpPanels()
     {
         foreach (var panel in helpSubPanels)
         {
+            if (!panel) continue;
             panel.SetActive(false);
         }
     }
