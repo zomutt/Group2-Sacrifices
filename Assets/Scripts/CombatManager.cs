@@ -19,13 +19,13 @@ public class CombatManager : MonoBehaviour
     private Transform enemyLineup;
     
     private float playerTurnTimer;
+    public float PlayerTurnTimer => playerTurnTimer;
     private int playerTurnTriggerIndex;
     
     public static float CombatSpeed = 0.5f;
     public static CombatManager Instance;
 
     private GameObject combatUI;
-    private MeterDisplay partyBar;
     
     void Awake()
     {
@@ -35,9 +35,11 @@ public class CombatManager : MonoBehaviour
         enemyCharacters = new();
 
         combatUI = GameObject.Find("CombatOnly");
+    }
 
-        partyBar = GameObject.Find("PartyBar").GetComponent<MeterDisplay>();
-        partyBar.SetMeterValueAndMax(0, 4);
+    private void Start()
+    {
+        combatUI.SetActive(false);
     }
 
     void Update()
@@ -55,6 +57,8 @@ public class CombatManager : MonoBehaviour
         PositionCharacters();
         
         SpawnEnemyCharacters(encounter);
+
+        combatUI.SetActive(true);
     }
 
     #region Character Management
@@ -186,6 +190,6 @@ public class CombatManager : MonoBehaviour
 
     private void UpdateUI()
     {
-        partyBar.SetMeterValue(playerTurnTimer);
+        
     }
 }
