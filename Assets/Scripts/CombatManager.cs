@@ -23,6 +23,9 @@ public class CombatManager : MonoBehaviour
     
     public static float CombatSpeed = 0.5f;
     public static CombatManager Instance;
+
+    private GameObject combatUI;
+    private MeterDisplay partyBar;
     
     void Awake()
     {
@@ -30,6 +33,11 @@ public class CombatManager : MonoBehaviour
 
         partyCharacters = new();
         enemyCharacters = new();
+
+        combatUI = GameObject.Find("CombatOnly");
+
+        partyBar = GameObject.Find("PartyBar").GetComponent<MeterDisplay>();
+        partyBar.SetMeterValueAndMax(0, 4);
     }
 
     void Update()
@@ -106,6 +114,8 @@ public class CombatManager : MonoBehaviour
         {
             DoPlayerTurn(playerTurnTriggerIndex);
         }
+
+        UpdateUI();
     }
     
     private void DoPlayerTurn(int index)
@@ -172,5 +182,10 @@ public class CombatManager : MonoBehaviour
         {
             return partyCharacters[Random.Range(0, partyCharacters.Count)];
         }
+    }
+
+    private void UpdateUI()
+    {
+        partyBar.SetMeterValue(playerTurnTimer);
     }
 }
