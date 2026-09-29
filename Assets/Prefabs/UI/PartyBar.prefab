@@ -460,7 +460,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 220, y: -30}
+  m_AnchoredPosition: {x: -5, y: -30}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &4114657539763446716
@@ -544,7 +544,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2958941256695039550}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5493023285243018244}
+        m_TargetAssemblyTypeName: PartyBarController, Assembly-CSharp
+        m_MethodName: SkipTurnsButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4866985749952523400
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,7 +593,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: -30}
+  m_AnchoredPosition: {x: 220, y: -30}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &6202525766276534452
@@ -665,7 +677,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3307502942718119096}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5493023285243018244}
+        m_TargetAssemblyTypeName: PartyBarController, Assembly-CSharp
+        m_MethodName: SkipTurnsButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5085446997859558643
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,9 +845,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2da7a95a12df6949b3b18e1e7800789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MeterDisplay
-  defaultMeterWidth: 0
-  currentValue: 0
-  maxValue: 0
 --- !u!114 &8728798126357329315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1027,7 +1048,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 145, y: -30}
+  m_AnchoredPosition: {x: 70, y: -30}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &1953523526813848741
@@ -1111,7 +1132,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2140652294991652336}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5493023285243018244}
+        m_TargetAssemblyTypeName: PartyBarController, Assembly-CSharp
+        m_MethodName: SkipTurnsButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7924781648243701842
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,7 +1393,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 70, y: -30}
+  m_AnchoredPosition: {x: 145, y: -30}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &54540766660455197
@@ -1444,7 +1477,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2775629762561476297}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5493023285243018244}
+        m_TargetAssemblyTypeName: PartyBarController, Assembly-CSharp
+        m_MethodName: SkipTurnsButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9016817947497358474
 GameObject:
   m_ObjectHideFlags: 0

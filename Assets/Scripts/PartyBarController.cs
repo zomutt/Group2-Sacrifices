@@ -18,4 +18,9 @@ public class PartyBarController : MonoBehaviour
     {
         meter.SetMeterValue(CombatManager.Instance.PlayerTurnTimer);
     }
+
+    public void SkipTurnsButton(int toTurn)
+    {
+        CombatManager.Instance.SkipToTurn(toTurn);
+    }
 }

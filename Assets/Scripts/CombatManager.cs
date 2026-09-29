@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -118,18 +119,6 @@ public class CombatManager : MonoBehaviour
         {
             DoPlayerTurn(playerTurnTriggerIndex);
         }
-
-        UpdateUI();
-    }
-    
-    private void DoPlayerTurn(int index)
-    {
-        if (index < partyCharacters.Count && partyCharacters[index] != null)
-            partyCharacters[index].DoTurn();
-        
-        // Progress turn index
-        playerTurnTriggerIndex = (index + 1) % 4;
-        playerTurnTimer = playerTurnTriggerIndex;
     }
 
     #region End of Battle
@@ -172,6 +161,8 @@ public class CombatManager : MonoBehaviour
 
     private void LeaveBattle()
     {
+        combatUI.SetActive(false);
+
         LevelManager.Instance.ExitCombat();
     }
     #endregion
@@ -180,16 +171,46 @@ public class CombatManager : MonoBehaviour
     {
         if (onEnemyTeam)
         {
-            return enemyCharacters[Random.Range(0, enemyCharacters.Count)];
+            return enemyCharacters[UnityEngine.Random.Range(0, enemyCharacters.Count)];
         }
         else
         {
-            return partyCharacters[Random.Range(0, partyCharacters.Count)];
+            return partyCharacters[UnityEngine.Random.Range(0, partyCharacters.Count)];
         }
     }
 
-    private void UpdateUI()
+    private void DoPlayerTurn(int index)
     {
-        
+        if (index < partyCharacters.Count && partyCharacters[index] != null)
+            partyCharacters[index].DoTurn();
+
+        // Progress turn index
+        playerTurnTriggerIndex = (index + 1) % 4;
+        playerTurnTimer = playerTurnTriggerIndex;
+    }
+
+    public void SkipToTurn(int toTurn)
+    {
+        int breakCheck = 0;
+        int totalSkipped = (toTurn + 4) - playerTurnTriggerIndex;
+
+        while (playerTurnTriggerIndex != toTurn)
+        {
+            playerTurnTriggerIndex = (playerTurnTriggerIndex + 1) % 4;
+
+            if (partyCharacters[playerTurnTriggerIndex] != null)
+                partyCharacters[playerTurnTriggerIndex].TakeDamage(10 / totalSkipped);
+
+            #region Break Loop
+            breakCheck++;
+            if (breakCheck >= 8)
+            {
+                Debug.LogError("SKIP TURN LOOP ERROR");
+                return;
+            }
+            #endregion
+        }
+
+        playerTurnTimer = playerTurnTriggerIndex + 1;
     }
 }
