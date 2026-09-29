@@ -199,7 +199,7 @@ public class CombatManager : MonoBehaviour
             playerTurnTriggerIndex = (playerTurnTriggerIndex + 1) % 4;
 
             if (partyCharacters[playerTurnTriggerIndex] != null)
-                partyCharacters[playerTurnTriggerIndex].TakeDamage(10 / totalSkipped);
+                partyCharacters[playerTurnTriggerIndex].TakeDamage(12 / totalSkipped);
 
             #region Break Loop
             breakCheck++;
