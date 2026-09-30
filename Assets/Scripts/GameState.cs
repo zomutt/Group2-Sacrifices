@@ -4,5 +4,6 @@ public enum GameState
 {
     Exploring,
     Battle,
-    Cutscene
+    Cutscene,
+    EndOfBattle
 }

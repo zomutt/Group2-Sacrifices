@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterBehavior : MonoBehaviour
 {
@@ -13,9 +14,14 @@ public class CharacterBehavior : MonoBehaviour
     
     private readonly float pivotRotateSpeed = 100f;
     
-    private int health;
     [SerializeField]
-    private int maxHealth;
+    private CharacterStats stats;
+    public CharacterStats Stats
+        => stats;
+
+    private CharacterBehavior currentTarget;
+    [SerializeField]
+    private AttackBehavior attack;
     
     #region In Battle
     private bool amOnEnemyTeam;
@@ -27,7 +33,7 @@ public class CharacterBehavior : MonoBehaviour
 
     void Start()
     {
-        health = maxHealth;
+        stats.RefillHealth();
     }
 
     void Update()
@@ -44,6 +50,11 @@ public class CharacterBehavior : MonoBehaviour
             RotatePivot(desiredRot, pivotRotateSpeed * Time.deltaTime * PartyController.Instance.CurrentVelocity);
         else
             RotatePivot(desiredRot, pivotRotateSpeed * Time.deltaTime * 6f);
+    }
+
+    public void ImmedatelyReorient()
+    {
+        RotatePivot(desiredRot, 180f);
     }
     
     void RotatePivot(float toRotation, float maxAmount)
@@ -74,12 +85,7 @@ public class CharacterBehavior : MonoBehaviour
     
     public void Sacrifice()
     {
-        // Remove from party controller
-        PartyController.Instance.RemoveFromParty(this);
-        
-        // Remove from party holder and hide
-        transform.parent = transform.parent.parent;
-        gameObject.SetActive(false);
+        OnDeath();
     }
     #endregion
     
@@ -124,9 +130,29 @@ public class CharacterBehavior : MonoBehaviour
     public void DoTurn()
     {
         Debug.Log(gameObject.name + " did turn");
-        
-        // To be implemented
+
+        attack.MoveOnTarget(this, CombatManager.Instance.RandomTarget(!amOnEnemyTeam));
     }
     #endregion
     
+    public void TakeDamage(int damage)
+    {
+        stats.health -= damage;
+
+        if (!stats.HasHealthRemaining)
+        {
+            OnDeath();
+        }
+    }
+
+    private void OnDeath()
+    {
+        Debug.Log(gameObject.name + " died");
+
+        PartyController.Instance.RemoveFromParty(this);
+        CombatManager.Instance.RemoveFromBattle(this);
+
+        transform.parent = transform.root;
+        gameObject.SetActive(false);
+    }
 }

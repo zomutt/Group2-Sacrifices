@@ -163,8 +163,11 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Returning to the real world...");
         
         overworldUI.SetActive(true);
-        
-        PartyController.Instance.enabled = true;
+
+        LevelGameState = GameState.Exploring;
+
+        PartyController.Instance.ReturnPartyToHolder();
+        CameraController.Instance.JumpToOverworldTarget();
     }
     #endregion
     
