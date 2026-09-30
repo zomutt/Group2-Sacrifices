@@ -138,6 +138,8 @@ public class CharacterBehavior : MonoBehaviour
     public void TakeDamage(int damage)
     {
         stats.health -= damage;
+        
+        LevelManager.Instance.SpawnDamageNumber(transform.position + Vector3.up, damage);
 
         if (!stats.HasHealthRemaining)
         {

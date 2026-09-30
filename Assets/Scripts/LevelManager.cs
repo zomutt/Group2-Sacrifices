@@ -30,6 +30,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private bool skipEncounters;
     
+    private ObjectPooler damageNumberPool;
+    
     public static GameState LevelGameState;
     public static LevelManager Instance;
     
@@ -47,6 +49,8 @@ public class LevelManager : MonoBehaviour
         ritualPanel = GameObject.Find("RitualPanel").GetComponent<RitualPanel>();
         ritualPanel.gameObject.SetActive(false);
         #endregion
+        
+        damageNumberPool = GameObject.Find("DmgNumPool").GetComponent<ObjectPooler>();
         
         LevelGameState = GameState.Exploring;
         Instance = this;
@@ -174,5 +178,15 @@ public class LevelManager : MonoBehaviour
     public void EndLevel()
     {
         Debug.Log("Put end here!");
+    }
+    
+    public void SpawnDamageNumber(Vector3 position, int damage)
+    {
+        GameObject damageNumber = damageNumberPool.GetPooledObject();
+        
+        damageNumber.transform.position = position;
+        damageNumber.GetComponent<DamageNumber>().SetDamageNumber(damage);
+        
+        damageNumber.SetActive(true);
     }
 }
