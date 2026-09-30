@@ -26,6 +26,16 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject soulsPanel;
     [SerializeField] private TextMeshProUGUI soulsText;
 
+    [Header("Overworld UI")]
+    [SerializeField] private GameObject overworldPanel;
+    [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private PaymentPanel paymentPanel;
+    [SerializeField] private RitualPanel ritualPanel;
+
+    // LevelManager grabs these instead of searching by name
+    public PaymentPanel PaymentPanel => paymentPanel;
+    public RitualPanel RitualPanel => ritualPanel;
+
     [Header("Scenes")]
     [SerializeField] private string creditsScene = "CreditsScene";
     [SerializeField] private string mainMenuScene = "MainMenuScene";
@@ -70,7 +80,14 @@ public class UIController : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance && Instance != this)
+        {
+            Destroy(gameObject);   // One already carried over from another scene
+            return;
+        }
+
         Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void OnDestroy()
@@ -113,6 +130,18 @@ public class UIController : MonoBehaviour
 
     // ===== Pause Menu =====
 
+    public void OnClickReloadScene()
+    {
+        Time.timeScale = 1;
+        ActivateAllInGroup();   // UI carries over, so put it back to how it starts
+        DeactivateAllInGroup();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void OnClickCloseGame()
+    {
+        Application.Quit();
+    }
     public void OnClickPauseGame()
     {
         Time.timeScale = 0; // This lives here (in UIController) because it's super early on, not because it's best practice.
@@ -143,6 +172,7 @@ public class UIController : MonoBehaviour
     public void OnClickConfirmQuit()
     {
         Time.timeScale = 1; // Otherwise the main menu loads frozen
+        Destroy(gameObject);   // Don't drag the game UI into the menu
         SceneManager.LoadScene(mainMenuScene);
     }
 
@@ -240,6 +270,18 @@ public class UIController : MonoBehaviour
     public void SetSouls(int souls)
     {
         if (soulsText) soulsText.text = $"Souls: {souls}";
+    }
+
+    // ===== Overworld =====
+
+    public void SetOverworldUI(bool active)
+    {
+        if (overworldPanel) overworldPanel.SetActive(active);
+    }
+
+    public void SetTimer(int time)
+    {
+        if (timerText) timerText.text = time.ToString();
     }
 
     // ===== Party =====

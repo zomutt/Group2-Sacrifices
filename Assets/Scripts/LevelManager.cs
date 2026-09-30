@@ -3,9 +3,6 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    private TextMeshProUGUI timerText;
-    private TextMeshProUGUI soulText;
-    
     private float levelTime;
     
     private int souls;
@@ -18,7 +15,6 @@ public class LevelManager : MonoBehaviour
     public PopupTrigger currentPopup;
     private GameObject currentPopupPanel;
     
-    private GameObject overworldUI;
     private PaymentPanel paymentPanel;
     private RitualPanel ritualPanel;
     
@@ -35,25 +31,21 @@ public class LevelManager : MonoBehaviour
     
     void Awake()
     {
-        if (timerText) timerText = GameObject.Find("LevelTimer").GetComponent<TextMeshProUGUI>();
-        soulText = GameObject.Find("SoulCount").GetComponent<TextMeshProUGUI>();
-        
-        #region Get Overworld UI
-        overworldUI = GameObject.Find("OverworldOnly");
-        
-        paymentPanel = GameObject.Find("PurchasePanel").GetComponent<PaymentPanel>();
-        paymentPanel.gameObject.SetActive(false);
-        
-        ritualPanel = GameObject.Find("RitualPanel").GetComponent<RitualPanel>();
-        ritualPanel.gameObject.SetActive(false);
-        #endregion
-        
         LevelGameState = GameState.Exploring;
         Instance = this;
     }
-    
+
     void Start()
     {
+        #region Get Overworld UI
+        // In Start so UIController.Instance is guaranteed to be set
+        paymentPanel = UIController.Instance.PaymentPanel;
+        paymentPanel.gameObject.SetActive(false);
+
+        ritualPanel = UIController.Instance.RitualPanel;
+        ritualPanel.gameObject.SetActive(false);
+        #endregion
+
         levelTime = 180f;
         
         souls = 0;
@@ -81,9 +73,9 @@ public class LevelManager : MonoBehaviour
     
     private void UpdateUI()
     {
-        timerText.text = Mathf.CeilToInt(levelTime / 2f).ToString();
-        
-        soulText.text = souls.ToString();
+        UIController.Instance.SetTimer(Mathf.CeilToInt(levelTime / 2f));
+
+        UIController.Instance.SetSouls(souls);
     }
     
     #region Souls
@@ -153,7 +145,7 @@ public class LevelManager : MonoBehaviour
     {
         Debug.Log("Encounter was triggered...");
         
-        overworldUI.SetActive(false);
+        UIController.Instance.SetOverworldUI(false);
         
         CombatManager.Instance.StartCombat(PartyController.Instance.GetPartyCharacters(), encounter);
     }
@@ -162,9 +154,12 @@ public class LevelManager : MonoBehaviour
     {
         Debug.Log("Returning to the real world...");
         
-        overworldUI.SetActive(true);
-        
-        PartyController.Instance.enabled = true;
+        UIController.Instance.SetOverworldUI(true);
+
+        LevelGameState = GameState.Exploring;
+
+        PartyController.Instance.ReturnPartyToHolder();
+        CameraController.Instance.JumpToOverworldTarget();
     }
     #endregion
     
