@@ -35,7 +35,7 @@ public class LevelManager : MonoBehaviour
     
     void Awake()
     {
-        timerText = GameObject.Find("LevelTimer").GetComponent<TextMeshProUGUI>();
+        if (timerText) timerText = GameObject.Find("LevelTimer").GetComponent<TextMeshProUGUI>();
         soulText = GameObject.Find("SoulCount").GetComponent<TextMeshProUGUI>();
         
         #region Get Overworld UI
