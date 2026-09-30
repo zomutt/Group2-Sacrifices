@@ -23,6 +23,8 @@ public class CombatManager : MonoBehaviour
     public float PlayerTurnTimer => playerTurnTimer;
     private int playerTurnTriggerIndex;
     
+    private GameObject combatUI;
+    
     public static float CombatSpeed = 0.5f;
     public static CombatManager Instance;
 
@@ -32,11 +34,15 @@ public class CombatManager : MonoBehaviour
 
         partyCharacters = new();
         enemyCharacters = new();
+        
+        combatUI = GameObject.Find("CombatOnly");
     }
 
     private void Start()
     {
         UIController.Instance.EndBattleUI();
+        
+        combatUI.SetActive(false);
     }
 
     void Update()
@@ -54,7 +60,10 @@ public class CombatManager : MonoBehaviour
         
         SpawnEnemyCharacters(encounter);
         
-        UIController.Instance.StartBattleUI();
+        // The player really does not need this info
+        // during a battle so I am putting this on hold
+        // for now because it covers the whole screen :,)
+        //UIController.Instance.StartBattleUI();
         
         combatUI.SetActive(true);
         
@@ -162,6 +171,7 @@ public class CombatManager : MonoBehaviour
     private void LeaveBattle()
     {
         UIController.Instance.EndBattleUI();
+        combatUI.SetActive(false);
 
         LevelManager.Instance.ExitCombat();
     }

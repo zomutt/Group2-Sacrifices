@@ -28,6 +28,10 @@ public class LevelManager : MonoBehaviour
     
     private ObjectPooler damageNumberPool;
     
+    private TextMeshProUGUI timerText;
+    private TextMeshProUGUI soulText;
+    private GameObject overworldUI;
+    
     public static GameState LevelGameState;
     public static LevelManager Instance;
     
@@ -58,7 +62,7 @@ public class LevelManager : MonoBehaviour
         // In Start so UIController.Instance is guaranteed to be set
         paymentPanel = UIController.Instance.PaymentPanel;
         paymentPanel.gameObject.SetActive(false);
-
+        
         ritualPanel = UIController.Instance.RitualPanel;
         ritualPanel.gameObject.SetActive(false);
         #endregion

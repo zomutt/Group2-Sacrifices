@@ -9034,7 +9034,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6089644099466473523
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15831,6 +15831,10 @@ MonoBehaviour:
   - {fileID: 5371127835557950645}
   soulsPanel: {fileID: 7520207918390539694}
   soulsText: {fileID: 2774794639621013228}
+  overworldPanel: {fileID: 0}
+  timerText: {fileID: 0}
+  paymentPanel: {fileID: 0}
+  ritualPanel: {fileID: 0}
   creditsScene: CreditsScene
   mainMenuScene: MainMenuScene
   levelOneScene: Level_1
@@ -17502,6 +17506,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8079663633653540926}
+    - target: {fileID: 8108670409399334833, guid: fda49a7995e60d54381f061d88d90f78, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8293638211763345012, guid: fda49a7995e60d54381f061d88d90f78, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

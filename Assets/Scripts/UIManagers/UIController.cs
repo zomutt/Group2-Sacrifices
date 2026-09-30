@@ -127,9 +127,8 @@ public class UIController : MonoBehaviour
             panel.SetActive(false);
         }
     }
-
-    // ===== Pause Menu =====
-
+    
+    #region Pause Menu
     public void OnClickReloadScene()
     {
         Time.timeScale = 1;
@@ -218,7 +217,9 @@ public class UIController : MonoBehaviour
             panel.SetActive(false);
         }
     }
+    #endregion
 
+    #region Combat
     // ===== Combat =====
     // Takes plain values so it doesn't care how stats are stored. Change it if it doesn't fit.
 
@@ -271,7 +272,9 @@ public class UIController : MonoBehaviour
     {
         if (soulsText) soulsText.text = $"Souls: {souls}";
     }
-
+    #endregion
+    
+    #region Overworld
     // ===== Overworld =====
 
     public void SetOverworldUI(bool active)
@@ -301,4 +304,5 @@ public class UIController : MonoBehaviour
         partyUI[slot].healthBar.maxValue = maxHealth;
         partyUI[slot].healthBar.value = health;
     }
+    #endregion
 }
