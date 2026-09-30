@@ -26,21 +26,17 @@ public class CombatManager : MonoBehaviour
     public static float CombatSpeed = 0.5f;
     public static CombatManager Instance;
 
-    private GameObject combatUI;
-    
     void Awake()
     {
         Instance = this;
 
         partyCharacters = new();
         enemyCharacters = new();
-
-        combatUI = GameObject.Find("CombatOnly");
     }
 
     private void Start()
     {
-        combatUI.SetActive(false);
+        UIController.Instance.EndBattleUI();
     }
 
     void Update()
@@ -59,7 +55,7 @@ public class CombatManager : MonoBehaviour
         
         SpawnEnemyCharacters(encounter);
 
-        combatUI.SetActive(true);
+        UIController.Instance.StartBattleUI();
     }
 
     #region Character Management
@@ -161,7 +157,7 @@ public class CombatManager : MonoBehaviour
 
     private void LeaveBattle()
     {
-        combatUI.SetActive(false);
+        UIController.Instance.EndBattleUI();
 
         LevelManager.Instance.ExitCombat();
     }
