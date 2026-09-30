@@ -2924,7 +2924,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -5836,7 +5836,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8796749794606842472}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5938716276012429903}
+        m_TargetAssemblyTypeName: RitualPanel, Assembly-CSharp
+        m_MethodName: ConfirmSacrifice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2680920571809143725
 GameObject:
   m_ObjectHideFlags: 0
@@ -7457,7 +7469,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5464083443539133519}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5938716276012429903}
+        m_TargetAssemblyTypeName: RitualPanel, Assembly-CSharp
+        m_MethodName: ConfirmSacrifice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3375167322875496399
 GameObject:
   m_ObjectHideFlags: 0
@@ -13809,7 +13833,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5049704505267024263}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3577592854516341284}
+        m_TargetAssemblyTypeName: PaymentPanel, Assembly-CSharp
+        m_MethodName: ConfirmPayment
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5747702521053688329
 GameObject:
   m_ObjectHideFlags: 0
@@ -18972,7 +19008,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2617861667903571933}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5938716276012429903}
+        m_TargetAssemblyTypeName: RitualPanel, Assembly-CSharp
+        m_MethodName: ConfirmSacrifice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8732995224686975116
 GameObject:
   m_ObjectHideFlags: 0
