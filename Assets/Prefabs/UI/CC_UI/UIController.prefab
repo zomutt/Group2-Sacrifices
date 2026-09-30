@@ -2879,6 +2879,7 @@ RectTransform:
   - {fileID: 2217471812556182220}
   - {fileID: 7340297581048533690}
   - {fileID: 246485478190688736}
+  - {fileID: 7561435023681283948}
   m_Father: {fileID: 6553730282247424975}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -10439,7 +10440,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 415.3125}
+  m_AnchoredPosition: {x: 35, y: 415.3125}
   m_SizeDelta: {x: 987.75, y: 249.375}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7550058195710888769
@@ -17883,6 +17884,7 @@ MonoBehaviour:
   - {fileID: 1175119212759994870}
   - {fileID: 331022950239459854}
   - {fileID: 7520207918390539694}
+  - {fileID: 3917448492121575976}
   deactivateGroup:
   - {fileID: 8059208405507557044}
   - {fileID: 4402022360923196463}
@@ -17895,6 +17897,7 @@ MonoBehaviour:
   pausePanel: {fileID: 8059208405507557044}
   settingsPanel: {fileID: 2495877464055950543}
   confirmQuitPanel: {fileID: 1079412293990123554}
+  losePanel: {fileID: 1341542599963503798}
   helpPanel: {fileID: 1429951169557510520}
   helpSubPanels:
   - {fileID: 3931429430550743777}
@@ -17902,8 +17905,8 @@ MonoBehaviour:
   - {fileID: 5371127835557950645}
   soulsPanel: {fileID: 7520207918390539694}
   soulsText: {fileID: 2774794639621013228}
-  overworldPanel: {fileID: 0}
-  timerText: {fileID: 0}
+  overworldPanel: {fileID: 3917448492121575976}
+  timerText: {fileID: 6302927654149838822}
   paymentPanel: {fileID: 7256379598879237145}
   ritualPanel: {fileID: 6123932203240714001}
   creditsScene: CreditsScene
@@ -19818,6 +19821,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5862199189354358639, guid: fda49a7995e60d54381f061d88d90f78, type: 3}
       insertIndex: -1
       addedObject: {fileID: 246485478190688736}
+    - targetCorrespondingSourceObject: {fileID: 5862199189354358639, guid: fda49a7995e60d54381f061d88d90f78, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7561435023681283948}
+    - targetCorrespondingSourceObject: {fileID: 1164668509902926356, guid: fda49a7995e60d54381f061d88d90f78, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4072066942107865870}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fda49a7995e60d54381f061d88d90f78, type: 3}
 --- !u!1001 &6824654308359134578
