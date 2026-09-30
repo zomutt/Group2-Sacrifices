@@ -2663,7 +2663,6 @@ RectTransform:
   - {fileID: 7463014077562460677}
   - {fileID: 1585986266393232580}
   - {fileID: 8870459484421319252}
-  - {fileID: 4072066942107865870}
   - {fileID: 5999363387478733421}
   - {fileID: 2217471812556182220}
   m_Father: {fileID: 6553730282247424975}
@@ -8099,7 +8098,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4069636155830573610}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8109,12 +8108,12 @@ RectTransform:
   - {fileID: 3535480363449567213}
   - {fileID: 3484798353323864878}
   - {fileID: 1926881889731024194}
-  m_Father: {fileID: 2184538159667749783}
+  m_Father: {fileID: 6089644099466473523}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 250.875, y: 470.46}
-  m_SizeDelta: {x: -1412.7631, y: -942.4279}
+  m_AnchoredPosition: {x: 250.875, y: 789.854}
+  m_SizeDelta: {x: 507.23694, y: 776.36017}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5433383895615774161
 CanvasRenderer:
@@ -9048,6 +9047,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2115557068027071809}
+  - {fileID: 4072066942107865870}
   m_Father: {fileID: 2184538159667749783}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -17526,10 +17526,10 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5862199189354358639, guid: fda49a7995e60d54381f061d88d90f78, type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 4072066942107865870}
-    - targetCorrespondingSourceObject: {fileID: 5862199189354358639, guid: fda49a7995e60d54381f061d88d90f78, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2217471812556182220}
+    - targetCorrespondingSourceObject: {fileID: 1164668509902926356, guid: fda49a7995e60d54381f061d88d90f78, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4072066942107865870}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fda49a7995e60d54381f061d88d90f78, type: 3}
