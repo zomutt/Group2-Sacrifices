@@ -113,6 +113,15 @@ public class UIController : MonoBehaviour
 
     // ===== Pause Menu =====
 
+    public void OnClickReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void OnClickCloseGame()
+    {
+        Application.Quit();
+    }
     public void OnClickPauseGame()
     {
         Time.timeScale = 0; // This lives here (in UIController) because it's super early on, not because it's best practice.
