@@ -54,12 +54,14 @@ public class CombatManager : MonoBehaviour
         LevelManager.LevelGameState = GameState.Battle;
         
         partyCharacters = party;
-        
         PositionCharacters();
         
         SpawnEnemyCharacters(encounter);
 
         combatUI.SetActive(true);
+        
+        playerTurnTimer = 0;
+        playerTurnTriggerIndex = 0;
     }
 
     #region Character Management
