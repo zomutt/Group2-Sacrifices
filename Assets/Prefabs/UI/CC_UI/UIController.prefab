@@ -3177,7 +3177,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2217471812556182220
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4292,7 +4292,7 @@ GameObject:
   - component: {fileID: 2389984313927772523}
   - component: {fileID: 4835595910423746336}
   m_Layer: 5
-  m_Name: PaymentText
+  m_Name: PurchaseText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8526,7 +8526,7 @@ GameObject:
   - component: {fileID: 5024670778156445727}
   - component: {fileID: 2774794639621013228}
   m_Layer: 5
-  m_Name: SoulsText (TMP)
+  m_Name: SoulCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9088,7 +9088,7 @@ GameObject:
   - component: {fileID: 6388924677318297227}
   - component: {fileID: 8420597363988066880}
   m_Layer: 5
-  m_Name: OverworldPanel
+  m_Name: OverworldOnly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10099,12 +10099,12 @@ GameObject:
   - component: {fileID: 2838617246400466770}
   - component: {fileID: 3577592854516341284}
   m_Layer: 5
-  m_Name: PaymentPanel
+  m_Name: PurchasePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &618960434573798618
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10358,7 +10358,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6089644099466473523
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15306,7 +15306,7 @@ GameObject:
   - component: {fileID: 4283864765282175174}
   - component: {fileID: 6302927654149838822}
   m_Layer: 5
-  m_Name: TimeText
+  m_Name: LevelTimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17565,7 +17565,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8194200690635977548
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18226,7 +18226,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5999363387478733421
 RectTransform:
   m_ObjectHideFlags: 0
