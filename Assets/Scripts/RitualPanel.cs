@@ -11,7 +11,10 @@ public class RitualPanel : MonoBehaviour
     
     [SerializeField]
     private Transform[] selectButtons;
-    
+
+    [SerializeField]
+    private AudioClip sacrificeSound;
+
     private CharacterBehavior[] partyCharacters;
     
     private void UpdatePartyButtons()
@@ -46,6 +49,8 @@ public class RitualPanel : MonoBehaviour
     
     public void ConfirmSacrifice(int partyIndex)
     {
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(sacrificeSound);
+
         LevelManager.Instance.GainSouls(reward);
         ritualPopup.RewardAction();
         

@@ -17,6 +17,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private GameObject confirmQuitPanel;
     [SerializeField] private GameObject losePanel;
+    [SerializeField] private AudioClip loseSound;
 
     [Header("Help Panels")]
     [SerializeField] private GameObject helpPanel;
@@ -177,6 +178,7 @@ public class UIController : MonoBehaviour
     {
         Time.timeScale = 0;
         if (losePanel) losePanel.SetActive(true);
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(loseSound);
     }
 
     public void OnClickBeginQuit()

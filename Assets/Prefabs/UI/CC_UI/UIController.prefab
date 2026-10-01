@@ -401,8 +401,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: af0bd802ead8f0e4d97d22a73557feca, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -930,8 +930,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 3da7c58f96716a24bac5129b1b457414, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1266,7 +1266,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '[1]: xxxxxxxxxxx'
+  m_text: '[1]: Soul Siphon'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
   m_sharedMaterial: {fileID: -6957930679625866968, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
@@ -1403,7 +1403,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '[4]: xxxxxxxxxxx'
+  m_text: '[4]: [LOCKED]'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
   m_sharedMaterial: {fileID: -6957930679625866968, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
@@ -1540,7 +1540,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '[2]: xxxxxxxxxxx'
+  m_text: '[2]: Bone Throw'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
   m_sharedMaterial: {fileID: -6957930679625866968, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
@@ -2180,7 +2180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4dc741bba9999a1439d891bc0ae1f335, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f4b5ea9a07e3e0144839db413cb114a2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2255,7 +2255,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '[4]: xxxxxxxxxxx'
+  m_text: '[4]: [LOCKED]'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
   m_sharedMaterial: {fileID: -6957930679625866968, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
@@ -3177,7 +3177,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2217471812556182220
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3832,7 +3832,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -169.37, y: 0}
+  m_AnchoredPosition: {x: -169.7, y: 1.1}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8950160602617610352
@@ -3863,7 +3863,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 1e5d1c260e87f8f4883da617220a5f33, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4071,7 +4071,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: NameName the Namename
+  m_text: Nolan the rugged
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eae9fc2179766e946b06ced94c48b0ce, type: 2}
   m_sharedMaterial: {fileID: 2009128612168470166, guid: eae9fc2179766e946b06ced94c48b0ce, type: 2}
@@ -4098,8 +4098,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16.4
-  m_fontSizeBase: 16.4
+  m_fontSize: 20.7
+  m_fontSizeBase: 20.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4699,8 +4699,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: fc6aa8a9da20a7c458b9ef915dee4fa4, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5993,7 +5993,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '[3]: xxxxxxxxxxx'
+  m_text: '[3]: [LOCKED]'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
   m_sharedMaterial: {fileID: -6957930679625866968, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
@@ -6130,7 +6130,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Dodge Chance: xxx%'
+  m_text: 'Dodge Chance: 0%'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
   m_sharedMaterial: {fileID: -6957930679625866968, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
@@ -6776,7 +6776,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Crit Chance: xxx%'
+  m_text: 'Crit Chance: 5%'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
   m_sharedMaterial: {fileID: -6957930679625866968, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
@@ -7064,7 +7064,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Crit Chance: xxx%'
+  m_text: 'Crit Chance: 10%'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
   m_sharedMaterial: {fileID: -6957930679625866968, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
@@ -9028,7 +9028,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Armor: xx'
+  m_text: 'Armor: 1'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
   m_sharedMaterial: {fileID: -6957930679625866968, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
@@ -9117,7 +9117,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7561435023681283948
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9473,7 +9473,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Armor: xx'
+  m_text: 'Armor: 2'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
   m_sharedMaterial: {fileID: -6957930679625866968, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
@@ -9901,7 +9901,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Name name name name name name name name
+  m_text: Nolan the Rugged
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
   m_sharedMaterial: {fileID: -6957930679625866968, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
@@ -9928,14 +9928,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.1
-  m_fontSizeBase: 17.1
+  m_fontSize: 27.09
+  m_fontSizeBase: 27.09
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -10609,8 +10609,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: af0bd802ead8f0e4d97d22a73557feca, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -10805,7 +10805,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '[2]: xxxxxxxxxxx'
+  m_text: '[2]: Blood Sacrifice'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
   m_sharedMaterial: {fileID: -6957930679625866968, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
@@ -11216,7 +11216,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: NameName the Namename
+  m_text: Nolan the rugged
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eae9fc2179766e946b06ced94c48b0ce, type: 2}
   m_sharedMaterial: {fileID: 2009128612168470166, guid: eae9fc2179766e946b06ced94c48b0ce, type: 2}
@@ -11243,8 +11243,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16.4
-  m_fontSizeBase: 16.4
+  m_fontSize: 20.7
+  m_fontSizeBase: 20.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -11648,8 +11648,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 239e0fafbacb8cf4e9fb11bcf876c82e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -11768,7 +11768,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4dc741bba9999a1439d891bc0ae1f335, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f4b5ea9a07e3e0144839db413cb114a2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11843,7 +11843,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Health: xx/xx'
+  m_text: 'Health: 25/25'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
   m_sharedMaterial: {fileID: -6957930679625866968, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
@@ -12055,7 +12055,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Damage:'
+  m_text: 'Damage: 5'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
   m_sharedMaterial: {fileID: -6957930679625866968, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
@@ -12619,8 +12619,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: af0bd802ead8f0e4d97d22a73557feca, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -13430,7 +13430,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Dodge Chance: xxx%'
+  m_text: 'Dodge Chance: 15%'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
   m_sharedMaterial: {fileID: -6957930679625866968, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
@@ -13912,7 +13912,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Damage: xx-xx'
+  m_text: 'Damage: 6'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
   m_sharedMaterial: {fileID: -6957930679625866968, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
@@ -14052,8 +14052,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: d65930eaf93c1c141aac6fb0e0f182d9, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -14821,7 +14821,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4dc741bba9999a1439d891bc0ae1f335, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f4b5ea9a07e3e0144839db413cb114a2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15030,7 +15030,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: ad4696a82d5b4f24080a8c9273c2834e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15745,7 +15745,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '[1]: xxxxxxxxxxx'
+  m_text: '[1]: Slash and Gash'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
   m_sharedMaterial: {fileID: -6957930679625866968, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
@@ -15882,7 +15882,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '[3]: xxxxxxxxxxx'
+  m_text: '[3]: [LOCKED]'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
   m_sharedMaterial: {fileID: -6957930679625866968, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
@@ -16373,8 +16373,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -169.37477, y: 0.5699}
-  m_SizeDelta: {x: 168.4808, y: 161.2728}
+  m_AnchoredPosition: {x: -169.70473, y: -1.8108001}
+  m_SizeDelta: {x: 168.4808, y: 170.5114}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &821014499908972914
 CanvasRenderer:
@@ -16687,7 +16687,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Health: xx'
+  m_text: 'Health: 20/20'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
   m_sharedMaterial: {fileID: -6957930679625866968, guid: db3f135beaa60804d8d54bdfb38dd219, type: 2}
@@ -16824,7 +16824,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: NameName the Namename
+  m_text: Nolan the rugged
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eae9fc2179766e946b06ced94c48b0ce, type: 2}
   m_sharedMaterial: {fileID: 2009128612168470166, guid: eae9fc2179766e946b06ced94c48b0ce, type: 2}
@@ -16851,8 +16851,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16.4
-  m_fontSizeBase: 16.4
+  m_fontSize: 20.7
+  m_fontSizeBase: 20.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -17318,8 +17318,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: af0bd802ead8f0e4d97d22a73557feca, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -17824,7 +17824,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4dc741bba9999a1439d891bc0ae1f335, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f4b5ea9a07e3e0144839db413cb114a2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18101,7 +18101,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: NameName the Namename
+  m_text: Nolan the rugged
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eae9fc2179766e946b06ced94c48b0ce, type: 2}
   m_sharedMaterial: {fileID: 2009128612168470166, guid: eae9fc2179766e946b06ced94c48b0ce, type: 2}
@@ -18128,8 +18128,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16.4
-  m_fontSizeBase: 16.4
+  m_fontSize: 20.7
+  m_fontSizeBase: 20.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -18265,7 +18265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5999363387478733421
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19678,7 +19678,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4dc741bba9999a1439d891bc0ae1f335, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f4b5ea9a07e3e0144839db413cb114a2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

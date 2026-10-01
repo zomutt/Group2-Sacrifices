@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: RegularSwipe
   m_EditorClassIdentifier: Assembly-CSharp::PlainAttack
   power: 2
+  attackSound: {fileID: 8300000, guid: 83978c4046ff7b74c9e0655670b329ee, type: 3}

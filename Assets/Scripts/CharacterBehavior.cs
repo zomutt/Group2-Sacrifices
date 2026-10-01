@@ -22,7 +22,12 @@ public class CharacterBehavior : MonoBehaviour
     private CharacterBehavior currentTarget;
     [SerializeField]
     private AttackBehavior attack;
-    
+
+    [SerializeField]
+    private AudioClip hurtSound;
+    [SerializeField]
+    private AudioClip deathSound;
+
     #region In Battle
     private bool amOnEnemyTeam;
     
@@ -141,6 +146,8 @@ public class CharacterBehavior : MonoBehaviour
         
         LevelManager.Instance.SpawnDamageNumber(transform.position + Vector3.up, damage);
 
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(hurtSound);
+
         if (!stats.HasHealthRemaining)
         {
             OnDeath();
@@ -150,6 +157,8 @@ public class CharacterBehavior : MonoBehaviour
     private void OnDeath()
     {
         Debug.Log(gameObject.name + " died");
+
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(deathSound);
 
         PartyController.Instance.RemoveFromParty(this);
         CombatManager.Instance.RemoveFromBattle(this);

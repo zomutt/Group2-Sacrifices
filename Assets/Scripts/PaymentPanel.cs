@@ -11,7 +11,10 @@ public class PaymentPanel : MonoBehaviour
     
     [SerializeField]
     private GameObject confirmButton;
-    
+
+    [SerializeField]
+    private AudioClip paySound;
+
     public void SetCost(PayablePopup popup)
     {
         payablePopup = popup;
@@ -35,6 +38,10 @@ public class PaymentPanel : MonoBehaviour
             return;
         
         if (LevelManager.Instance.ConfirmSoulPayment(cost))
+        {
+            if (AudioManager.Instance) AudioManager.Instance.PlaySFX(paySound);
+
             payablePopup.PaidAction();
+        }
     }
 }
