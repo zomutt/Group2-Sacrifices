@@ -2877,6 +2877,7 @@ RectTransform:
   - {fileID: 8870459484421319252}
   - {fileID: 5999363387478733421}
   - {fileID: 7561435023681283948}
+  - {fileID: 4072066942107865870}
   - {fileID: 2217471812556182220}
   - {fileID: 939733022717485762}
   m_Father: {fileID: 6553730282247424975}
@@ -9470,12 +9471,12 @@ RectTransform:
   - {fileID: 5792398906991738220}
   - {fileID: 7766438316112813650}
   - {fileID: 1926881889731024194}
-  m_Father: {fileID: 6089644099466473523}
+  m_Father: {fileID: 2184538159667749783}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -38, y: 792}
-  m_SizeDelta: {x: 295.0923, y: 776.3602}
+  m_AnchoredPosition: {x: -38, y: 472.60583}
+  m_SizeDelta: {x: -1672.4326, y: -942.42786}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5433383895615774161
 CanvasRenderer:
@@ -10638,7 +10639,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2115557068027071809}
-  - {fileID: 4072066942107865870}
   m_Father: {fileID: 2184538159667749783}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -18827,6 +18827,7 @@ MonoBehaviour:
   - {fileID: 331022950239459854}
   - {fileID: 7520207918390539694}
   - {fileID: 3917448492121575976}
+  - {fileID: 4069636155830573610}
   deactivateGroup:
   - {fileID: 8059208405507557044}
   - {fileID: 4402022360923196463}
@@ -20896,12 +20897,12 @@ PrefabInstance:
       addedObject: {fileID: 7561435023681283948}
     - targetCorrespondingSourceObject: {fileID: 5862199189354358639, guid: fda49a7995e60d54381f061d88d90f78, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 4072066942107865870}
+    - targetCorrespondingSourceObject: {fileID: 5862199189354358639, guid: fda49a7995e60d54381f061d88d90f78, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 2217471812556182220}
     - targetCorrespondingSourceObject: {fileID: 5862199189354358639, guid: fda49a7995e60d54381f061d88d90f78, type: 3}
       insertIndex: -1
       addedObject: {fileID: 939733022717485762}
-    - targetCorrespondingSourceObject: {fileID: 1164668509902926356, guid: fda49a7995e60d54381f061d88d90f78, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4072066942107865870}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fda49a7995e60d54381f061d88d90f78, type: 3}
