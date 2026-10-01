@@ -24,7 +24,10 @@ public class CombatManager : MonoBehaviour
     private int playerTurnTriggerIndex;
     
     private GameObject combatUI;
-    
+
+    [SerializeField]
+    private AudioClip battleStartSound;
+
     public static float CombatSpeed = 0.5f;
     public static CombatManager Instance;
 
@@ -54,7 +57,9 @@ public class CombatManager : MonoBehaviour
     public void StartCombat(List<CharacterBehavior> party, EncounterInfo encounter)
     {
         LevelManager.LevelGameState = GameState.Battle;
-        
+
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(battleStartSound);
+
         partyCharacters = party;
         PositionCharacters();
         

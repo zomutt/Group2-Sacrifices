@@ -2,9 +2,14 @@ using UnityEngine;
 
 public class EndLevelTrigger : TriggerArea
 {
+    [SerializeField]
+    private AudioClip endLevelSound;
+
     #region Trigger
     public override void OnEnter()
     {
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(endLevelSound);
+
         LevelManager.Instance.EndLevel();
         
         gameObject.SetActive(false);
