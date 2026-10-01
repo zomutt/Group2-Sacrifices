@@ -16,6 +16,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private GameObject confirmQuitPanel;
+    [SerializeField] private GameObject losePanel;
 
     [Header("Help Panels")]
     [SerializeField] private GameObject helpPanel;
@@ -88,11 +89,28 @@ public class UIController : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnDestroy()
     {
-        if (Instance == this) Instance = null;   // So it doesn't point at a dead UI after a scene change
+        if (Instance == this)
+        {
+            Instance = null;   // So it doesn't point at a dead UI after a scene change
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Time.timeScale = 1;
+
+        bool onMainMenu = scene.name == mainMenuScene;
+        gameObject.SetActive(!onMainMenu);
+        if (onMainMenu) return;
+
+        ActivateAllInGroup();
+        DeactivateAllInGroup();
     }
 
     private void Start()
@@ -131,9 +149,6 @@ public class UIController : MonoBehaviour
     #region Pause Menu
     public void OnClickReloadScene()
     {
-        Time.timeScale = 1;
-        ActivateAllInGroup();   // UI carries over, so put it back to how it starts
-        DeactivateAllInGroup();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -156,6 +171,12 @@ public class UIController : MonoBehaviour
         if (settingsPanel) settingsPanel.SetActive(false);
         if (helpPanel) helpPanel.SetActive(false);
         if (confirmQuitPanel) confirmQuitPanel.SetActive(false);
+    }
+
+    public void ShowLosePanel()
+    {
+        Time.timeScale = 0;
+        if (losePanel) losePanel.SetActive(true);
     }
 
     public void OnClickBeginQuit()
