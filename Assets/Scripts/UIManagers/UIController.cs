@@ -18,6 +18,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject confirmQuitPanel;
     [SerializeField] private GameObject losePanel;
     [SerializeField] private AudioClip loseSound;
+    [SerializeField] private AudioClip clickSound;
 
     [Header("Help Panels")]
     [SerializeField] private GameObject helpPanel;
@@ -150,21 +151,25 @@ public class UIController : MonoBehaviour
     #region Pause Menu
     public void OnClickReloadScene()
     {
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void OnClickCloseGame()
     {
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
         Application.Quit();
     }
     public void OnClickPauseGame()
     {
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
         Time.timeScale = 0; // This lives here (in UIController) because it's super early on, not because it's best practice.
         if (pausePanel) pausePanel.SetActive(true);
     }
 
     public void OnClickResumeGame()
     {
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
         Time.timeScale = 1; // Same as above.
         if (pausePanel) pausePanel.SetActive(false);
 
@@ -183,16 +188,19 @@ public class UIController : MonoBehaviour
 
     public void OnClickBeginQuit()
     {
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
         if (confirmQuitPanel) confirmQuitPanel.SetActive(true);
     }
 
     public void OnClickDenyQuit()
     {
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
         if (confirmQuitPanel) confirmQuitPanel.SetActive(false);
     }
 
     public void OnClickConfirmQuit()
     {
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
         Time.timeScale = 1; // Otherwise the main menu loads frozen
         Destroy(gameObject);   // Don't drag the game UI into the menu
         SceneManager.LoadScene(mainMenuScene);
@@ -200,6 +208,7 @@ public class UIController : MonoBehaviour
 
     public void OnClickToggleSettings()
     {
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
         if (!settingsPanel) return;
         settingsPanel.SetActive(!settingsPanel.activeSelf);
 
@@ -208,6 +217,7 @@ public class UIController : MonoBehaviour
 
     public void OnClickToggleHelp()
     {
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
         if (!helpPanel) return;
         ResetHelpPages(); // Back to the first page when you open/close the panel
         helpPanel.SetActive(!helpPanel.activeSelf);
@@ -217,6 +227,7 @@ public class UIController : MonoBehaviour
 
     public void OnClickCycleHelp()
     {
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
         if (helpSubPanels.Length == 0) return;
         currentHelpPage++;
         if (currentHelpPage >= helpSubPanels.Length) currentHelpPage = 0;

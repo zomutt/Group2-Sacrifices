@@ -14,6 +14,8 @@ public class RitualPanel : MonoBehaviour
 
     [SerializeField]
     private AudioClip sacrificeSound;
+    [SerializeField]
+    private AudioClip clickSound;
 
     private CharacterBehavior[] partyCharacters;
     
@@ -49,6 +51,7 @@ public class RitualPanel : MonoBehaviour
     
     public void ConfirmSacrifice(int partyIndex)
     {
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
         if (AudioManager.Instance) AudioManager.Instance.PlaySFX(sacrificeSound);
 
         LevelManager.Instance.GainSouls(reward);

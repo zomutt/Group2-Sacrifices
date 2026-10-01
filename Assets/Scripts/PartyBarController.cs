@@ -4,6 +4,9 @@ public class PartyBarController : MonoBehaviour
 {
     private MeterDisplay meter;
 
+    [SerializeField]
+    private AudioClip clickSound;
+
     private void Awake()
     {
         meter = GetComponent<MeterDisplay>();
@@ -21,6 +24,8 @@ public class PartyBarController : MonoBehaviour
 
     public void SkipTurnsButton(int toTurn)
     {
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
+
         CombatManager.Instance.SkipToTurn(toTurn);
     }
 }

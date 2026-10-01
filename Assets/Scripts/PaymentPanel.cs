@@ -14,6 +14,8 @@ public class PaymentPanel : MonoBehaviour
 
     [SerializeField]
     private AudioClip paySound;
+    [SerializeField]
+    private AudioClip clickSound;
 
     public void SetCost(PayablePopup popup)
     {
@@ -34,6 +36,8 @@ public class PaymentPanel : MonoBehaviour
     
     public void ConfirmPayment()
     {
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
+
         if (!payablePopup.IsAvailable)
             return;
         
