@@ -833,6 +833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c83d70da99a440c4b91268db7b602de5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PartyBarController
+  clickSound: {fileID: 8300000, guid: f3a8493be63c82044ae1557a3a3ebcc2, type: 3}
 --- !u!114 &7036966226702819267
 MonoBehaviour:
   m_ObjectHideFlags: 0

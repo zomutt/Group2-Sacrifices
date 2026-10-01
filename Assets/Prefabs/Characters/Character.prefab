@@ -86,6 +86,8 @@ MonoBehaviour:
     armor: 0
   soulsOnDeath: 50
   attack: {fileID: 11400000, guid: 263466f647c2be5488241436d0657210, type: 2}
+  hurtSound: {fileID: 8300000, guid: b244b6d7db6c4b74f9947ef5f1afe85e, type: 3}
+  deathSound: {fileID: 8300000, guid: 93854d03fa74c4d41b281decab210b44, type: 3}
   maxTurnTimer: 4
   isEnemy: 0
 --- !u!1 &8815762113112565051

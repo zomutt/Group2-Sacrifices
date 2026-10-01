@@ -21,6 +21,9 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private string creditsScene = "CreditsScene";
     [SerializeField] private string levelOne = "Level_1";
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip clickSound;
+
 
 
     private void Start()
@@ -49,12 +52,14 @@ public class MainMenuController : MonoBehaviour
 
     public void OnClickPlay()
     {
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
         Debug.Log("Starting level one");
         SceneManager.LoadScene(levelOne);
     }
 
     public void OnClickToggleSettings()
     {
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
         if (!settingsPanel) return;
         settingsPanel.SetActive(!settingsPanel.activeSelf);
 
@@ -63,6 +68,7 @@ public class MainMenuController : MonoBehaviour
 
     public void OnClickToggleHelp()
     {
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
         if (!helpPanel) return;
         ResetHelpPages();   // Back to the first page when you open/close the panel
         helpPanel.SetActive(!helpPanel.activeSelf);
@@ -72,18 +78,21 @@ public class MainMenuController : MonoBehaviour
 
     public void OnClickCredits()
     {
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
         Debug.Log("Loading credits");
         SceneManager.LoadScene(creditsScene);
     }
 
     public void OnClickExitGame()
     {
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
         Debug.Log("Exit Game");
         Application.Quit();
     }
 
     public void OnClickCycleHelp()
     {
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
         if (helpSubPanels.Length == 0) return;
         currentHelpPage++;
         if (currentHelpPage >= helpSubPanels.Length) currentHelpPage = 0;

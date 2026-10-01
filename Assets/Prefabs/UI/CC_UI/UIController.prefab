@@ -10204,6 +10204,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PaymentPanel
   costText: {fileID: 8320588503456353404}
   confirmButton: {fileID: 5698371353372428462}
+  paySound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: f3a8493be63c82044ae1557a3a3ebcc2, type: 3}
 --- !u!1 &4321210187776370422
 GameObject:
   m_ObjectHideFlags: 0
@@ -17683,6 +17685,8 @@ MonoBehaviour:
   - {fileID: 4011150784338979781}
   - {fileID: 7988940396114494921}
   - {fileID: 8150532239202253805}
+  sacrificeSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: f3a8493be63c82044ae1557a3a3ebcc2, type: 3}
 --- !u!1 &7790978134899707188
 GameObject:
   m_ObjectHideFlags: 0
@@ -17897,6 +17901,8 @@ MonoBehaviour:
   settingsPanel: {fileID: 2495877464055950543}
   confirmQuitPanel: {fileID: 1079412293990123554}
   losePanel: {fileID: 1341542599963503798}
+  loseSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: f3a8493be63c82044ae1557a3a3ebcc2, type: 3}
   helpPanel: {fileID: 1429951169557510520}
   helpSubPanels:
   - {fileID: 3931429430550743777}

@@ -6,8 +6,11 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class CreditsController : MonoBehaviour
 {
+    [SerializeField] private AudioClip clickSound;
+
     public void OnClickMainMenu()
     {
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
         SceneManager.LoadScene("MainMenuScene");        
     }
 }

@@ -695,6 +695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd3655fe1229d148841d1b8a4460233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CreditsController
+  clickSound: {fileID: 8300000, guid: f3a8493be63c82044ae1557a3a3ebcc2, type: 3}
 --- !u!1 &1075966402
 GameObject:
   m_ObjectHideFlags: 0

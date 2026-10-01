@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2373020734188331374}
   - component: {fileID: 4492321968804426462}
+  - component: {fileID: 6194937517027323176}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -130,6 +131,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6194937517027323176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5062387869312158026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f018cf9feba490478ae94e8a18275fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  audioSource: {fileID: 4492321968804426462}
+  music: {fileID: 0}
+  musVolume: 1
+  sfxVolume: 1
 --- !u!1001 &2187792343453390503
 PrefabInstance:
   m_ObjectHideFlags: 0
