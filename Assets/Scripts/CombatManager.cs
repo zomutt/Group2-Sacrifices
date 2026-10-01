@@ -150,6 +150,7 @@ public class CombatManager : MonoBehaviour
             case CombatOutcome.EnemyWin:
                 Debug.Log("Battle lost!");
                 EndActiveCombat();
+                Invoke("LoseBattle", 1f);
                 return true;
 
             default:
@@ -180,6 +181,11 @@ public class CombatManager : MonoBehaviour
         combatUI.SetActive(false);
 
         LevelManager.Instance.ExitCombat();
+    }
+
+    private void LoseBattle()
+    {
+        UIController.Instance.ShowLosePanel();
     }
     #endregion
 

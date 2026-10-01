@@ -42,12 +42,6 @@ public class LevelManager : MonoBehaviour
         
         #region Get Overworld UI
         overworldUI = GameObject.Find("OverworldOnly");
-        
-        paymentPanel = GameObject.Find("PurchasePanel").GetComponent<PaymentPanel>();
-        paymentPanel.gameObject.SetActive(false);
-        
-        ritualPanel = GameObject.Find("RitualPanel").GetComponent<RitualPanel>();
-        ritualPanel.gameObject.SetActive(false);
         #endregion
         
         damageNumberPool = GameObject.Find("DmgNumPool").GetComponent<ObjectPooler>();
@@ -189,6 +183,8 @@ public class LevelManager : MonoBehaviour
     public void EndLevel()
     {
         Debug.Log("Put end here!");
+
+        UIController.Instance.ShowWinPanel();
     }
     
     public void SpawnDamageNumber(Vector3 position, int damage)

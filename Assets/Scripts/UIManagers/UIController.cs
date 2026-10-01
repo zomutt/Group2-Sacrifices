@@ -18,6 +18,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject confirmQuitPanel;
     [SerializeField] private GameObject losePanel;
     [SerializeField] private AudioClip loseSound;
+    [SerializeField] private GameObject winPanel;
     [SerializeField] private AudioClip clickSound;
 
     [Header("Help Panels")]
@@ -149,10 +150,10 @@ public class UIController : MonoBehaviour
     }
     
     #region Pause Menu
-    public void OnClickReloadScene()
+    public void OnClickChangeScene(int add)
     {
         if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + add);
     }
 
     public void OnClickCloseGame()
@@ -184,6 +185,12 @@ public class UIController : MonoBehaviour
         Time.timeScale = 0;
         if (losePanel) losePanel.SetActive(true);
         if (AudioManager.Instance) AudioManager.Instance.PlaySFX(loseSound);
+    }
+
+    public void ShowWinPanel()
+    {
+        Time.timeScale = 0;
+        if (winPanel) winPanel.SetActive(true);
     }
 
     public void OnClickBeginQuit()
