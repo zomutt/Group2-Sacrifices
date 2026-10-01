@@ -44,6 +44,9 @@ public class CameraController : MonoBehaviour
 
     public void JumpToOverworldTarget()
     {
+        if (!partyTf)
+            partyTf = PartyController.Instance.transform;
+        
         transform.position = partyTf.position;
     }
 }

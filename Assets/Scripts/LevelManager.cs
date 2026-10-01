@@ -37,8 +37,8 @@ public class LevelManager : MonoBehaviour
     
     void Awake()
     {
-        timerText = GameObject.Find("LevelTimer").GetComponent<TextMeshProUGUI>();
-        soulText = GameObject.Find("SoulCount").GetComponent<TextMeshProUGUI>();
+        //timerText = GameObject.Find("LevelTimer").GetComponent<TextMeshProUGUI>();
+        //soulText = GameObject.Find("SoulCount").GetComponent<TextMeshProUGUI>();
         
         #region Get Overworld UI
         overworldUI = GameObject.Find("OverworldOnly");
@@ -73,6 +73,8 @@ public class LevelManager : MonoBehaviour
         
         encounterIndex = 0;
         encounterTimer = encounters[encounterIndex].spawnTime;
+        
+        CameraController.Instance.JumpToOverworldTarget();
     }
     
     void Update()
@@ -178,7 +180,7 @@ public class LevelManager : MonoBehaviour
         UIController.Instance.SetOverworldUI(true);
 
         LevelGameState = GameState.Exploring;
-
+        
         PartyController.Instance.ReturnPartyToHolder();
         CameraController.Instance.JumpToOverworldTarget();
     }

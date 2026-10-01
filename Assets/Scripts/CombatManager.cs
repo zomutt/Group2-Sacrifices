@@ -98,6 +98,7 @@ public class CombatManager : MonoBehaviour
                 CharacterBehavior enemyChara = newEnemy.GetComponent<CharacterBehavior>();
                 enemyChara.DesiredRotation = 90;
                 enemyChara.SetEnemyTurnTimer(2 - i);
+                enemyChara.isEnemy = true;
 
                 enemyCharacters.Add(enemyChara);
             }

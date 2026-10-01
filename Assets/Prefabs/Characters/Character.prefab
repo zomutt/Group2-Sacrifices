@@ -84,8 +84,10 @@ MonoBehaviour:
     strength: 5
     luck: 2
     armor: 0
+  soulsOnDeath: 50
   attack: {fileID: 11400000, guid: 263466f647c2be5488241436d0657210, type: 2}
   maxTurnTimer: 4
+  isEnemy: 0
 --- !u!1 &8815762113112565051
 GameObject:
   m_ObjectHideFlags: 0

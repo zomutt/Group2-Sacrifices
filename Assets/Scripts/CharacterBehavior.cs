@@ -18,7 +18,10 @@ public class CharacterBehavior : MonoBehaviour
     private CharacterStats stats;
     public CharacterStats Stats
         => stats;
-
+    
+    [SerializeField]
+    private int soulsOnDeath;
+    
     private CharacterBehavior currentTarget;
     [SerializeField]
     private AttackBehavior attack;
@@ -29,6 +32,8 @@ public class CharacterBehavior : MonoBehaviour
     [SerializeField, Tooltip("For use as enemy")]
     private float maxTurnTimer;
     private float personalTurnTimer;
+    
+    public bool isEnemy;
     #endregion
 
     void Start()
@@ -153,7 +158,10 @@ public class CharacterBehavior : MonoBehaviour
 
         PartyController.Instance.RemoveFromParty(this);
         CombatManager.Instance.RemoveFromBattle(this);
-
+        
+        if (isEnemy)
+            LevelManager.Instance.GainSouls(soulsOnDeath);
+        
         transform.parent = transform.root;
         gameObject.SetActive(false);
     }
