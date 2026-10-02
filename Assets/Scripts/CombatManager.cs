@@ -27,6 +27,8 @@ public class CombatManager : MonoBehaviour
 
     [SerializeField]
     private AudioClip battleStartSound;
+    [SerializeField]
+    private AudioClip battleWinSound;
 
     public static float CombatSpeed = 0.5f;
     public static CombatManager Instance;
@@ -143,6 +145,7 @@ public class CombatManager : MonoBehaviour
         {
             case CombatOutcome.PartyWin:
                 Debug.Log("Battle won!");
+                if (AudioManager.Instance) AudioManager.Instance.PlaySFX(battleWinSound);
                 EndActiveCombat();
                 Invoke("LeaveBattle", 2f);
                 return true;

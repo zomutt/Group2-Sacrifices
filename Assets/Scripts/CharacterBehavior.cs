@@ -30,6 +30,8 @@ public class CharacterBehavior : MonoBehaviour
     private AudioClip hurtSound;
     [SerializeField]
     private AudioClip deathSound;
+    [SerializeField]
+    private AudioClip soulDropSound;
 
     #region In Battle
     private bool amOnEnemyTeam;
@@ -169,7 +171,10 @@ public class CharacterBehavior : MonoBehaviour
         CombatManager.Instance.RemoveFromBattle(this);
         
         if (isEnemy)
+        {
             LevelManager.Instance.GainSouls(soulsOnDeath);
+            if (AudioManager.Instance) AudioManager.Instance.PlaySFX(soulDropSound);
+        }
         
         transform.parent = transform.root;
         gameObject.SetActive(false);
