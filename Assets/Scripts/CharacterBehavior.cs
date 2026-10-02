@@ -20,6 +20,9 @@ public class CharacterBehavior : MonoBehaviour
     public CharacterStats Stats
         => stats;
     
+    [HideInInspector]
+    public int addedStrength;
+    
     [SerializeField]
     private int soulsOnDeath;
     
@@ -27,13 +30,16 @@ public class CharacterBehavior : MonoBehaviour
     [SerializeField]
     private AttackBehavior attack;
     
-    [SerializeField]
-    private List<StatusEffect> statuses;
+    public List<StatusEffect> statuses;
+    public List<StatusEffect> statusesToRemove;
 
     [SerializeField]
     private AudioClip hurtSound;
     [SerializeField]
     private AudioClip deathSound;
+    
+    private bool damageNumberWanted;
+    private int damageNumberValue;
 
     #region In Battle
     [SerializeField, Tooltip("For use as enemy")]
@@ -53,6 +59,9 @@ public class CharacterBehavior : MonoBehaviour
         ModelOrientation();
         
         TickTurn();
+        
+        if (damageNumberWanted)
+            SpawnDamageNumber(damageNumberValue);
     }
     
     #region Rotation
@@ -140,6 +149,15 @@ public class CharacterBehavior : MonoBehaviour
         {
             status.TickStatusEffect(this);
         }
+        
+        if (statusesToRemove.Count > 0)
+        {
+            foreach (StatusEffect status in statusesToRemove)
+            {
+                statuses.Remove(status);
+            }
+            statusesToRemove.Clear();
+        }
     }
     
     public void DoTurn()
@@ -153,6 +171,8 @@ public class CharacterBehavior : MonoBehaviour
     
     private void DoTurnStart()
     {
+        addedStrength = 0;
+        
         foreach (StatusEffect status in statuses)
         {
             status.DoTurnStart(this);
@@ -183,7 +203,7 @@ public class CharacterBehavior : MonoBehaviour
     {
         stats.health -= damage;
         
-        LevelManager.Instance.SpawnDamageNumber(transform.position + Vector3.up, damage);
+        AddToDamageNumber(-damage);
 
         if (AudioManager.Instance) AudioManager.Instance.PlaySFX(hurtSound);
 
@@ -197,7 +217,7 @@ public class CharacterBehavior : MonoBehaviour
     {
         stats.health = Mathf.Clamp(stats.health + health, 0, stats.maxHealth);
         
-        LevelManager.Instance.SpawnDamageNumber(transform.position + Vector3.up, health, true);
+        AddToDamageNumber(health);
     }
 
     private void OnDeath()
@@ -214,5 +234,19 @@ public class CharacterBehavior : MonoBehaviour
         
         transform.parent = transform.root;
         gameObject.SetActive(false);
+    }
+    
+    private void AddToDamageNumber(int numberValue)
+    {
+        damageNumberWanted = true;
+        damageNumberValue += numberValue;
+    }
+    
+    private void SpawnDamageNumber(int numberValue)
+    {
+        LevelManager.Instance.SpawnDamageNumber(transform.position + Vector3.up, numberValue);
+        
+        damageNumberWanted = false;
+        damageNumberValue = 0;
     }
 }

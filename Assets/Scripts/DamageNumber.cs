@@ -38,16 +38,16 @@ public class DamageNumber : MonoBehaviour
         transform.rotation = Camera.main.transform.rotation;
     }
 
-    public void SetDamageNumber(int damage, bool isHeal)
+    public void SetDamageNumber(int damage)
     {
-        if (isHeal)
+        if (damage > 0)
         {
             textMesh.text = "+" + damage;
             textMesh.color = healColor;
         }
         else
         {
-            textMesh.text = "-" + damage;
+            textMesh.text = "" + damage;
             textMesh.color = damageColor;
         }
         

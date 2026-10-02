@@ -249,17 +249,20 @@ public class CombatManager : MonoBehaviour
 
     public void SkipToTurn(int toTurn)
     {
+        if (partyCharacters[toTurn] == null)
+            return;
+        
         int breakCheck = 0;
         List<CharacterBehavior> skippedBehaviors = new();
 
-        if (partyCharacters[playerTurnTriggerIndex])
+        if (partyCharacters[playerTurnTriggerIndex] != null)
             skippedBehaviors.Add(partyCharacters[playerTurnTriggerIndex]);
-
+        
         while (playerTurnTriggerIndex != toTurn)
         {
             playerTurnTriggerIndex = (playerTurnTriggerIndex + 1) % 4;
 
-            if (partyCharacters[playerTurnTriggerIndex])
+            if (partyCharacters[playerTurnTriggerIndex] != null)
                 skippedBehaviors.Add(partyCharacters[playerTurnTriggerIndex]);
 
             #region Break Loop

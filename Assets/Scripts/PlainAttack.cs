@@ -6,13 +6,13 @@ public class PlainAttack : AttackBehavior
 
     public override void MoveOnTarget(CharacterBehavior from, CharacterBehavior to)
     {
-        to.TakeDamage(GetAttackPower(from.Stats, power));
+        to.TakeDamage(GetAttackPower(from, power));
 
         OnHitSpecialFX(to);
     }
 
-    private int GetAttackPower(CharacterStats stats, float basePower)
+    private int GetAttackPower(CharacterBehavior chara, float basePower)
     {
-        return (int)(stats.strength * basePower);
+        return (int)((chara.Stats.strength + chara.addedStrength) * basePower);
     }
 }
