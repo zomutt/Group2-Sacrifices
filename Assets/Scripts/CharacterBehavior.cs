@@ -138,7 +138,7 @@ public class CharacterBehavior : MonoBehaviour
     {
         foreach (StatusEffect status in statuses)
         {
-            status.TickStatusEffect();
+            status.TickStatusEffect(this);
         }
     }
     
@@ -155,7 +155,7 @@ public class CharacterBehavior : MonoBehaviour
     {
         foreach (StatusEffect status in statuses)
         {
-            status.DoTurnStart();
+            status.DoTurnStart(this);
         }
     }
     

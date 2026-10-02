@@ -20,6 +20,14 @@ PrefabInstance:
       propertyPath: stats.magic
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+      propertyPath: statuses.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+      propertyPath: 'statuses.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 0697075b8f47343f68e9d2a6cd21dd5a, type: 2}
     - target: {fileID: 5733892435195879708, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

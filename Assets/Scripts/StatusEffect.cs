@@ -9,10 +9,13 @@ public class StatusEffect : ScriptableObject
     
     private float duration;
     
-    public virtual void TickStatusEffect()
+    public virtual void TickStatusEffect(CharacterBehavior owner)
     {
-        duration -= Time.deltaTime;
+        if (!permanent)
+        {
+            duration -= Time.deltaTime;
+        }
     }
     
-    public virtual void DoTurnStart() {}
+    public virtual void DoTurnStart(CharacterBehavior owner) {}
 }
