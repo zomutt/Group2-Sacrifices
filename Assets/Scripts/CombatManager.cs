@@ -27,6 +27,9 @@ public class CombatManager : MonoBehaviour
 
     [SerializeField]
     private AudioClip battleStartSound;
+    
+    [HideInInspector]
+    public CharacterBehavior pinnedTarget;
 
     public static float CombatSpeed = 0.5f;
     public static CombatManager Instance;
@@ -74,6 +77,8 @@ public class CombatManager : MonoBehaviour
         
         playerTurnTimer = 0;
         playerTurnTriggerIndex = 0;
+        
+        SetPinnedTargetDefault();
     }
 
     #region Character Management
@@ -120,6 +125,9 @@ public class CombatManager : MonoBehaviour
         {
             enemyCharacters.Remove(toRemove);
         }
+        
+        if (pinnedTarget == toRemove)
+            SetPinnedTargetDefault();
     }
     #endregion
 
@@ -188,8 +196,9 @@ public class CombatManager : MonoBehaviour
         UIController.Instance.ShowLosePanel();
     }
     #endregion
-
-    public CharacterBehavior RandomTarget(bool onEnemyTeam)
+    
+    #region Getting Targets
+    public CharacterBehavior GetRandomTarget(bool onEnemyTeam)
     {
         if (onEnemyTeam)
         {
@@ -200,6 +209,33 @@ public class CombatManager : MonoBehaviour
             return partyCharacters[UnityEngine.Random.Range(0, partyCharacters.Count)];
         }
     }
+    
+    public CharacterBehavior GetLowestHealthTarget(bool onEnemyTeam)
+    {
+        List<CharacterBehavior> teamCharacters =
+            (onEnemyTeam) ? enemyCharacters : partyCharacters;
+        
+        float healthPercent = teamCharacters[0].Stats.HealthPercent;
+        int lowestHealthIndex = 0;
+        
+        for (int i = 1; i < teamCharacters.Count; i++)
+        {
+            if (healthPercent > teamCharacters[i].Stats.HealthPercent)
+            {
+                healthPercent = teamCharacters[i].Stats.HealthPercent;
+                lowestHealthIndex = i;
+            }
+        }
+        
+        return teamCharacters[lowestHealthIndex];
+    }
+    
+    private void SetPinnedTargetDefault()
+    {
+        if (enemyCharacters.Count > 0)
+            pinnedTarget = enemyCharacters[0];
+    }
+    #endregion
 
     private void DoPlayerTurn(int index)
     {
@@ -242,5 +278,7 @@ public class CombatManager : MonoBehaviour
         }
 
         playerTurnTimer = playerTurnTriggerIndex + 1;
+        
+        Debug.Log($"Skipped {skippedBehaviors.Count} turns.");
     }
 }

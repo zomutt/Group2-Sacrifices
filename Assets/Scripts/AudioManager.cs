@@ -34,6 +34,6 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySFX(AudioClip clip)
     {
-        PlaySFX(clip, 1f);
+        PlaySFX(clip, sfxVolume);
     }
 }

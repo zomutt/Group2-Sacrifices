@@ -8,11 +8,11 @@ public class PlainAttack : AttackBehavior
     {
         to.TakeDamage(GetAttackPower(from.Stats, power));
 
-        OnHitSpecialFX();
+        OnHitSpecialFX(to);
     }
 
-    private int GetAttackPower(CharacterStats stats, int basePower)
+    private int GetAttackPower(CharacterStats stats, float basePower)
     {
-        return stats.strength * basePower;
+        return (int)(stats.strength * basePower);
     }
 }

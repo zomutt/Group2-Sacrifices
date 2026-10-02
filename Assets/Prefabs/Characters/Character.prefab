@@ -83,6 +83,7 @@ MonoBehaviour:
     maxHealth: 25
     strength: 5
     luck: 2
+    magic: 1
     armor: 0
   soulsOnDeath: 50
   attack: {fileID: 11400000, guid: 263466f647c2be5488241436d0657210, type: 2}

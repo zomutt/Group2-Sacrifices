@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using TMPro;
 using UnityEngine;
 
@@ -188,11 +189,13 @@ public class LevelManager : MonoBehaviour
     }
     
     public void SpawnDamageNumber(Vector3 position, int damage)
+        => SpawnDamageNumber(position, damage, false);
+    public void SpawnDamageNumber(Vector3 position, int damage, bool isHeal)
     {
         GameObject damageNumber = damageNumberPool.GetPooledObject();
         
         damageNumber.transform.position = position;
-        damageNumber.GetComponent<DamageNumber>().SetDamageNumber(damage);
+        damageNumber.GetComponent<DamageNumber>().SetDamageNumber(damage, isHeal);
         
         damageNumber.SetActive(true);
     }

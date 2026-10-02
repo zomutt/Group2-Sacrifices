@@ -32,8 +32,6 @@ public class CharacterBehavior : MonoBehaviour
     private AudioClip deathSound;
 
     #region In Battle
-    private bool amOnEnemyTeam;
-    
     [SerializeField, Tooltip("For use as enemy")]
     private float maxTurnTimer;
     private float personalTurnTimer;
@@ -102,7 +100,7 @@ public class CharacterBehavior : MonoBehaviour
     #region Turn Management
     public void SetEnemyTurnTimer(int fullness)
     {
-        amOnEnemyTeam = true;
+        isEnemy = true;
         
         personalTurnTimer = maxTurnTimer / 4f * fullness + 0.5f;
     }
@@ -112,7 +110,7 @@ public class CharacterBehavior : MonoBehaviour
         if (LevelManager.LevelGameState != GameState.Battle)
             return;
         
-        if (amOnEnemyTeam)
+        if (isEnemy)
         {
             TickEnemyTurn();
         }
@@ -141,7 +139,26 @@ public class CharacterBehavior : MonoBehaviour
     {
         Debug.Log(gameObject.name + " did turn");
 
-        attack.MoveOnTarget(this, CombatManager.Instance.RandomTarget(!amOnEnemyTeam));
+        attack.MoveOnTarget(this, GetTargetForMove(attack));
+    }
+    
+    private CharacterBehavior GetTargetForMove(AttackBehavior move)
+    {
+        bool targetsEnemies = move.targetType.targetsEnemies;
+        
+        if (!isEnemy) // Party tries to target the pinned enemy
+        {
+            bool pinnedIsEnemy = CombatManager.Instance.pinnedTarget.isEnemy;
+            
+            if (pinnedIsEnemy == targetsEnemies) // If my move can target pinned enemy
+                return CombatManager.Instance.pinnedTarget;
+        }
+        
+        if (!targetsEnemies)
+            return CombatManager.Instance.GetLowestHealthTarget(isEnemy);
+        
+        // Given nothing else, characters target randomly
+        return CombatManager.Instance.GetRandomTarget(!isEnemy);
     }
     #endregion
     
@@ -157,6 +174,13 @@ public class CharacterBehavior : MonoBehaviour
         {
             OnDeath();
         }
+    }
+    
+    public void GainHealth(int health)
+    {
+        stats.health = Mathf.Clamp(stats.health + health, 0, stats.maxHealth);
+        
+        LevelManager.Instance.SpawnDamageNumber(transform.position + Vector3.up, health, true);
     }
 
     private void OnDeath()

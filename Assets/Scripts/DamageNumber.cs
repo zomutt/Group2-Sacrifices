@@ -8,6 +8,11 @@ public class DamageNumber : MonoBehaviour
     private Animator anim;
     
     private readonly float timeBeforeDisable = 1.5f;
+    
+    [SerializeField]
+    private Color damageColor;
+    [SerializeField]
+    private Color healColor;
 
     void Awake()
     {
@@ -33,9 +38,18 @@ public class DamageNumber : MonoBehaviour
         transform.rotation = Camera.main.transform.rotation;
     }
 
-    public void SetDamageNumber(int damage)
+    public void SetDamageNumber(int damage, bool isHeal)
     {
-        textMesh.text = "-" + damage;
+        if (isHeal)
+        {
+            textMesh.text = "+" + damage;
+            textMesh.color = healColor;
+        }
+        else
+        {
+            textMesh.text = "-" + damage;
+            textMesh.color = damageColor;
+        }
         
         Billboard();
         transform.position += -transform.forward;
