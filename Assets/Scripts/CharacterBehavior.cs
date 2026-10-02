@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -25,6 +26,9 @@ public class CharacterBehavior : MonoBehaviour
     private CharacterBehavior currentTarget;
     [SerializeField]
     private AttackBehavior attack;
+    
+    [SerializeField]
+    private List<StatusEffect> statuses;
 
     [SerializeField]
     private AudioClip hurtSound;
@@ -132,14 +136,27 @@ public class CharacterBehavior : MonoBehaviour
     
     private void TickStatusEffects()
     {
-        // To be implemented
+        foreach (StatusEffect status in statuses)
+        {
+            status.TickStatusEffect();
+        }
     }
     
     public void DoTurn()
     {
         Debug.Log(gameObject.name + " did turn");
+        
+        DoTurnStart();
 
         attack.MoveOnTarget(this, GetTargetForMove(attack));
+    }
+    
+    private void DoTurnStart()
+    {
+        foreach (StatusEffect status in statuses)
+        {
+            status.DoTurnStart();
+        }
     }
     
     private CharacterBehavior GetTargetForMove(AttackBehavior move)
@@ -154,7 +171,7 @@ public class CharacterBehavior : MonoBehaviour
                 return CombatManager.Instance.pinnedTarget;
         }
         
-        if (!targetsEnemies)
+        if (!targetsEnemies) // Tries to help lowest health ally
             return CombatManager.Instance.GetLowestHealthTarget(isEnemy);
         
         // Given nothing else, characters target randomly
