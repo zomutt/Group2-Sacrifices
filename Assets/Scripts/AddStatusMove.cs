@@ -12,7 +12,7 @@ public class AddStatusMove : AttackBehavior
         StatusEffect newStatusEffect = Instantiate(statusToAdd);
         
         if (usesMagic)
-            newStatusEffect.power = GetMagicPowerOf(from);
+            newStatusEffect.power = (int)(GetMagicPowerOf(from) * power);
         
         to.statuses.Add(newStatusEffect);
     }

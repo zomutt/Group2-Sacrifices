@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f95032806c029420ab2d2b4c2d179039, type: 3}
   m_Name: AddPermaHeal
   m_EditorClassIdentifier: Assembly-CSharp::AddStatusMove
-  power: 0
+  name: Permaheal Spell
+  power: 2
   hitParticleIndex: -1
   attackSound: {fileID: 0}
   targetType:

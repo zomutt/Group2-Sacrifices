@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class StatusEffect : ScriptableObject
 {
-    [SerializeField]
-    private bool permanent;
+    public bool permanent;
     [SerializeField]
     private bool hidden;
     

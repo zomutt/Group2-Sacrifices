@@ -28,7 +28,7 @@ public class CharacterBehavior : MonoBehaviour
     
     private CharacterBehavior currentTarget;
     [SerializeField]
-    private AttackBehavior attack;
+    private List<AttackBehavior> attacks;
     
     public List<StatusEffect> statuses;
     public List<StatusEffect> statusesToRemove;
@@ -162,11 +162,11 @@ public class CharacterBehavior : MonoBehaviour
     
     public void DoTurn()
     {
-        Debug.Log(gameObject.name + " did turn");
-        
         DoTurnStart();
-
-        attack.MoveOnTarget(this, GetTargetForMove(attack));
+        
+        AttackBehavior usedAttack = attacks[Random.Range(0, attacks.Count)];
+        Debug.Log($"{gameObject.name} used {usedAttack.name}");
+        usedAttack.MoveOnTarget(this, GetTargetForMove(usedAttack));
     }
     
     private void DoTurnStart()
@@ -196,6 +196,19 @@ public class CharacterBehavior : MonoBehaviour
         
         // Given nothing else, characters target randomly
         return CombatManager.Instance.GetRandomTarget(!isEnemy);
+    }
+    
+    public void EndOfBattle()
+    {
+        // Clear statuses
+        for (int i = 0; i < statuses.Count; i++)
+        {
+            if (!statuses[i].permanent)
+            {
+                statuses.RemoveAt(i);
+                i--;
+            }
+        }
     }
     #endregion
     

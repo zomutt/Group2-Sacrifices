@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf20535e02bb15249a00aabd9d62cc1e, type: 3}
   m_Name: RegularSwipe
   m_EditorClassIdentifier: Assembly-CSharp::PlainAttack
+  name: Swipe
   power: 2
   hitParticleIndex: -1
   attackSound: {fileID: 8300000, guid: 83978c4046ff7b74c9e0655670b329ee, type: 3}
