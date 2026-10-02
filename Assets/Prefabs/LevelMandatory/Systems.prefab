@@ -339,6 +339,18 @@ PrefabInstance:
       propertyPath: skipEncounters
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1578407621177848870, guid: 20b5d2f4a8fae46d3890f8dce1efff43, type: 3}
+      propertyPath: 'encounters.Array.data[0].enemyPrefabs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 891966489884274992, guid: 9ee37490c5b5f4723b8fbec9d27d6985, type: 3}
+    - target: {fileID: 1578407621177848870, guid: 20b5d2f4a8fae46d3890f8dce1efff43, type: 3}
+      propertyPath: 'encounters.Array.data[0].enemyPrefabs.Array.data[2]'
+      value: 
+      objectReference: {fileID: 891966489884274992, guid: 9ee37490c5b5f4723b8fbec9d27d6985, type: 3}
+    - target: {fileID: 1578407621177848870, guid: 20b5d2f4a8fae46d3890f8dce1efff43, type: 3}
+      propertyPath: 'encounters.Array.data[1].enemyPrefabs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 891966489884274992, guid: 9ee37490c5b5f4723b8fbec9d27d6985, type: 3}
     - target: {fileID: 1950751163782307281, guid: 20b5d2f4a8fae46d3890f8dce1efff43, type: 3}
       propertyPath: m_Name
       value: LevelManager

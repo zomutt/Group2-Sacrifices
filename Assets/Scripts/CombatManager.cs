@@ -13,6 +13,7 @@ public class CombatManager : MonoBehaviour
 
     private List<CharacterBehavior> partyCharacters;
     private List<CharacterBehavior> enemyCharacters;
+    private List<CharacterBehavior> partyOrdered;
     
     [SerializeField]
     private Transform partyLineup;
@@ -84,12 +85,19 @@ public class CombatManager : MonoBehaviour
     #region Character Management
     private void PositionCharacters()
     {
+        partyOrdered = new List<CharacterBehavior>()
+        {
+            null, null, null, null
+        };
+        
         for (int i = 0; i < partyCharacters.Count; i++)
         {
             partyCharacters[i].transform.parent = partyLineup.GetChild(i);
             partyCharacters[i].transform.localPosition = Vector3.zero;
             partyCharacters[i].DesiredRotation = -90;
             partyCharacters[i].ImmedatelyReorient();
+            
+            partyOrdered[i] = partyCharacters[i];
         }
     }
     
@@ -120,6 +128,7 @@ public class CombatManager : MonoBehaviour
         if (partyCharacters.Contains(toRemove))
         {
             partyCharacters.Remove(toRemove);
+            partyOrdered[partyOrdered.IndexOf(toRemove)] = null;
         }
         else if (enemyCharacters.Contains(toRemove))
         {
@@ -239,8 +248,8 @@ public class CombatManager : MonoBehaviour
 
     private void DoPlayerTurn(int index)
     {
-        if (index < partyCharacters.Count && partyCharacters[index] != null)
-            partyCharacters[index].DoTurn();
+        if (partyOrdered[index] != null)
+            partyOrdered[index].DoTurn();
 
         // Progress turn index
         playerTurnTriggerIndex = (index + 1) % 4;
@@ -249,21 +258,21 @@ public class CombatManager : MonoBehaviour
 
     public void SkipToTurn(int toTurn)
     {
-        if (partyCharacters[toTurn] == null)
+        if (partyOrdered[toTurn] == null)
             return;
         
         int breakCheck = 0;
         List<CharacterBehavior> skippedBehaviors = new();
 
-        if (partyCharacters[playerTurnTriggerIndex] != null)
-            skippedBehaviors.Add(partyCharacters[playerTurnTriggerIndex]);
+        if (partyOrdered[playerTurnTriggerIndex] != null)
+            skippedBehaviors.Add(partyOrdered[playerTurnTriggerIndex]);
         
         while (playerTurnTriggerIndex != toTurn)
         {
             playerTurnTriggerIndex = (playerTurnTriggerIndex + 1) % 4;
 
-            if (partyCharacters[playerTurnTriggerIndex] != null)
-                skippedBehaviors.Add(partyCharacters[playerTurnTriggerIndex]);
+            if (partyOrdered[playerTurnTriggerIndex] != null)
+                skippedBehaviors.Add(partyOrdered[playerTurnTriggerIndex]);
 
             #region Break Loop
             breakCheck++;

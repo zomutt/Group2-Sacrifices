@@ -61,7 +61,7 @@ public class CharacterBehavior : MonoBehaviour
         TickTurn();
         
         if (damageNumberWanted)
-            SpawnDamageNumber(damageNumberValue);
+            SpawnDamageNumber();
     }
     
     #region Rotation
@@ -209,6 +209,9 @@ public class CharacterBehavior : MonoBehaviour
                 i--;
             }
         }
+        
+        damageNumberWanted = false;
+        damageNumberValue = 0;
     }
     #endregion
     
@@ -223,6 +226,8 @@ public class CharacterBehavior : MonoBehaviour
         if (!stats.HasHealthRemaining)
         {
             OnDeath();
+            
+            SpawnDamageNumber();
         }
     }
     
@@ -255,9 +260,9 @@ public class CharacterBehavior : MonoBehaviour
         damageNumberValue += numberValue;
     }
     
-    private void SpawnDamageNumber(int numberValue)
+    private void SpawnDamageNumber()
     {
-        LevelManager.Instance.SpawnDamageNumber(transform.position + Vector3.up, numberValue);
+        LevelManager.Instance.SpawnDamageNumber(transform.position + Vector3.up, damageNumberValue);
         
         damageNumberWanted = false;
         damageNumberValue = 0;
