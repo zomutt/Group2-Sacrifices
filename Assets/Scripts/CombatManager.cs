@@ -139,6 +139,27 @@ public class CombatManager : MonoBehaviour
         if (pinnedTarget == toRemove)
             SetPinnedTargetDefault();
     }
+    
+    public void AddToBattle(GameObject character)
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            if (enemyLineup.GetChild(i).childCount == 0)
+            {
+                GameObject newCharacter = Instantiate(character, enemyLineup.GetChild(i));
+                newCharacter.transform.localPosition = Vector3.zero;
+                
+                CharacterBehavior newCharaBehavior = newCharacter.GetComponent<CharacterBehavior>();
+                
+                enemyCharacters.Add(newCharaBehavior);
+                
+                Debug.Log($"Summoned {newCharacter.name} into battle");
+                return;
+            }
+        }
+        
+        Debug.LogError("Attempted to add character while enemy team was full");
+    }
     #endregion
 
     private void TickBattle()
