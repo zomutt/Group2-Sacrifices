@@ -23,6 +23,7 @@ public class CombatManager : MonoBehaviour
     private float playerTurnTimer;
     public float PlayerTurnTimer => playerTurnTimer;
     private int playerTurnTriggerIndex;
+    private bool waitingForPlayerTurn;
     
     private GameObject combatUI;
 
@@ -32,7 +33,7 @@ public class CombatManager : MonoBehaviour
     [HideInInspector]
     public CharacterBehavior pinnedTarget;
 
-    public static float CombatSpeed = 0.5f;
+    public static readonly float CombatSpeed = 1f;
     public static CombatManager Instance;
 
     void Awake()
@@ -144,8 +145,9 @@ public class CombatManager : MonoBehaviour
     {
         if (TryEndBattle())
             return;
-
-        playerTurnTimer += Time.deltaTime * CombatSpeed;
+        
+        if (!waitingForPlayerTurn)
+            playerTurnTimer += Time.deltaTime * CombatSpeed;
         
         if (Mathf.FloorToInt(playerTurnTimer) > playerTurnTriggerIndex)
         {
@@ -254,6 +256,13 @@ public class CombatManager : MonoBehaviour
         // Progress turn index
         playerTurnTriggerIndex = (index + 1) % 4;
         playerTurnTimer = playerTurnTriggerIndex;
+        
+        waitingForPlayerTurn = true;
+    }
+    
+    public void EndPlayerTurn()
+    {
+        waitingForPlayerTurn = false;
     }
 
     public void SkipToTurn(int toTurn)

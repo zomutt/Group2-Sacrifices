@@ -164,9 +164,22 @@ public class CharacterBehavior : MonoBehaviour
     {
         DoTurnStart();
         
-        AttackBehavior usedAttack = attacks[Random.Range(0, attacks.Count)];
+        if (isEnemy)
+            DoMove(Random.Range(0, attacks.Count));
+        else
+        {
+            MovePanel.Instance.OpenPanel(attacks, this);
+        }
+    }
+    
+    public void DoMove(int index)
+    {
+        AttackBehavior usedAttack = attacks[index];
         Debug.Log($"{gameObject.name} used {usedAttack.name}");
         usedAttack.MoveOnTarget(this, GetTargetForMove(usedAttack));
+        
+        if (!isEnemy)
+            CombatManager.Instance.EndPlayerTurn();
     }
     
     private void DoTurnStart()

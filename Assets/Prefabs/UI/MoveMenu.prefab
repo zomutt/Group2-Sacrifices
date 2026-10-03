@@ -120,7 +120,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5795024697200316091}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8111856117247758764}
+        m_TargetAssemblyTypeName: MovePanel, Assembly-CSharp
+        m_MethodName: ChooseMove
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2906357433600142777
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,7 +390,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 193670239093752662}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8111856117247758764}
+        m_TargetAssemblyTypeName: MovePanel, Assembly-CSharp
+        m_MethodName: ChooseMove
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5211450859329643045
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,7 +523,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3598067862657449609}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8111856117247758764}
+        m_TargetAssemblyTypeName: MovePanel, Assembly-CSharp
+        m_MethodName: ChooseMove
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5385009045382260482
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,7 +656,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5090150351309603976}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8111856117247758764}
+        m_TargetAssemblyTypeName: MovePanel, Assembly-CSharp
+        m_MethodName: ChooseMove
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6136765456064955136
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,6 +816,7 @@ GameObject:
   m_Component:
   - component: {fileID: 676959518294070169}
   - component: {fileID: 2473929086494721025}
+  - component: {fileID: 8111856117247758764}
   - component: {fileID: 581534603917607111}
   m_Layer: 5
   m_Name: MoveMenu
@@ -807,6 +856,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7527074218254941867}
   m_CullTransparentMesh: 1
+--- !u!114 &8111856117247758764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7527074218254941867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 402d62a667b4944368d3e3a6854c2b24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MovePanel
+  buttons:
+  - {fileID: 5385009045382260482}
+  - {fileID: 2964439193681154393}
+  - {fileID: 5211450859329643045}
+  - {fileID: 2001456394174373860}
+  buttonTexts:
+  - {fileID: 6679948002619031149}
+  - {fileID: 3699531081584570537}
+  - {fileID: 6598819713987066846}
+  - {fileID: 497571022903525475}
 --- !u!114 &581534603917607111
 MonoBehaviour:
   m_ObjectHideFlags: 0

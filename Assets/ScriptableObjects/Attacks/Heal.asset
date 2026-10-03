@@ -17,5 +17,5 @@ MonoBehaviour:
   hitParticleIndex: -1
   attackSound: {fileID: 0}
   targetType:
-    targetsEnemies: 1
+    targetsEnemies: 0
     hitsAll: 0
