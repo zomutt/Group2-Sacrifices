@@ -13,7 +13,11 @@ PrefabInstance:
       value: Goblin
       objectReference: {fileID: 0}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
-      propertyPath: 'attacks.Array.data[0]'
+      propertyPath: attacks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+      propertyPath: 'attacks.Array.data[1]'
       value: 
       objectReference: {fileID: 11400000, guid: f5bc60bdc3e6b4288830e38d9a26c6c1, type: 2}
     - target: {fileID: 5733892435195879708, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}

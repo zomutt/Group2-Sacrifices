@@ -3,10 +3,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Attacks", menuName = "ScriptableObjects/Attacks/PlainAttack")]
 public class PlainAttack : AttackBehavior
 {
-
     public override void MoveOnTarget(CharacterBehavior from, CharacterBehavior to)
     {
-        to.TakeDamage(GetAttackPower(from, power));
+        if (power > 0)
+            to.TakeDamage(GetAttackPower(from, power));
 
         OnHitSpecialFX(to);
     }
