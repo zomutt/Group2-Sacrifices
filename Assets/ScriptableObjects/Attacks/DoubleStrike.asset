@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 091b6ae2e9a3a4d77bc5633608575c1d, type: 3}
+  m_Name: DoubleStrike
+  m_EditorClassIdentifier: Assembly-CSharp::MultiAttack
+  attackName: 
+  power: 0
+  hitParticleIndex: -1
+  attackSound: {fileID: 0}
+  targetType:
+    targetsEnemies: 1
+    hitsAll: 0
+  isMelee: 0
+  usesSoulsForPower: 0
+  repeatCount: 2
