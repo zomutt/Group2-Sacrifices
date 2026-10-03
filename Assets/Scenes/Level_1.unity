@@ -2966,6 +2966,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -32
       objectReference: {fileID: 0}
+    - target: {fileID: 5350023561530645701, guid: 82e55e6c2f82149eca7d5a0e1f50b8f0, type: 3}
+      propertyPath: 'encounters.Array.data[0].enemyPrefabs.Array.data[2]'
+      value: 
+      objectReference: {fileID: 891966489884274992, guid: 8f3d53fe324854da59d2615b87169c5d, type: 3}
     - target: {fileID: 5648693907178991337, guid: 82e55e6c2f82149eca7d5a0e1f50b8f0, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.13

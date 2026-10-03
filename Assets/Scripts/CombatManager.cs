@@ -152,6 +152,8 @@ public class CombatManager : MonoBehaviour
                 CharacterBehavior newCharaBehavior = newCharacter.GetComponent<CharacterBehavior>();
                 
                 enemyCharacters.Add(newCharaBehavior);
+                newCharaBehavior.DesiredRotation = 90;
+                newCharaBehavior.SetEnemyTurnTimer(0);
                 
                 Debug.Log($"Summoned {newCharacter.name} into battle");
                 return;

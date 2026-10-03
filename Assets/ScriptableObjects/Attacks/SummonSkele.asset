@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61c58581d9bad445792d041b203d5f3d, type: 3}
+  m_Name: SummonSkele
+  m_EditorClassIdentifier: Assembly-CSharp::SummonMove
+  name: Reanimate Bones
+  power: 0
+  hitParticleIndex: -1
+  attackSound: {fileID: 0}
+  targetType:
+    targetsEnemies: 1
+    hitsAll: 0
+  summonedCharacter: {fileID: 4111861808816167372, guid: 2527b5f9c6f364ca2a455e03a5e7c839, type: 3}
