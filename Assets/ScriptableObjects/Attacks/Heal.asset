@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aea61264283e48f39f65a2bb9836a82, type: 3}
   m_Name: Heal
   m_EditorClassIdentifier: Assembly-CSharp::HealMove
-  name: Heal Spell
+  attackName: Revitalize
   power: 1.5
   hitParticleIndex: -1
   attackSound: {fileID: 0}
   targetType:
     targetsEnemies: 0
-    hitsAll: 0
+    targetsSelf: 0

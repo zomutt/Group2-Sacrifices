@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 091b6ae2e9a3a4d77bc5633608575c1d, type: 3}
   m_Name: DoubleStrike
   m_EditorClassIdentifier: Assembly-CSharp::MultiAttack
-  attackName: 
-  power: 0
+  attackName: Double Strike
+  power: 1.2
   hitParticleIndex: -1
   attackSound: {fileID: 0}
   targetType:
     targetsEnemies: 1
-    hitsAll: 0
-  isMelee: 0
+    targetsSelf: 0
+  isMelee: 1
   usesSoulsForPower: 0
   repeatCount: 2

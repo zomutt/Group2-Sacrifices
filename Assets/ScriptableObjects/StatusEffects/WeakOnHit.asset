@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3175e736699d4f2195410598092e7b1, type: 3}
   m_Name: WeakOnHit
   m_EditorClassIdentifier: Assembly-CSharp::GiveStatusToMeleeEffect
-  permanent: 0
-  hidden: 0
+  permanent: 1
+  hidden: 1
   duration: 0
   power: 0
-  giveOnHurt: {fileID: 0}
+  giveOnHurt: {fileID: 11400000, guid: 7e2427af49dcd4135a41def2451fa94b, type: 2}

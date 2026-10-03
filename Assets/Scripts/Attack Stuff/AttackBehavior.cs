@@ -18,7 +18,7 @@ public abstract class AttackBehavior : ScriptableObject
     public class TargetTyping
     {
         public bool targetsEnemies = true;
-        public bool hitsAll = false;
+        public bool targetsSelf = false;
     }
     public TargetTyping targetType;
 
@@ -48,5 +48,10 @@ public abstract class AttackBehavior : ScriptableObject
             return chara.Stats.magic;
         else
             return PartyController.Instance.GetPartyTotalMagic();
+    }
+    
+    protected int GetArmorOf(CharacterBehavior target)
+    {
+        return target.Stats.armor;
     }
 }

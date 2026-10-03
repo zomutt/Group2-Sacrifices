@@ -12,13 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f95032806c029420ab2d2b4c2d179039, type: 3}
   m_Name: AddStrength
   m_EditorClassIdentifier: Assembly-CSharp::AddStatusMove
-  name: Strength Spell
+  attackName: Die by the Sword
   power: 0
   hitParticleIndex: -1
   attackSound: {fileID: 0}
   targetType:
     targetsEnemies: 0
-    hitsAll: 0
-  statusToAdd: {fileID: 11400000, guid: e4d462fdbae674dc496e2a3c4f772ee5, type: 2}
+    targetsSelf: 0
+  isMelee: 0
+  usesSoulsForPower: 0
+  statusesToAdd:
+  - {fileID: 11400000, guid: e4d462fdbae674dc496e2a3c4f772ee5, type: 2}
   usesMagic: 1
   magicMultiplier: 0.8

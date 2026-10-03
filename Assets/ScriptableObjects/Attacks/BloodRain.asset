@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74a1572a986f4418594240368d1db24a, type: 3}
   m_Name: BloodRain
   m_EditorClassIdentifier: Assembly-CSharp::MassAttack
-  attackName: 
-  power: 0
+  attackName: Blood Rain
+  power: 10
   hitParticleIndex: -1
   attackSound: {fileID: 0}
   targetType:
     targetsEnemies: 1
-    hitsAll: 0
-  isMelee: 0
+    targetsSelf: 0
+  attackToUse: {fileID: 11400000, guid: 361cebe254f3e45a7bf4e9b7b2023ed6, type: 2}

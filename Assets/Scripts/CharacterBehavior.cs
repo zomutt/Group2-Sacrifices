@@ -21,6 +21,9 @@ public class CharacterBehavior : MonoBehaviour
         => stats;
     
     [HideInInspector]
+    public int addedArmor;
+    
+    [HideInInspector]
     public int addedStrength;
     
     [SerializeField]
@@ -143,23 +146,6 @@ public class CharacterBehavior : MonoBehaviour
         }
     }
     
-    private void TickStatusEffects()
-    {
-        foreach (StatusEffect status in statuses)
-        {
-            status.TickStatusEffect(this);
-        }
-        
-        if (statusesToRemove.Count > 0)
-        {
-            foreach (StatusEffect status in statusesToRemove)
-            {
-                statuses.Remove(status);
-            }
-            statusesToRemove.Clear();
-        }
-    }
-    
     public void DoTurn()
     {
         DoTurnStart();
@@ -199,6 +185,9 @@ public class CharacterBehavior : MonoBehaviour
     
     private CharacterBehavior GetTargetForMove(AttackBehavior move)
     {
+        if (move.targetType.targetsSelf)
+            return this;
+        
         bool targetsEnemies = move.targetType.targetsEnemies;
         
         if (!isEnemy) // Party tries to target the pinned enemy
@@ -233,6 +222,7 @@ public class CharacterBehavior : MonoBehaviour
     }
     #endregion
     
+    #region Damage Taking
     public void TakeDamage(int damage)
     {
         stats.health -= damage;
@@ -254,14 +244,6 @@ public class CharacterBehavior : MonoBehaviour
         stats.health = Mathf.Clamp(stats.health + health, 0, stats.maxHealth);
         
         AddToDamageNumber(health);
-    }
-    
-    public void DoOnHurtMelee(CharacterBehavior attacker)
-    {
-        foreach (StatusEffect status in statuses)
-        {
-            status.DoOnHurtMelee(this, attacker);
-        }
     }
 
     private void OnDeath()
@@ -293,4 +275,41 @@ public class CharacterBehavior : MonoBehaviour
         damageNumberWanted = false;
         damageNumberValue = 0;
     }
+    #endregion
+    
+    #region Status Effects
+    private void TickStatusEffects()
+    {
+        foreach (StatusEffect status in statuses)
+        {
+            status.TickStatusEffect(this);
+        }
+        
+        if (statusesToRemove.Count > 0)
+        {
+            foreach (StatusEffect status in statusesToRemove)
+            {
+                status.DoOnEnd(this);
+                statuses.Remove(status);
+            }
+            statusesToRemove.Clear();
+        }
+    }
+    
+    public void AddStatusEffect(StatusEffect effect)
+    {
+        statuses.Add(effect);
+        
+        effect.DoOnAdd(this);
+    }
+    
+    public void DoOnHurtMelee(CharacterBehavior attacker)
+    {
+        foreach (StatusEffect status in statuses)
+        {
+            status.DoOnHurtMelee(this, attacker);
+        }
+    }
+    #endregion
+    
 }

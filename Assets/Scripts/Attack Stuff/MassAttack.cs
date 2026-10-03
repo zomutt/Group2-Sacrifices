@@ -2,8 +2,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Attacks", menuName = "ScriptableObjects/Attacks/MassAttack")]
-public class MassAttack : PlainAttack
+public class MassAttack : AttackBehavior
 {
+    [SerializeField]
+    private AttackBehavior attackToUse;
+    
     public override void MoveOnTarget(CharacterBehavior from, CharacterBehavior to)
     {
         List<CharacterBehavior> targets = (to.isEnemy) ?
@@ -11,7 +14,7 @@ public class MassAttack : PlainAttack
         
         foreach (CharacterBehavior chara in targets)
         {
-            base.MoveOnTarget(from, chara);
+            attackToUse.MoveOnTarget(from, chara);
         }
     }
 }

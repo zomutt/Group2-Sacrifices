@@ -12,13 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f95032806c029420ab2d2b4c2d179039, type: 3}
   m_Name: CausePetrify
   m_EditorClassIdentifier: Assembly-CSharp::AddStatusMove
-  name: Cause Bleed
+  attackName: Petrifying Bite
   power: 0.5
   hitParticleIndex: -1
   attackSound: {fileID: 0}
   targetType:
     targetsEnemies: 1
-    hitsAll: 0
-  statusToAdd: {fileID: 11400000, guid: ce01bbcb9613049429336e1e11e8f122, type: 2}
+    targetsSelf: 0
+  isMelee: 1
+  usesSoulsForPower: 0
+  statusesToAdd:
+  - {fileID: 11400000, guid: ce01bbcb9613049429336e1e11e8f122, type: 2}
   usesMagic: 0
   magicMultiplier: 0

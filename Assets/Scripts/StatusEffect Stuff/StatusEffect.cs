@@ -25,4 +25,8 @@ public class StatusEffect : ScriptableObject
     public virtual void DoTurnStart(CharacterBehavior owner) {}
     
     public virtual void DoOnHurtMelee(CharacterBehavior owner, CharacterBehavior attacker) {}
+    
+    public virtual void DoOnAdd(CharacterBehavior owner) {}
+    
+    public virtual void DoOnEnd(CharacterBehavior owner) {}
 }

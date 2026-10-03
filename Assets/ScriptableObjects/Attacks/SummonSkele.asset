@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61c58581d9bad445792d041b203d5f3d, type: 3}
   m_Name: SummonSkele
   m_EditorClassIdentifier: Assembly-CSharp::SummonMove
-  name: Reanimate Bones
+  attackName: Reanimate Bones
   power: 0
   hitParticleIndex: -1
   attackSound: {fileID: 0}
   targetType:
     targetsEnemies: 1
-    hitsAll: 0
+    targetsSelf: 0
   summonedCharacter: {fileID: 4111861808816167372, guid: 2527b5f9c6f364ca2a455e03a5e7c839, type: 3}
