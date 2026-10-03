@@ -194,6 +194,11 @@ public class CombatManager : MonoBehaviour
     private void EndActiveCombat()
     {
         LevelManager.LevelGameState = GameState.EndOfBattle;
+        
+        foreach (CharacterBehavior character in partyCharacters)
+        {
+            character.EndOfBattle();
+        }
     }
 
     private void LeaveBattle()

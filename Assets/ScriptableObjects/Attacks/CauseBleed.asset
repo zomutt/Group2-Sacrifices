@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CauseBleed
   m_EditorClassIdentifier: Assembly-CSharp::AddStatusMove
   name: Cause Bleed
-  power: 0
+  power: 0.5
   hitParticleIndex: -1
   attackSound: {fileID: 0}
   targetType:
@@ -21,3 +21,4 @@ MonoBehaviour:
     hitsAll: 0
   statusToAdd: {fileID: 11400000, guid: 053d4b71ee5f249b8a0cc6d1491ee302, type: 2}
   usesMagic: 0
+  magicMultiplier: 0

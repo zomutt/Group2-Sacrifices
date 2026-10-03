@@ -1029,6 +1029,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 4416055863205438021, guid: 85800e535d20d40b6b3c75fb79f03e7f, type: 3}
+      propertyPath: soulCost
+      value: 400
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

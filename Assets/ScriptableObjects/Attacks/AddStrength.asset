@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AddStrength
   m_EditorClassIdentifier: Assembly-CSharp::AddStatusMove
   name: Strength Spell
-  power: 0.8
+  power: 0
   hitParticleIndex: -1
   attackSound: {fileID: 0}
   targetType:
@@ -21,3 +21,4 @@ MonoBehaviour:
     hitsAll: 0
   statusToAdd: {fileID: 11400000, guid: e4d462fdbae674dc496e2a3c4f772ee5, type: 2}
   usesMagic: 1
+  magicMultiplier: 0.8
