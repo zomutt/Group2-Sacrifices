@@ -147,11 +147,13 @@ public class CombatManager : MonoBehaviour
             return;
         
         if (!waitingForPlayerTurn)
-            playerTurnTimer += Time.deltaTime * CombatSpeed;
-        
-        if (Mathf.FloorToInt(playerTurnTimer) > playerTurnTriggerIndex)
         {
-            DoPlayerTurn(playerTurnTriggerIndex);
+            playerTurnTimer += Time.deltaTime * CombatSpeed;
+            
+            if (Mathf.FloorToInt(playerTurnTimer) > playerTurnTriggerIndex)
+            {
+                DoPlayerTurn(playerTurnTriggerIndex);
+            }
         }
     }
 
@@ -251,18 +253,20 @@ public class CombatManager : MonoBehaviour
     private void DoPlayerTurn(int index)
     {
         if (partyOrdered[index] != null)
+        {
             partyOrdered[index].DoTurn();
-
+            waitingForPlayerTurn = true;
+        }
+        
         // Progress turn index
         playerTurnTriggerIndex = (index + 1) % 4;
-        playerTurnTimer = playerTurnTriggerIndex;
-        
-        waitingForPlayerTurn = true;
     }
     
     public void EndPlayerTurn()
     {
         waitingForPlayerTurn = false;
+        
+        playerTurnTimer = playerTurnTriggerIndex;
     }
 
     public void SkipToTurn(int toTurn)
