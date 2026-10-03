@@ -175,7 +175,7 @@ public class CharacterBehavior : MonoBehaviour
     public void DoMove(int index)
     {
         AttackBehavior usedAttack = attacks[index];
-        Debug.Log($"{gameObject.name} used {usedAttack.name}");
+        Debug.Log($"{gameObject.name} used {usedAttack.attackName}");
         usedAttack.MoveOnTarget(this, GetTargetForMove(usedAttack));
         
         if (!isEnemy)
@@ -249,6 +249,14 @@ public class CharacterBehavior : MonoBehaviour
         stats.health = Mathf.Clamp(stats.health + health, 0, stats.maxHealth);
         
         AddToDamageNumber(health);
+    }
+    
+    public void DoOnHurtMelee(CharacterBehavior attacker)
+    {
+        foreach (StatusEffect status in statuses)
+        {
+            status.DoOnHurtMelee(this, attacker);
+        }
     }
 
     private void OnDeath()

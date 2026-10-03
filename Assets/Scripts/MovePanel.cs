@@ -29,7 +29,7 @@ public class MovePanel : MonoBehaviour
             if (attacks.Count > i && attacks[i] != null)
             {
                 buttons[i].SetActive(true);
-                buttonTexts[i].text = attacks[i].name;
+                buttonTexts[i].text = attacks[i].attackName;
             }
             else
             {

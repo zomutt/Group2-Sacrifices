@@ -3,7 +3,7 @@ using UnityEngine;
 
 public abstract class AttackBehavior : ScriptableObject
 {
-    public string name;
+    public string attackName;
     
     [SerializeField]
     protected float power;

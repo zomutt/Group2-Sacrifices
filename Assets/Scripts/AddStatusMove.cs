@@ -1,9 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Attacks", menuName = "ScriptableObjects/Attacks/AddStatusMove")]
+[CreateAssetMenu(fileName = "Attacks", menuName = "ScriptableObjects/Attacks/AddStatus")]
 public class AddStatusMove : PlainAttack
 {
-    public StatusEffect statusToAdd;
+    public List<StatusEffect> statusesToAdd;
     
     public bool usesMagic;
     public float magicMultiplier;
@@ -12,11 +13,14 @@ public class AddStatusMove : PlainAttack
     {
         base.MoveOnTarget(from, to);
         
-        StatusEffect newStatusEffect = Instantiate(statusToAdd);
-        
-        if (usesMagic)
-            newStatusEffect.power = (int)(GetMagicPowerOf(from) * magicMultiplier);
-        
-        to.statuses.Add(newStatusEffect);
+        foreach (StatusEffect status in statusesToAdd)
+        {
+            StatusEffect newStatusEffect = Instantiate(status);
+            
+            if (usesMagic)
+                newStatusEffect.power = (int)(GetMagicPowerOf(from) * magicMultiplier);
+            
+            to.statuses.Add(newStatusEffect);
+        }
     }
 }
