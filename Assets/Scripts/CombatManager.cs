@@ -10,10 +10,13 @@ public class CombatManager : MonoBehaviour
         PartyWin,
         EnemyWin
     }
-
-    private List<CharacterBehavior> partyCharacters;
-    private List<CharacterBehavior> enemyCharacters;
-    private List<CharacterBehavior> partyOrdered;
+    
+    [HideInInspector]
+    public List<CharacterBehavior> partyCharacters;
+    [HideInInspector]
+    public List<CharacterBehavior> enemyCharacters;
+    [HideInInspector]
+    public List<CharacterBehavior> partyOrdered;
     
     [SerializeField]
     private Transform partyLineup;

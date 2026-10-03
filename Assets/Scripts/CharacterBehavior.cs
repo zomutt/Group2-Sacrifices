@@ -174,6 +174,11 @@ public class CharacterBehavior : MonoBehaviour
     
     public void DoMove(int index)
     {
+        if (index == 3 && !isEnemy) // This is a hack solution to make the mega attack cost souls
+        {
+            LevelManager.Instance.ConfirmSoulPayment(LevelManager.Instance.Souls / 2);
+        }
+        
         AttackBehavior usedAttack = attacks[index];
         Debug.Log($"{gameObject.name} used {usedAttack.attackName}");
         usedAttack.MoveOnTarget(this, GetTargetForMove(usedAttack));

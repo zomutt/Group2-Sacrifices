@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: attacks.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: statuses.Array.size
@@ -36,6 +36,10 @@ PrefabInstance:
       propertyPath: 'attacks.Array.data[2]'
       value: 
       objectReference: {fileID: 11400000, guid: 850402084375348dd81d3d3d3b5e75b4, type: 2}
+    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+      propertyPath: 'attacks.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: d38f9dc2eb813460e8e550e94f171bf7, type: 2}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: 'statuses.Array.data[0]'
       value: 

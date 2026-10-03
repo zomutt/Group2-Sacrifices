@@ -4,7 +4,10 @@ using UnityEngine;
 public class PlainAttack : AttackBehavior
 {
     [SerializeField]
-    private bool isMelee;
+    protected bool isMelee;
+    
+    [SerializeField]
+    protected bool usesSoulsForPower;
     
     public override void MoveOnTarget(CharacterBehavior from, CharacterBehavior to)
     {
@@ -17,9 +20,14 @@ public class PlainAttack : AttackBehavior
             to.DoOnHurtMelee(from);
     }
 
-    private int GetAttackPower(CharacterBehavior chara, float basePower)
+    protected int GetAttackPower(CharacterBehavior chara, float basePower)
     {
-        int totalPower = (int)((chara.Stats.strength + chara.addedStrength) * basePower);
+        int totalPower;
+        
+        if (usesSoulsForPower)
+            totalPower = LevelManager.Instance.Souls / 10;
+        else
+            totalPower = (int)((chara.Stats.strength + chara.addedStrength) * basePower);
         
         return Mathf.Max(0, totalPower);
     }
