@@ -12,7 +12,7 @@ public class CombatManager : MonoBehaviour
     }
     
     [HideInInspector]
-    private List<CharacterBehavior> partyCharacters;
+    public List<CharacterBehavior> partyCharacters;
     [HideInInspector]
     public List<CharacterBehavior> enemyCharacters;
     [HideInInspector]

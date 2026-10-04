@@ -8,13 +8,13 @@ public class MassAttack : AttackBehavior
     private AttackBehavior attackToUse;
     
     public override void MoveOnTarget(CharacterBehavior from, CharacterBehavior to)
-    {/*
+    {
         List<CharacterBehavior> targets = (to.isEnemy) ?
             CombatManager.Instance.enemyCharacters : CombatManager.Instance.partyCharacters;
         
         foreach (CharacterBehavior chara in targets)
         {
             attackToUse.MoveOnTarget(from, chara);
-        }*/
+        }
     }
 }
