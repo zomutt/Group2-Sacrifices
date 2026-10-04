@@ -85,7 +85,7 @@ public class LevelManager : MonoBehaviour
             levelTime -= Time.deltaTime;
         else
         {
-            // Lose level
+            UIController.Instance.ShowLosePanel();
         }
     }
     

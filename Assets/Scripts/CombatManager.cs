@@ -225,7 +225,7 @@ public class CombatManager : MonoBehaviour
 
     private CombatOutcome CheckRemainingAlive()
     {
-        if (partyCharacters.Count == 0)
+        if (partyOrdered[0] == null)
             return CombatOutcome.EnemyWin;
         else if (enemyCharacters.Count == 0)
             return CombatOutcome.PartyWin;

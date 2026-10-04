@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec557c65a5773440aac7ad47555d7a63, type: 3}
   m_Name: Blast
   m_EditorClassIdentifier: Assembly-CSharp::MagicAttack
-  attackName: 
-  power: 0
+  attackName: Magic Blast
+  power: 1.5
   hitParticleIndex: -1
   attackSound: {fileID: 0}
   targetType:
