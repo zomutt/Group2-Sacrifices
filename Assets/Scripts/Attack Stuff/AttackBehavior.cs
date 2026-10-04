@@ -52,6 +52,6 @@ public abstract class AttackBehavior : ScriptableObject
     
     protected int GetArmorOf(CharacterBehavior target)
     {
-        return target.Stats.armor;
+        return target.Stats.armor + target.addedArmor;
     }
 }

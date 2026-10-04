@@ -12,7 +12,7 @@ public class CombatManager : MonoBehaviour
     }
     
     [HideInInspector]
-    public List<CharacterBehavior> partyCharacters;
+    private List<CharacterBehavior> partyCharacters;
     [HideInInspector]
     public List<CharacterBehavior> enemyCharacters;
     [HideInInspector]
@@ -67,9 +67,10 @@ public class CombatManager : MonoBehaviour
         LevelManager.LevelGameState = GameState.Battle;
 
         if (AudioManager.Instance) AudioManager.Instance.PlaySFX(battleStartSound);
-
-        partyCharacters = party;
-        PositionCharacters();
+        
+        PositionCharacters(party);
+        
+        DebugPartyList();
         
         SpawnEnemyCharacters(encounter);
         
@@ -87,21 +88,26 @@ public class CombatManager : MonoBehaviour
     }
 
     #region Character Management
-    private void PositionCharacters()
+    private void PositionCharacters(List<CharacterBehavior> party)
     {
         partyOrdered = new List<CharacterBehavior>()
         {
             null, null, null, null
         };
         
-        for (int i = 0; i < partyCharacters.Count; i++)
+        for (int i = 0; i < party.Count; i++)
         {
-            partyCharacters[i].transform.parent = partyLineup.GetChild(i);
-            partyCharacters[i].transform.localPosition = Vector3.zero;
-            partyCharacters[i].DesiredRotation = -90;
-            partyCharacters[i].ImmedatelyReorient();
+            CharacterBehavior chara = party[i];
             
-            partyOrdered[i] = partyCharacters[i];
+            partyCharacters.Add(chara);
+            
+            chara.transform.parent = partyLineup.GetChild(i);
+            chara.transform.localPosition = Vector3.zero;
+            
+            chara.DesiredRotation = -90;
+            chara.ImmedatelyReorient();
+            
+            partyOrdered[i] = chara;
         }
     }
     
@@ -126,9 +132,19 @@ public class CombatManager : MonoBehaviour
             }
         }
     }
+    
+    public void DebugPartyList()
+    {
+        foreach (CharacterBehavior chara in partyCharacters)
+        {
+            Debug.Log(chara);
+        }
+    }
 
     public void RemoveFromBattle(CharacterBehavior toRemove)
     {
+        Debug.Log(toRemove);
+        
         if (partyCharacters.Contains(toRemove))
         {
             partyCharacters.Remove(toRemove);

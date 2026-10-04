@@ -50,6 +50,8 @@ public class CharacterBehavior : MonoBehaviour
     private float personalTurnTimer;
     
     public bool isEnemy;
+    
+    private bool isHoldingTurn;
     #endregion
 
     void Start()
@@ -181,6 +183,8 @@ public class CharacterBehavior : MonoBehaviour
         {
             status.DoTurnStart(this);
         }
+        
+        isHoldingTurn = true;
     }
     
     private CharacterBehavior GetTargetForMove(AttackBehavior move)
@@ -230,7 +234,7 @@ public class CharacterBehavior : MonoBehaviour
         AddToDamageNumber(-damage);
 
         if (AudioManager.Instance) AudioManager.Instance.PlaySFX(hurtSound);
-
+        
         if (!stats.HasHealthRemaining)
         {
             OnDeath();
@@ -251,12 +255,15 @@ public class CharacterBehavior : MonoBehaviour
         Debug.Log(gameObject.name + " died");
 
         if (AudioManager.Instance) AudioManager.Instance.PlaySFX(deathSound);
-
+        
         PartyController.Instance.RemoveFromParty(this);
         CombatManager.Instance.RemoveFromBattle(this);
         
         if (isEnemy)
             LevelManager.Instance.GainSouls(soulsOnDeath);
+        
+        if (isHoldingTurn)
+            CombatManager.Instance.EndPlayerTurn();
         
         transform.parent = transform.root;
         gameObject.SetActive(false);
