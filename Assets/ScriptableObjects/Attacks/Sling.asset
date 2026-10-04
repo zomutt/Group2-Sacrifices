@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf20535e02bb15249a00aabd9d62cc1e, type: 3}
   m_Name: Sling
   m_EditorClassIdentifier: Assembly-CSharp::PlainAttack
-  attackName: Swipe
-  power: 1
+  attackName: Sling
+  power: 0.5
   hitParticleIndex: -1
   attackSound: {fileID: 0}
   targetType:

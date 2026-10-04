@@ -20,7 +20,7 @@ public class PlainAttack : AttackBehavior
             to.DoOnHurtMelee(from);
     }
 
-    protected int GetAttackPower(CharacterBehavior chara, float basePower)
+    protected virtual int GetAttackPower(CharacterBehavior chara, float basePower)
     {
         int totalPower;
         
