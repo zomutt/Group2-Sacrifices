@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0db68061f6d144e75a5c42273e22b69b, type: 3}
-  m_Name: MagePassiveHealing
+  m_Name: PsvHealStrong
   m_EditorClassIdentifier: Assembly-CSharp::HealPerTurnStatus
   permanent: 1
   hidden: 1

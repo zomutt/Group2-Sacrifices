@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f95032806c029420ab2d2b4c2d179039, type: 3}
-  m_Name: CausePetrify
+  m_Name: BufBleedOnHit
   m_EditorClassIdentifier: Assembly-CSharp::AddStatusMove
-  attackName: Petrifying Bite
-  power: 0.5
+  attackName: Brace
+  power: 0
   hitParticleIndex: -1
   attackSound: {fileID: 0}
   targetType:
-    targetsEnemies: 1
-    targetsSelf: 0
-  isMelee: 1
+    targetsEnemies: 0
+    targetsSelf: 1
+  isMelee: 0
   usesSoulsForPower: 0
   statusesToAdd:
-  - {fileID: 11400000, guid: ce01bbcb9613049429336e1e11e8f122, type: 2}
+  - {fileID: 11400000, guid: c30bf1118afe84ff7952e20411421b18, type: 2}
   usesMagic: 0
   magicMultiplier: 0

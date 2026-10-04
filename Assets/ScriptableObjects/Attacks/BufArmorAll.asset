@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61c58581d9bad445792d041b203d5f3d, type: 3}
-  m_Name: SummonSkele
-  m_EditorClassIdentifier: Assembly-CSharp::SummonMove
-  attackName: Reanimate Bones
+  m_Script: {fileID: 11500000, guid: 74a1572a986f4418594240368d1db24a, type: 3}
+  m_Name: BufArmorAll
+  m_EditorClassIdentifier: Assembly-CSharp::MassAttack
+  attackName: Shield All
   power: 0
   hitParticleIndex: -1
   attackSound: {fileID: 0}
   targetType:
-    targetsEnemies: 1
+    targetsEnemies: 0
     targetsSelf: 0
-  summonedCharacter: {fileID: 4111861808816167372, guid: 2527b5f9c6f364ca2a455e03a5e7c839, type: 3}
+  attackToUse: {fileID: 11400000, guid: 8eb4a159efa7b49a2be470aae243a2e5, type: 2}

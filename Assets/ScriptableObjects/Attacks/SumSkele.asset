@@ -9,16 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 091b6ae2e9a3a4d77bc5633608575c1d, type: 3}
-  m_Name: DoubleStrike
-  m_EditorClassIdentifier: Assembly-CSharp::MultiAttack
-  attackName: Double Strike
-  power: 1.2
+  m_Script: {fileID: 11500000, guid: 61c58581d9bad445792d041b203d5f3d, type: 3}
+  m_Name: SumSkele
+  m_EditorClassIdentifier: Assembly-CSharp::SummonMove
+  attackName: Reanimate Bones
+  power: 0
   hitParticleIndex: -1
   attackSound: {fileID: 0}
   targetType:
     targetsEnemies: 1
     targetsSelf: 0
-  isMelee: 1
-  usesSoulsForPower: 0
-  repeatCount: 2
+  summonedCharacter: {fileID: 4111861808816167372, guid: 2527b5f9c6f364ca2a455e03a5e7c839, type: 3}

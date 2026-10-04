@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bef43ef9a20d4d86b2362689325247a, type: 3}
-  m_Name: Braced
-  m_EditorClassIdentifier: Assembly-CSharp::DefenseEffect
-  permanent: 0
-  hidden: 0
-  duration: 6
-  power: 5
+  m_Script: {fileID: 11500000, guid: 0db68061f6d144e75a5c42273e22b69b, type: 3}
+  m_Name: PsvHealWeak
+  m_EditorClassIdentifier: Assembly-CSharp::HealPerTurnStatus
+  permanent: 1
+  hidden: 1
+  duration: 0
+  power: 1
