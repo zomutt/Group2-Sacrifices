@@ -156,7 +156,7 @@ public class RandomMusic : MonoBehaviour
 
         while (currentTime < duration)
         {
-            currentTime += Time.deltaTime;
+            currentTime += Time.unscaledDeltaTime;   // Unscaled so fades still finish while the win/pause panels freeze time
             float newVol = Mathf.Lerp(currentVol, targetValue, currentTime / duration);
             mixer.SetFloat(exposedParamName, Mathf.Log10(newVol) * 20);
             yield return null;

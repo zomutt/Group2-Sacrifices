@@ -2587,7 +2587,7 @@ RectTransform:
   m_Father: {fileID: 7634182987048462702}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 74.23685, y: 0}
   m_SizeDelta: {x: 158.4737, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9881,7 +9881,7 @@ RectTransform:
   m_Father: {fileID: 1608776067335243650}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 74.23685, y: 0}
   m_SizeDelta: {x: 158.4737, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -15069,7 +15069,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d65930eaf93c1c141aac6fb0e0f182d9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: da95556f8c4abfa4183b98ecbb8cc99c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15576,7 +15576,7 @@ RectTransform:
   m_Father: {fileID: 3801698953122180935}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 74.23685, y: 0}
   m_SizeDelta: {x: 158.4737, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -16321,7 +16321,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ad4696a82d5b4f24080a8c9273c2834e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f715c162e3165e148842574ffc682d6c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -19430,7 +19430,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6336675650727425247
 Transform:
   m_ObjectHideFlags: 0
@@ -19478,9 +19478,12 @@ MonoBehaviour:
   settingsPanel: {fileID: 2495877464055950543}
   confirmQuitPanel: {fileID: 1079412293990123554}
   losePanel: {fileID: 1341542599963503798}
-  loseSound: {fileID: 0}
+  loseSound: {fileID: 8300000, guid: 90d48372d8150db47b5d6a1e58b291a0, type: 3}
   winPanel: {fileID: 5627704176084994206}
+  winSound: {fileID: 8300000, guid: 79af57ef07bd2ee439e92af53e8ca3e1, type: 3}
   clickSound: {fileID: 8300000, guid: f3a8493be63c82044ae1557a3a3ebcc2, type: 3}
+  panelOpenSound: {fileID: 8300000, guid: b0852f2ea687a8d47a40f373db420e7f, type: 3}
+  panelCloseSound: {fileID: 8300000, guid: b0852f2ea687a8d47a40f373db420e7f, type: 3}
   helpPanel: {fileID: 1429951169557510520}
   helpSubPanels:
   - {fileID: 3931429430550743777}
@@ -19790,7 +19793,7 @@ RectTransform:
   m_Father: {fileID: 2046101952083939713}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 74.23685, y: 0}
   m_SizeDelta: {x: 158.4737, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

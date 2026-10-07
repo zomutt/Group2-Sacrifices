@@ -19,7 +19,10 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject losePanel;
     [SerializeField] private AudioClip loseSound;
     [SerializeField] private GameObject winPanel;
+    [SerializeField] private AudioClip winSound;
     [SerializeField] private AudioClip clickSound;
+    [SerializeField] private AudioClip panelOpenSound;
+    [SerializeField] private AudioClip panelCloseSound;
 
     [Header("Help Panels")]
     [SerializeField] private GameObject helpPanel;
@@ -164,6 +167,7 @@ public class UIController : MonoBehaviour
     public void OnClickPauseGame()
     {
         if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(panelOpenSound);
         Time.timeScale = 0; // This lives here (in UIController) because it's super early on, not because it's best practice.
         if (pausePanel) pausePanel.SetActive(true);
     }
@@ -171,6 +175,7 @@ public class UIController : MonoBehaviour
     public void OnClickResumeGame()
     {
         if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(panelCloseSound);
         Time.timeScale = 1; // Same as above.
         if (pausePanel) pausePanel.SetActive(false);
 
@@ -191,6 +196,8 @@ public class UIController : MonoBehaviour
     {
         Time.timeScale = 0;
         if (winPanel) winPanel.SetActive(true);
+        if (AudioManager.Instance) AudioManager.Instance.StopMusic();
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(winSound);
     }
 
     public void OnClickBeginQuit()
