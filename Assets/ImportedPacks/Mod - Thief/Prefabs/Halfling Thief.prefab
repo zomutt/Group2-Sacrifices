@@ -78,12 +78,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 625ba697559e0294182029756806b95a, type: 2}
     - target: {fileID: 5866666021909216657, guid: afe90dc7f6644b649abe725ee248f5b6, type: 3}
       propertyPath: m_WarningMessage
-      value: "\nBinding warning: Some generic clip(s) animate transforms that are
-        already bound by a Humanoid avatar. These transforms can only be changed
-        by Humanoid clips.\n\tTransform 'Knee_R'\n\tTransform 'IndexFinger1_R'\n\tTransform
-        'ThumbFinger3_R'\n\tTransform 'Scapula_L'\n\tTransform 'Hip_R'\n\tTransform
-        'Toes_L'\n\tTransform 'ThumbFinger2_R'\n\tTransform 'Elbow_R'\n\tTransform
-        'Ankle_L'\n\tTransform 'Wrist_L'\n\tand more ...\n\tFrom animation clip 'mixamo.com'"
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: afe90dc7f6644b649abe725ee248f5b6, type: 3}
       propertyPath: m_ApplyRootMotion
@@ -99,6 +94,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: afe90dc7f6644b649abe725ee248f5b6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1887287955714401585}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: afe90dc7f6644b649abe725ee248f5b6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7903559359202698400}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: afe90dc7f6644b649abe725ee248f5b6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7607374635677464285}
   m_SourcePrefab: {fileID: 100100000, guid: afe90dc7f6644b649abe725ee248f5b6, type: 3}
 --- !u!1 &2604455028615479503 stripped
 GameObject:
@@ -106,6 +107,47 @@ GameObject:
   m_PrefabInstance: {fileID: 2946915313730862494}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &36408831842637631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2604455028615479503}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d48bd78ebe139a4e9bc2535da2d6168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimTester
+  moveSpeed: 2
+  turnSpeed: 10
+  modelYawOffset: 0
+--- !u!114 &1887287955714401585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2604455028615479503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d903c97fcc8644a3c84db3d8a31100ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterBehavior
+  modelPivot: {fileID: 5891241039092899536}
+  stats:
+    health: 0
+    maxHealth: 0
+    strength: 0
+    luck: 0
+    armor: 0
+  soulsOnDeath: 0
+  attack: {fileID: 0}
+  hurtSound: {fileID: 0}
+  deathSound: {fileID: 0}
+  soulDropSound: {fileID: 0}
+  maxTurnTimer: 0
+  isEnemy: 0
+--- !u!114 &7903559359202698400
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,7 +162,7 @@ MonoBehaviour:
   moveSpeed: 2
   turnSpeed: 10
   modelYawOffset: 0
---- !u!114 &1887287955714401585
+--- !u!114 &7607374635677464285
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
