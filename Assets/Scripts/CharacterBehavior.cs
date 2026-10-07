@@ -52,6 +52,12 @@ public class CharacterBehavior : MonoBehaviour
     public bool isEnemy;
     
     private bool isHoldingTurn;
+    
+    [HideInInspector]
+    public StatusDisplay statusDisplay;
+    
+    [SerializeField, Tooltip("For use as enemy")]
+    private EnemyBrain brain;
     #endregion
 
     void Start()
@@ -216,6 +222,7 @@ public class CharacterBehavior : MonoBehaviour
         {
             if (!statuses[i].permanent)
             {
+                statusDisplay.RemoveStatus(statuses[i]);
                 statuses.RemoveAt(i);
                 i--;
             }
@@ -297,7 +304,9 @@ public class CharacterBehavior : MonoBehaviour
             foreach (StatusEffect status in statusesToRemove)
             {
                 status.DoOnEnd(this);
+                
                 statuses.Remove(status);
+                statusDisplay.RemoveStatus(status);
             }
             statusesToRemove.Clear();
         }
@@ -306,6 +315,7 @@ public class CharacterBehavior : MonoBehaviour
     public void AddStatusEffect(StatusEffect effect)
     {
         statuses.Add(effect);
+        statusDisplay.AddStatus(effect);
         
         effect.DoOnAdd(this);
     }

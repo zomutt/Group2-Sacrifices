@@ -16,4 +16,5 @@ MonoBehaviour:
   hidden: 0
   duration: 30
   power: 0
+  icon: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   giveOnHurt: {fileID: 11400000, guid: 053d4b71ee5f249b8a0cc6d1491ee302, type: 2}

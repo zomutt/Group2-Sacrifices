@@ -20,7 +20,7 @@ public class AddStatusMove : PlainAttack
             if (usesMagic)
                 newStatusEffect.power = (int)(GetMagicPowerOf(from) * magicMultiplier);
             
-            to.statuses.Add(newStatusEffect);
+            to.AddStatusEffect(newStatusEffect);
         }
     }
 }

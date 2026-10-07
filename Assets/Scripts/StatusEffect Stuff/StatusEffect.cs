@@ -3,13 +3,15 @@ using UnityEngine;
 public class StatusEffect : ScriptableObject
 {
     public bool permanent;
-    [SerializeField]
-    private bool hidden;
+    public bool hidden;
     
     [SerializeField]
     private float duration;
+    public float Duration => duration;
     
     public int power;
+    
+    public Sprite icon;
     
     public virtual void TickStatusEffect(CharacterBehavior owner)
     {

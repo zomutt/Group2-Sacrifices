@@ -18,6 +18,8 @@ public class CombatManager : MonoBehaviour
     [HideInInspector]
     public List<CharacterBehavior> partyOrdered;
     
+    public int EnemyCount => enemyCharacters.Count;
+    
     [SerializeField]
     private Transform partyLineup;
     [SerializeField]
