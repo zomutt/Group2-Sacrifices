@@ -142,24 +142,6 @@ public class CombatManager : MonoBehaviour
             Debug.Log(chara);
         }
     }
-
-    public void RemoveFromBattle(CharacterBehavior toRemove)
-    {
-        Debug.Log(toRemove);
-        
-        if (partyCharacters.Contains(toRemove))
-        {
-            partyCharacters.Remove(toRemove);
-            partyOrdered[partyOrdered.IndexOf(toRemove)] = null;
-        }
-        else if (enemyCharacters.Contains(toRemove))
-        {
-            enemyCharacters.Remove(toRemove);
-        }
-        
-        if (pinnedTarget == toRemove)
-            SetPinnedTargetDefault();
-    }
     
     public void AddToBattle(GameObject character)
     {
@@ -183,6 +165,24 @@ public class CombatManager : MonoBehaviour
         
         Debug.LogError("Attempted to add character while enemy team was full");
     }
+
+    public void RemoveFromBattle(CharacterBehavior toRemove)
+    {
+        Debug.Log(toRemove);
+        
+        if (partyCharacters.Contains(toRemove))
+        {
+            partyCharacters.Remove(toRemove);
+            partyOrdered[partyOrdered.IndexOf(toRemove)] = null;
+        }
+        else if (enemyCharacters.Contains(toRemove))
+        {
+            enemyCharacters.Remove(toRemove);
+        }
+        
+        if (pinnedTarget == toRemove)
+            SetPinnedTargetDefault();
+    }
     #endregion
 
     private void TickBattle()
@@ -196,6 +196,7 @@ public class CombatManager : MonoBehaviour
             
             if (Mathf.FloorToInt(playerTurnTimer) > playerTurnTriggerIndex)
             {
+                Debug.Log(playerTurnTriggerIndex + ", " + playerTurnTimer);
                 DoPlayerTurn(playerTurnTriggerIndex);
             }
         }
@@ -255,6 +256,7 @@ public class CombatManager : MonoBehaviour
 
     private void LoseBattle()
     {
+        combatUI.SetActive(false);
         UIController.Instance.ShowLosePanel();
     }
     #endregion
@@ -301,14 +303,17 @@ public class CombatManager : MonoBehaviour
 
     private void DoPlayerTurn(int index)
     {
+        playerTurnTriggerIndex = (index + 1) % 4;
+        
         if (partyOrdered[index] != null)
         {
             partyOrdered[index].DoTurn();
             waitingForPlayerTurn = true;
         }
-        
-        // Progress turn index
-        playerTurnTriggerIndex = (index + 1) % 4;
+        else
+        {
+            EndPlayerTurn();
+        }
     }
     
     public void EndPlayerTurn()
