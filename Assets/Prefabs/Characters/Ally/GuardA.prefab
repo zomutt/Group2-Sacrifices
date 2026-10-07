@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5564885785924365908
+--- !u!1001 &8246799484015666464
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,11 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4709240086951026532, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: m_Name
-      value: Skeleton Mage
+      value: GuardA
       objectReference: {fileID: 0}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
-      propertyPath: stats.maxHealth
-      value: 100
+      propertyPath: stats.armor
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+      propertyPath: stats.magic
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: attacks.Array.size
@@ -25,49 +29,13 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
-      propertyPath: 'attacks.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: ec13e539a54704c13abe12e75712459a, type: 2}
-    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: 'attacks.Array.data[1]'
       value: 
-      objectReference: {fileID: 11400000, guid: 263466f647c2be5488241436d0657210, type: 2}
-    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
-      propertyPath: 'attacks.Array.data[2]'
-      value: 
-      objectReference: {fileID: 11400000, guid: ec13e539a54704c13abe12e75712459a, type: 2}
-    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
-      propertyPath: brain.moves.Array.size
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: fb050a6bd1e134e56b1ce5b67561caa1, type: 2}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: 'statuses.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: e54dc2035256043ed99e068086627871, type: 2}
-    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
-      propertyPath: brain.moves.Array.data[0].moveConditions.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
-      propertyPath: brain.moves.Array.data[0].moveConditions.Array.data[0].a
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
-      propertyPath: brain.moves.Array.data[0].moveConditions.Array.data[0].b
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
-      propertyPath: brain.moves.Array.data[0].moveConditions.Array.data[1].a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
-      propertyPath: brain.moves.Array.data[0].moveConditions.Array.data[1].b
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
-      propertyPath: brain.moves.Array.data[0].moveConditions.Array.data[1].conditionType
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 4c49e0b3276a14a9cbb56c71b00c7a81, type: 2}
     - target: {fileID: 5733892435195879708, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

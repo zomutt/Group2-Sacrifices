@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8667969608512521896
+--- !u!1001 &8246799484015666464
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,12 +10,36 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4709240086951026532, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: m_Name
-      value: Skeleton
+      value: GuardB
       objectReference: {fileID: 0}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
-      propertyPath: stats.maxHealth
-      value: 5
+      propertyPath: stats.armor
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+      propertyPath: stats.magic
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+      propertyPath: stats.strength
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+      propertyPath: attacks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+      propertyPath: statuses.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+      propertyPath: 'attacks.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 4556fe0c73ce842f698b95aecf404ad5, type: 2}
+    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+      propertyPath: 'statuses.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 4c49e0b3276a14a9cbb56c71b00c7a81, type: 2}
     - target: {fileID: 5733892435195879708, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
