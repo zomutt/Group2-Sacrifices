@@ -12196,7 +12196,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 49462369021633432, guid: 8cc6902d397838746ac7923452a5a03b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -466.125
+      value: -466.12497
       objectReference: {fileID: 0}
     - target: {fileID: 1520119285950605901, guid: 8cc6902d397838746ac7923452a5a03b, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -12224,7 +12224,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2948848667472381639, guid: 8cc6902d397838746ac7923452a5a03b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -466.125
+      value: -466.12497
+      objectReference: {fileID: 0}
+    - target: {fileID: 4072066942107865870, guid: 8cc6902d397838746ac7923452a5a03b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -38
       objectReference: {fileID: 0}
     - target: {fileID: 4600510524954254684, guid: 8cc6902d397838746ac7923452a5a03b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -12241,7 +12245,7 @@ PrefabInstance:
     - target: {fileID: 6050243453661689961, guid: 8cc6902d397838746ac7923452a5a03b, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 661826521}
+      objectReference: {fileID: 0}
     - target: {fileID: 6050243453661689961, guid: 8cc6902d397838746ac7923452a5a03b, type: 3}
       propertyPath: m_RenderMode
       value: 1
@@ -12308,7 +12312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8870459484421319252, guid: 8cc6902d397838746ac7923452a5a03b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -464
+      value: -463.99997
       objectReference: {fileID: 0}
     - target: {fileID: 9121693809026575495, guid: 8cc6902d397838746ac7923452a5a03b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -15559,11 +15563,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 82e55e6c2f82149eca7d5a0e1f50b8f0, type: 3}
---- !u!20 &661826521 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 7623323719523915886, guid: 82e55e6c2f82149eca7d5a0e1f50b8f0, type: 3}
-  m_PrefabInstance: {fileID: 661826520}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &665050004
 PrefabInstance:
   m_ObjectHideFlags: 0
