@@ -13,7 +13,7 @@ public class EnemyBrain
             [Serializable]
             public enum ConditionType
             {
-                AOutOfB,
+                RandomAOutOfB,
                 EnemyCountAToB
             }
             
@@ -26,7 +26,7 @@ public class EnemyBrain
             {
                 switch (conditionType)
                 {
-                    case ConditionType.AOutOfB:
+                    case ConditionType.RandomAOutOfB:
                         return UnityEngine.Random.Range(0, a) < b;
                         
                     case ConditionType.EnemyCountAToB:

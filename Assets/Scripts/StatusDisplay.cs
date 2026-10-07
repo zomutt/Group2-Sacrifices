@@ -57,6 +57,8 @@ public class StatusDisplay : MonoBehaviour
         
         int i = statuses.IndexOf(status);
         
+        icons[i].gameObject.SetActive(false);
+        
         statuses.RemoveAt(i);
         icons.RemoveAt(i);
         
