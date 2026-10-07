@@ -108,9 +108,9 @@ MonoBehaviour:
     armor: 0
   soulsOnDeath: 0
   attack: {fileID: 11400000, guid: 263466f647c2be5488241436d0657210, type: 2}
-  hurtSound: {fileID: 8300000, guid: b244b6d7db6c4b74f9947ef5f1afe85e, type: 3}
-  deathSound: {fileID: 8300000, guid: 93854d03fa74c4d41b281decab210b44, type: 3}
-  soulDropSound: {fileID: 0}
+  hurtSound: {fileID: 8300000, guid: a8faea35d36a0f2488e820fba75a7e59, type: 3}
+  deathSound: {fileID: 8300000, guid: 208b4804cfb12824f80dac92ee09bbab, type: 3}
+  soulDropSound: {fileID: 8300000, guid: 814416f1e2112ae4ca05229b48085bef, type: 3}
   maxTurnTimer: 0
   isEnemy: 0
 --- !u!114 &550208703761793228
