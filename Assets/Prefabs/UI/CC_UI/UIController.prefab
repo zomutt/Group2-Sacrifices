@@ -19480,7 +19480,10 @@ MonoBehaviour:
   losePanel: {fileID: 1341542599963503798}
   loseSound: {fileID: 8300000, guid: 90d48372d8150db47b5d6a1e58b291a0, type: 3}
   winPanel: {fileID: 5627704176084994206}
+  winSound: {fileID: 8300000, guid: 79af57ef07bd2ee439e92af53e8ca3e1, type: 3}
   clickSound: {fileID: 8300000, guid: f3a8493be63c82044ae1557a3a3ebcc2, type: 3}
+  panelOpenSound: {fileID: 8300000, guid: b0852f2ea687a8d47a40f373db420e7f, type: 3}
+  panelCloseSound: {fileID: 8300000, guid: b0852f2ea687a8d47a40f373db420e7f, type: 3}
   helpPanel: {fileID: 1429951169557510520}
   helpSubPanels:
   - {fileID: 3931429430550743777}
