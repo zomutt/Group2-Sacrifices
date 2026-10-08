@@ -77,9 +77,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: df05897f7c914dd49affc28edc0ae074, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 807960641413855111}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: df05897f7c914dd49affc28edc0ae074, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 550208703761793228}
   m_SourcePrefab: {fileID: 100100000, guid: df05897f7c914dd49affc28edc0ae074, type: 3}
 --- !u!1 &49737744995945392 stripped
@@ -87,32 +84,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: df05897f7c914dd49affc28edc0ae074, type: 3}
   m_PrefabInstance: {fileID: 896741784131253985}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &807960641413855111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 49737744995945392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d903c97fcc8644a3c84db3d8a31100ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CharacterBehavior
-  modelPivot: {fileID: 863394373488464138}
-  stats:
-    health: 0
-    maxHealth: 0
-    strength: 0
-    luck: 0
-    armor: 0
-  soulsOnDeath: 0
-  attack: {fileID: 11400000, guid: 263466f647c2be5488241436d0657210, type: 2}
-  hurtSound: {fileID: 8300000, guid: a8faea35d36a0f2488e820fba75a7e59, type: 3}
-  deathSound: {fileID: 8300000, guid: 208b4804cfb12824f80dac92ee09bbab, type: 3}
-  soulDropSound: {fileID: 8300000, guid: 814416f1e2112ae4ca05229b48085bef, type: 3}
-  maxTurnTimer: 0
-  isEnemy: 0
 --- !u!114 &550208703761793228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,11 +99,6 @@ MonoBehaviour:
   moveSpeed: 2
   turnSpeed: 10
   modelYawOffset: 0
---- !u!4 &863394373488464138 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: df05897f7c914dd49affc28edc0ae074, type: 3}
-  m_PrefabInstance: {fileID: 896741784131253985}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7757360680466523872 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -1741077115640573951, guid: df05897f7c914dd49affc28edc0ae074, type: 3}
