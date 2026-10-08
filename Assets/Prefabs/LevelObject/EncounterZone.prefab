@@ -47,6 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a3e1d5320abe410da2ab3053971f30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EncounterTrigger
+  hasForcedEncounter: 0
+  forcedEncounter:
+    spawnTime: 0
+    enemyPrefabs: []
 --- !u!33 &2853973043078706629
 MeshFilter:
   m_ObjectHideFlags: 0
