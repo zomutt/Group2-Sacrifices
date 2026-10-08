@@ -564,6 +564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11f4236b2c0794694a3d1c201e84aebc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicVolume: 0
   playOnStart: 1
   randomiseStartPosition: 1
   bed: {fileID: 2187792343449879971}

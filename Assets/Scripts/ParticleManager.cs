@@ -5,8 +5,15 @@ public class ParticleManager : MonoBehaviour
 {
     [SerializeField] List<ObjectPooler> particles = new List<ObjectPooler>();
     
-    public GameObject ParticleList()
+    public static ParticleManager Instance;
+
+    void Awake()
     {
-        return particles[0].GetPooledObject();
+        Instance = this;
+    }
+
+    public GameObject ParticleList(int index)
+    {
+        return particles[index].GetPooledObject();
     }
 }

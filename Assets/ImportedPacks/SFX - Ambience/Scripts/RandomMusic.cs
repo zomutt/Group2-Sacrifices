@@ -4,6 +4,9 @@ using UnityEngine.Audio;
 
 public class RandomMusic : MonoBehaviour
 {
+    [Range(0, 1)]
+    public float musicVolume;
+    
     [Tooltip("Immediately start the music when the object is loaded. If false, StartMusic() will need to be called instead.")]
     public bool playOnStart;
     [Tooltip("Randomises the start position of the bed. Avoids repetition when starting.")]
@@ -84,7 +87,7 @@ public class RandomMusic : MonoBehaviour
             StopAllCoroutines();
             timer = 0f;
             mixer.SetFloat(exposedParamName, - 80);
-            StartCoroutine(FadeMasterGroup(fadeInDuration, 0));
+            StartCoroutine(FadeMasterGroup(fadeInDuration, musicVolume));
             if (randomiseStartPosition)
             {
                 bed.time = Random.Range(0, bed.clip.length);
