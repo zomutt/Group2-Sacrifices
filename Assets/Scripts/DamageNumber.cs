@@ -8,6 +8,11 @@ public class DamageNumber : MonoBehaviour
     private Animator anim;
     
     private readonly float timeBeforeDisable = 1.5f;
+    
+    [SerializeField]
+    private Color damageColor;
+    [SerializeField]
+    private Color healColor;
 
     void Awake()
     {
@@ -35,7 +40,16 @@ public class DamageNumber : MonoBehaviour
 
     public void SetDamageNumber(int damage)
     {
-        textMesh.text = "-" + damage;
+        if (damage > 0)
+        {
+            textMesh.text = "+" + damage;
+            textMesh.color = healColor;
+        }
+        else
+        {
+            textMesh.text = "" + damage;
+            textMesh.color = damageColor;
+        }
         
         Billboard();
         transform.position += -transform.forward;

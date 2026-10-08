@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using TMPro;
 using UnityEngine;
 
@@ -25,6 +26,8 @@ public class LevelManager : MonoBehaviour
     
     [SerializeField]
     private bool skipEncounters;
+    [HideInInspector]
+    public float afterEncounterTimer;
     
     private ObjectPooler damageNumberPool;
     
@@ -84,8 +87,11 @@ public class LevelManager : MonoBehaviour
             levelTime -= Time.deltaTime;
         else
         {
-            // Lose level
+            UIController.Instance.ShowLosePanel();
         }
+        
+        if (afterEncounterTimer > 0)
+            afterEncounterTimer -= Time.deltaTime;
     }
     
     private void UpdateUI()
@@ -144,7 +150,7 @@ public class LevelManager : MonoBehaviour
     #region Encounters
     public void ProgressEncounterTimer(float time)
     {
-        if (skipEncounters)
+        if (skipEncounters || afterEncounterTimer > 0)
             return;
         
         encounterTimer -= time;
@@ -177,6 +183,8 @@ public class LevelManager : MonoBehaviour
         
         PartyController.Instance.ReturnPartyToHolder();
         CameraController.Instance.JumpToOverworldTarget();
+        
+        afterEncounterTimer = 8f;
     }
     #endregion
     

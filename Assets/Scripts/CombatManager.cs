@@ -10,9 +10,15 @@ public class CombatManager : MonoBehaviour
         PartyWin,
         EnemyWin
     }
-
-    private List<CharacterBehavior> partyCharacters;
-    private List<CharacterBehavior> enemyCharacters;
+    
+    [HideInInspector]
+    public List<CharacterBehavior> partyCharacters;
+    [HideInInspector]
+    public List<CharacterBehavior> enemyCharacters;
+    [HideInInspector]
+    public List<CharacterBehavior> partyOrdered;
+    
+    public int EnemyCount => enemyCharacters.Count;
     
     [SerializeField]
     private Transform partyLineup;
@@ -22,6 +28,7 @@ public class CombatManager : MonoBehaviour
     private float playerTurnTimer;
     public float PlayerTurnTimer => playerTurnTimer;
     private int playerTurnTriggerIndex;
+    private bool waitingForPlayerTurn;
     
     private GameObject combatUI;
 
@@ -29,8 +36,11 @@ public class CombatManager : MonoBehaviour
     private AudioClip battleStartSound;
     [SerializeField]
     private AudioClip battleWinSound;
+    
+    [HideInInspector]
+    public CharacterBehavior pinnedTarget;
 
-    public static float CombatSpeed = 0.5f;
+    public static readonly float CombatSpeed = 1f;
     public static CombatManager Instance;
 
     void Awake()
@@ -61,9 +71,10 @@ public class CombatManager : MonoBehaviour
         LevelManager.LevelGameState = GameState.Battle;
 
         if (AudioManager.Instance) AudioManager.Instance.PlaySFX(battleStartSound);
-
-        partyCharacters = party;
-        PositionCharacters();
+        
+        PositionCharacters(party);
+        
+        DebugPartyList();
         
         SpawnEnemyCharacters(encounter);
         
@@ -76,17 +87,31 @@ public class CombatManager : MonoBehaviour
         
         playerTurnTimer = 0;
         playerTurnTriggerIndex = 0;
+        
+        SetPinnedTargetDefault();
     }
 
     #region Character Management
-    private void PositionCharacters()
+    private void PositionCharacters(List<CharacterBehavior> party)
     {
-        for (int i = 0; i < partyCharacters.Count; i++)
+        partyOrdered = new List<CharacterBehavior>()
         {
-            partyCharacters[i].transform.parent = partyLineup.GetChild(i);
-            partyCharacters[i].transform.localPosition = Vector3.zero;
-            partyCharacters[i].DesiredRotation = -90;
-            partyCharacters[i].ImmedatelyReorient();
+            null, null, null, null
+        };
+        
+        for (int i = 0; i < party.Count; i++)
+        {
+            CharacterBehavior chara = party[i];
+            
+            partyCharacters.Add(chara);
+            
+            chara.transform.parent = partyLineup.GetChild(i);
+            chara.transform.localPosition = Vector3.zero;
+            
+            chara.DesiredRotation = -90;
+            chara.ImmedatelyReorient();
+            
+            partyOrdered[i] = chara;
         }
     }
     
@@ -111,17 +136,54 @@ public class CombatManager : MonoBehaviour
             }
         }
     }
+    
+    public void DebugPartyList()
+    {
+        foreach (CharacterBehavior chara in partyCharacters)
+        {
+            Debug.Log(chara);
+        }
+    }
+    
+    public void AddToBattle(GameObject character)
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            if (enemyLineup.GetChild(i).childCount == 0)
+            {
+                GameObject newCharacter = Instantiate(character, enemyLineup.GetChild(i));
+                newCharacter.transform.localPosition = Vector3.zero;
+                
+                CharacterBehavior newCharaBehavior = newCharacter.GetComponent<CharacterBehavior>();
+                
+                enemyCharacters.Add(newCharaBehavior);
+                newCharaBehavior.DesiredRotation = 90;
+                newCharaBehavior.SetEnemyTurnTimer(0);
+                
+                Debug.Log($"Summoned {newCharacter.name} into battle");
+                return;
+            }
+        }
+        
+        Debug.LogError("Attempted to add character while enemy team was full");
+    }
 
     public void RemoveFromBattle(CharacterBehavior toRemove)
     {
+        Debug.Log(toRemove);
+        
         if (partyCharacters.Contains(toRemove))
         {
             partyCharacters.Remove(toRemove);
+            partyOrdered[partyOrdered.IndexOf(toRemove)] = null;
         }
         else if (enemyCharacters.Contains(toRemove))
         {
             enemyCharacters.Remove(toRemove);
         }
+        
+        if (pinnedTarget == toRemove)
+            SetPinnedTargetDefault();
     }
     #endregion
 
@@ -129,12 +191,16 @@ public class CombatManager : MonoBehaviour
     {
         if (TryEndBattle())
             return;
-
-        playerTurnTimer += Time.deltaTime * CombatSpeed;
         
-        if (Mathf.FloorToInt(playerTurnTimer) > playerTurnTriggerIndex)
+        if (!waitingForPlayerTurn)
         {
-            DoPlayerTurn(playerTurnTriggerIndex);
+            playerTurnTimer += Time.deltaTime * CombatSpeed;
+            
+            if (Mathf.FloorToInt(playerTurnTimer) > playerTurnTriggerIndex)
+            {
+                Debug.Log(playerTurnTriggerIndex + ", " + playerTurnTimer);
+                DoPlayerTurn(playerTurnTriggerIndex);
+            }
         }
     }
 
@@ -165,7 +231,7 @@ public class CombatManager : MonoBehaviour
 
     private CombatOutcome CheckRemainingAlive()
     {
-        if (partyCharacters.Count == 0)
+        if (partyOrdered[0] == null)
             return CombatOutcome.EnemyWin;
         else if (enemyCharacters.Count == 0)
             return CombatOutcome.PartyWin;
@@ -176,6 +242,11 @@ public class CombatManager : MonoBehaviour
     private void EndActiveCombat()
     {
         LevelManager.LevelGameState = GameState.EndOfBattle;
+        
+        foreach (CharacterBehavior character in partyCharacters)
+        {
+            character.EndOfBattle();
+        }
     }
 
     private void LeaveBattle()
@@ -188,11 +259,13 @@ public class CombatManager : MonoBehaviour
 
     private void LoseBattle()
     {
+        combatUI.SetActive(false);
         UIController.Instance.ShowLosePanel();
     }
     #endregion
-
-    public CharacterBehavior RandomTarget(bool onEnemyTeam)
+    
+    #region Getting Targets
+    public CharacterBehavior GetRandomTarget(bool onEnemyTeam)
     {
         if (onEnemyTeam)
         {
@@ -203,28 +276,73 @@ public class CombatManager : MonoBehaviour
             return partyCharacters[UnityEngine.Random.Range(0, partyCharacters.Count)];
         }
     }
+    
+    public CharacterBehavior GetLowestHealthTarget(bool onEnemyTeam)
+    {
+        List<CharacterBehavior> teamCharacters =
+            (onEnemyTeam) ? enemyCharacters : partyCharacters;
+        
+        float healthPercent = teamCharacters[0].Stats.HealthPercent;
+        int lowestHealthIndex = 0;
+        
+        for (int i = 1; i < teamCharacters.Count; i++)
+        {
+            if (healthPercent > teamCharacters[i].Stats.HealthPercent)
+            {
+                healthPercent = teamCharacters[i].Stats.HealthPercent;
+                lowestHealthIndex = i;
+            }
+        }
+        
+        return teamCharacters[lowestHealthIndex];
+    }
+    
+    private void SetPinnedTargetDefault()
+    {
+        if (enemyCharacters.Count > 0)
+            pinnedTarget = enemyCharacters[0];
+    }
+    #endregion
 
     private void DoPlayerTurn(int index)
     {
-        if (index < partyCharacters.Count && partyCharacters[index] != null)
-            partyCharacters[index].DoTurn();
-
-        // Progress turn index
         playerTurnTriggerIndex = (index + 1) % 4;
+        
+        if (partyOrdered[index] != null)
+        {
+            partyOrdered[index].DoTurn();
+            waitingForPlayerTurn = true;
+        }
+        else
+        {
+            EndPlayerTurn();
+        }
+    }
+    
+    public void EndPlayerTurn()
+    {
+        waitingForPlayerTurn = false;
+        
         playerTurnTimer = playerTurnTriggerIndex;
     }
 
     public void SkipToTurn(int toTurn)
     {
+        if (partyOrdered[toTurn] == null)
+            return;
+        
         int breakCheck = 0;
         List<CharacterBehavior> skippedBehaviors = new();
 
+        if (partyOrdered[playerTurnTriggerIndex] != null)
+            skippedBehaviors.Add(partyOrdered[playerTurnTriggerIndex]);
+        
         while (playerTurnTriggerIndex != toTurn)
         {
             playerTurnTriggerIndex = (playerTurnTriggerIndex + 1) % 4;
 
-            if (partyCharacters[playerTurnTriggerIndex] != null)
-                skippedBehaviors.Add(partyCharacters[playerTurnTriggerIndex]);
+            if (partyOrdered[playerTurnTriggerIndex] != null)
+                skippedBehaviors.Add(partyOrdered[playerTurnTriggerIndex]);
 
             #region Break Loop
             breakCheck++;
@@ -242,5 +360,7 @@ public class CombatManager : MonoBehaviour
         }
 
         playerTurnTimer = playerTurnTriggerIndex + 1;
+        
+        Debug.Log($"Skipped {skippedBehaviors.Count} turns.");
     }
 }

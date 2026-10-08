@@ -227,6 +227,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b45d030d2751f4c9e8fa14651bbeb4e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageNumber
+  damageColor: {r: 1, g: 0.40392157, b: 0.40392157, a: 0}
+  healColor: {r: 0.5331632, g: 1, b: 0.4039216, a: 0}
 --- !u!95 &5846157507595941051
 Animator:
   serializedVersion: 7

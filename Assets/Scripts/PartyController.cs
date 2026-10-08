@@ -118,6 +118,16 @@ public class PartyController : MonoBehaviour
     {
         return characters;
     }
+    
+    public int GetPartyTotalMagic()
+    {
+        int total = 0;
+        
+        foreach (CharacterBehavior chara in characters)
+            total += chara.Stats.magic;
+        
+        return total;
+    }
 
     public void ReturnPartyToHolder()
     {
