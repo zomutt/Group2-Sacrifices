@@ -48,6 +48,7 @@ public class RandomMusic : MonoBehaviour
     float timer;
     float triggerTime;
     bool musicPlaying;
+    bool fadingOut;
 
     void Start()
     {
@@ -70,6 +71,14 @@ public class RandomMusic : MonoBehaviour
 
     public void StartMusic()
     {
+        if (fadingOut)
+        {
+            // A stop is mid-fade (e.g. next level loaded quickly); cancel it so the music restarts
+            StopAllCoroutines();
+            fadingOut = false;
+            musicPlaying = false;
+        }
+
         if (musicPlaying == false)
         {
             StopAllCoroutines();
@@ -137,7 +146,9 @@ public class RandomMusic : MonoBehaviour
 
     IEnumerator FadeAndStopMusic()
     {
+        fadingOut = true;
         yield return StartCoroutine(FadeMasterGroup(fadeOutDuration, 0));
+        fadingOut = false;
         bed.Stop();
         melody.Stop();
         perc.Stop();

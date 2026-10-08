@@ -43,6 +43,12 @@ public class CharacterBehavior : MonoBehaviour
     [SerializeField]
     private AudioClip soulDropSound;
     
+    [SerializeField, Tooltip("Seconds to wait for the Death animation before the character is hidden")]
+    private float deathAnimDuration = 1.5f;
+
+    private Animator anim;
+    private bool isDead;
+
     private bool damageNumberWanted;
     private int damageNumberValue;
 
@@ -64,11 +70,15 @@ public class CharacterBehavior : MonoBehaviour
 
     void Start()
     {
+        anim = GetComponentInChildren<Animator>();
         stats.RefillHealth();
     }
 
     void Update()
     {
+        if (isDead)
+            return;
+
         ModelOrientation();
         
         TickTurn();
@@ -177,6 +187,7 @@ public class CharacterBehavior : MonoBehaviour
         
         AttackBehavior usedAttack = attacks[index];
         Debug.Log($"{gameObject.name} used {usedAttack.attackName}");
+        if (anim) anim.SetTrigger("Attack");
         usedAttack.MoveOnTarget(this, GetTargetForMove(usedAttack));
         
         if (!isEnemy)
@@ -261,6 +272,10 @@ public class CharacterBehavior : MonoBehaviour
 
     private void OnDeath()
     {
+        if (isDead)
+            return;
+        isDead = true;
+
         Debug.Log(gameObject.name + " died");
 
         if (AudioManager.Instance) AudioManager.Instance.PlaySFX(deathSound);
@@ -278,6 +293,18 @@ public class CharacterBehavior : MonoBehaviour
             CombatManager.Instance.EndPlayerTurn();
         
         transform.parent = transform.root;
+
+        if (anim)
+        {
+            anim.SetTrigger("Death");
+            Invoke(nameof(Hide), deathAnimDuration);
+        }
+        else
+            Hide();
+    }
+
+    private void Hide()
+    {
         gameObject.SetActive(false);
     }
     

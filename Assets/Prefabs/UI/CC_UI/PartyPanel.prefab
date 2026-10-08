@@ -255,6 +255,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FatedBar (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3139969578169385697, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
+      propertyPath: m_text
+      value: Nolan the Farmhand
+      objectReference: {fileID: 0}
+    - target: {fileID: 6541545993899743301, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e9e6dd48bea46614b8bae036fa99f1f0, type: 3}
     - target: {fileID: 6713143018086776991, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.0006713867
@@ -380,6 +388,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FatedBar (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3139969578169385697, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
+      propertyPath: m_text
+      value: Thrall the Enslaved
+      objectReference: {fileID: 0}
+    - target: {fileID: 6541545993899743301, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c05b3c3fc85c7c547bb2197eaa7e0e54, type: 3}
     - target: {fileID: 6713143018086776991, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.0006713867
@@ -505,6 +521,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FatedBar (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3139969578169385697, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
+      propertyPath: m_text
+      value: Alo the Halfling Thief
+      objectReference: {fileID: 0}
+    - target: {fileID: 6541545993899743301, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: eb41b1c7bb85fc845bec7f70b4b23437, type: 3}
     - target: {fileID: 6713143018086776991, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.0006713867
@@ -630,6 +654,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: FatedBar
       objectReference: {fileID: 0}
+    - target: {fileID: 3139969578169385697, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
+      propertyPath: m_text
+      value: Karth the Blood Mage
+      objectReference: {fileID: 0}
+    - target: {fileID: 6541545993899743301, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 357c61d0d575c6e4d93eea5512f9360c, type: 3}
     - target: {fileID: 6713143018086776991, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.0006713867

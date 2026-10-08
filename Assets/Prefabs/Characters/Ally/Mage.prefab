@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1328864978564107950, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -4346608842568992544, guid: fa4bfa046268551448e1d6a9d90877c5, type: 3}
     - target: {fileID: 4709240086951026532, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: m_Name
       value: Mage
@@ -17,6 +21,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: d2bb4f8fe47b949f795d28bbb41b1e9c, type: 2}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+      propertyPath: modelPivot
+      value: 
+      objectReference: {fileID: 6862843576742292029}
+    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: stats.armor
       value: 2
       objectReference: {fileID: 0}
@@ -24,6 +32,10 @@ PrefabInstance:
       propertyPath: stats.magic
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+      propertyPath: soulDropSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 814416f1e2112ae4ca05229b48085bef, type: 3}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: attacks.Array.size
       value: 4
@@ -88,8 +100,69 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5929171198066487673, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e7430ad2f81d96b46856c544587a261e, type: 2}
+    - target: {fileID: 7222020043352060863, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 84008a26f1eddf243a80cc2af6b8eb6d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9160832369927155960, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5644879680561319470}
+    - targetCorrespondingSourceObject: {fileID: 9160832369927155960, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3838456312316876865}
   m_SourcePrefab: {fileID: 100100000, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+--- !u!1 &1314100694997085157 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9160832369927155960, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+  m_PrefabInstance: {fileID: 7862527522176326429}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5644879680561319470
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314100694997085157}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: cb57f7c83ae84d046a752b96f7843b2a, type: 3}
+  m_Controller: {fileID: 9100000, guid: 7a07cf708d15af74facc28a7af935bd8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3838456312316876865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314100694997085157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d48bd78ebe139a4e9bc2535da2d6168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimTester
+  moveSpeed: 0
+  turnSpeed: 10
+  modelYawOffset: 180
+--- !u!4 &6862843576742292029 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3612160408842334496, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+  m_PrefabInstance: {fileID: 7862527522176326429}
+  m_PrefabAsset: {fileID: 0}
