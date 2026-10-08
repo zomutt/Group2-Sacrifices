@@ -5,7 +5,10 @@ public class TutorialTrigger : TriggerArea
     public TutorialUIManager uiManager;
     public override void OnEnter()
     {
-        uiManager.TutorialOne();
+        if(uiManager.tutorialOn)
+        {
+            uiManager.TutorialOne();
+        }
     }
 
     public override void OnExit() { }
