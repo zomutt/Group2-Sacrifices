@@ -63,6 +63,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a2d549013724844b59fa1db6d6768f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PartyPanel
+  characterPanels:
+  - {fileID: 7670420695567539523}
+  - {fileID: 3726045762598621372}
+  - {fileID: 4671654908270196341}
+  - {fileID: 3115436758669143192}
   healthSliders:
   - {fileID: 6563106536872581454}
   - {fileID: 203658715432506545}
@@ -355,6 +360,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!1 &3726045762598621372 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2022885365130706318, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
+  m_PrefabInstance: {fileID: 3433758753210101042}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4745005649587872283 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7961955239392825129, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
@@ -480,6 +490,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!1 &3115436758669143192 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2022885365130706318, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
+  m_PrefabInstance: {fileID: 3976391207740281110}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &6435774329036299839 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7961955239392825129, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
@@ -597,6 +612,11 @@ PrefabInstance:
 --- !u!224 &3655017433049449682 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7961955239392825129, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
+  m_PrefabInstance: {fileID: 6685513273520163835}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4671654908270196341 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2022885365130706318, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
   m_PrefabInstance: {fileID: 6685513273520163835}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &8192915270229668472 stripped
@@ -735,3 +755,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!1 &7670420695567539523 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2022885365130706318, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
+  m_PrefabInstance: {fileID: 8529946879287894221}
+  m_PrefabAsset: {fileID: 0}

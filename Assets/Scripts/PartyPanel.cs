@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class PartyPanel : MonoBehaviour
 {
     [SerializeField]
+    private GameObject[] characterPanels;
+    [SerializeField]
     private Slider[] healthSliders;
 
     void Update()
@@ -21,7 +23,12 @@ public class PartyPanel : MonoBehaviour
         
         for (int i = 0; i < characters.Count; i++)
         {
+            characterPanels[i].SetActive(true);
             SetHealthbarValue(healthSliders[i], characters[i]);
+        }
+        for (int i = characters.Count; i < 4; i++)
+        {
+            characterPanels[i].SetActive(false);
         }
     }
     

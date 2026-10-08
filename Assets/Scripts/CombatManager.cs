@@ -170,7 +170,7 @@ public class CombatManager : MonoBehaviour
 
     public void RemoveFromBattle(CharacterBehavior toRemove)
     {
-        Debug.Log(toRemove);
+        Debug.Log(toRemove + " " + partyOrdered.IndexOf(toRemove));
         
         if (partyCharacters.Contains(toRemove))
         {
@@ -198,7 +198,6 @@ public class CombatManager : MonoBehaviour
             
             if (Mathf.FloorToInt(playerTurnTimer) > playerTurnTriggerIndex)
             {
-                Debug.Log(playerTurnTriggerIndex + ", " + playerTurnTimer);
                 DoPlayerTurn(playerTurnTriggerIndex);
             }
         }
@@ -294,6 +293,7 @@ public class CombatManager : MonoBehaviour
             }
         }
         
+        Debug.Log("lowest health was index " + lowestHealthIndex);
         return teamCharacters[lowestHealthIndex];
     }
     

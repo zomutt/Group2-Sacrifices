@@ -78,8 +78,6 @@ public class StatusDisplay : MonoBehaviour
         for (int i = 0; i < icons.Count; i++)
         {
             icons[i].UpdatePosition(i * iconSpacing);
-            
-            Debug.Log(icons[i].transform.position);
         }
     }
 }

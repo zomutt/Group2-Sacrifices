@@ -60,7 +60,12 @@ public class CharacterBehavior : MonoBehaviour
     
     [SerializeField, Tooltip("For use as enemy")]
     private EnemyBrain brain;
+    
+    private bool isDead;
     #endregion
+    
+    [SerializeField]
+    private Animator anim;
 
     void Start()
     {
@@ -181,6 +186,9 @@ public class CharacterBehavior : MonoBehaviour
         
         if (!isEnemy)
             CombatManager.Instance.EndPlayerTurn();
+        
+        if (anim != null)
+            anim.SetTrigger("Attack");
     }
     
     private void DoTurnStart()
@@ -261,7 +269,10 @@ public class CharacterBehavior : MonoBehaviour
 
     private void OnDeath()
     {
+        if (isDead) return;
+        
         Debug.Log(gameObject.name + " died");
+        isDead = true;
 
         if (AudioManager.Instance) AudioManager.Instance.PlaySFX(deathSound);
         
