@@ -2633,7 +2633,6 @@ GameObject:
   - component: {fileID: 440094876471930465}
   - component: {fileID: 1275532020749116420}
   - component: {fileID: 8003449233331637845}
-  - component: {fileID: 3124610391531659157}
   m_Layer: 0
   m_Name: Skeleton_Mage
   m_TagString: Untagged
@@ -2695,32 +2694,6 @@ MonoBehaviour:
   moveSpeed: 2
   turnSpeed: 10
   modelYawOffset: 0
---- !u!114 &3124610391531659157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8297646330481783477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d903c97fcc8644a3c84db3d8a31100ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CharacterBehavior
-  modelPivot: {fileID: 440094876471930465}
-  stats:
-    health: 0
-    maxHealth: 25
-    strength: 5
-    luck: 2
-    armor: 0
-  soulsOnDeath: 0
-  attack: {fileID: 11400000, guid: 263466f647c2be5488241436d0657210, type: 2}
-  hurtSound: {fileID: 8300000, guid: 966d873884cd46d44a09ef80de0d20ec, type: 3}
-  deathSound: {fileID: 8300000, guid: 580372bfd50ed6f47b58d82d32492f59, type: 3}
-  soulDropSound: {fileID: 8300000, guid: 814416f1e2112ae4ca05229b48085bef, type: 3}
-  maxTurnTimer: 4
-  isEnemy: 0
 --- !u!1 &8409258971218406018
 GameObject:
   m_ObjectHideFlags: 0

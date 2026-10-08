@@ -654,7 +654,6 @@ GameObject:
   - component: {fileID: 6544114445179338226}
   - component: {fileID: 7770425463392344054}
   - component: {fileID: 5461920724857262675}
-  - component: {fileID: 3439998457380335481}
   m_Layer: 0
   m_Name: Farmer
   m_TagString: Untagged
@@ -717,32 +716,6 @@ MonoBehaviour:
   moveSpeed: 2
   turnSpeed: 10
   modelYawOffset: 0
---- !u!114 &3439998457380335481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3537038063191597636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d903c97fcc8644a3c84db3d8a31100ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CharacterBehavior
-  modelPivot: {fileID: 6544114445179338226}
-  stats:
-    health: 0
-    maxHealth: 0
-    strength: 0
-    luck: 0
-    armor: 0
-  soulsOnDeath: 0
-  attack: {fileID: 11400000, guid: 263466f647c2be5488241436d0657210, type: 2}
-  hurtSound: {fileID: 8300000, guid: eca115111f69b9744a3225ec9d88c12a, type: 3}
-  deathSound: {fileID: 8300000, guid: 9e1ad49c51aba8e4ba65af29a8df51ad, type: 3}
-  soulDropSound: {fileID: 8300000, guid: 814416f1e2112ae4ca05229b48085bef, type: 3}
-  maxTurnTimer: 0
-  isEnemy: 0
 --- !u!1 &3578120558929136357
 GameObject:
   m_ObjectHideFlags: 0

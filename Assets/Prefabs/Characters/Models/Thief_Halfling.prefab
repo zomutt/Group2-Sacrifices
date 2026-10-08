@@ -752,7 +752,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2588616422715482341}
   - component: {fileID: 8434309988311055007}
-  - component: {fileID: 1031987396071551630}
   - component: {fileID: 6752288206933290699}
   m_Layer: 0
   m_Name: Thief_Halfling
@@ -800,32 +799,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1031987396071551630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2929393951611992671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d903c97fcc8644a3c84db3d8a31100ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CharacterBehavior
-  modelPivot: {fileID: 6720015820707882048}
-  stats:
-    health: 0
-    maxHealth: 0
-    strength: 0
-    luck: 0
-    armor: 0
-  soulsOnDeath: 0
-  attack: {fileID: 11400000, guid: 263466f647c2be5488241436d0657210, type: 2}
-  hurtSound: {fileID: 8300000, guid: eca115111f69b9744a3225ec9d88c12a, type: 3}
-  deathSound: {fileID: 8300000, guid: 9e1ad49c51aba8e4ba65af29a8df51ad, type: 3}
-  soulDropSound: {fileID: 8300000, guid: 814416f1e2112ae4ca05229b48085bef, type: 3}
-  maxTurnTimer: 0
-  isEnemy: 0
 --- !u!114 &6752288206933290699
 MonoBehaviour:
   m_ObjectHideFlags: 0

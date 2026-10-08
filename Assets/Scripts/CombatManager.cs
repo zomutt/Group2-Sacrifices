@@ -94,6 +94,7 @@ public class CombatManager : MonoBehaviour
     #region Character Management
     private void PositionCharacters(List<CharacterBehavior> party)
     {
+        partyCharacters = new();
         partyOrdered = new List<CharacterBehavior>()
         {
             null, null, null, null
@@ -170,7 +171,7 @@ public class CombatManager : MonoBehaviour
 
     public void RemoveFromBattle(CharacterBehavior toRemove)
     {
-        Debug.Log(toRemove + " " + partyOrdered.IndexOf(toRemove));
+        Debug.Log(toRemove + " " + partyOrdered.IndexOf(toRemove) + " died");
         
         if (partyCharacters.Contains(toRemove))
         {

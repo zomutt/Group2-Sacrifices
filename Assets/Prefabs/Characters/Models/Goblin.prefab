@@ -3174,7 +3174,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1370713833817433172}
   - component: {fileID: 8559460593763773779}
-  - component: {fileID: 6737776111595517964}
   - component: {fileID: 7473163189127069443}
   m_Layer: 0
   m_Name: Goblin
@@ -3231,32 +3230,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6737776111595517964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1042919959945243223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d903c97fcc8644a3c84db3d8a31100ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CharacterBehavior
-  modelPivot: {fileID: 1370713833817433172}
-  stats:
-    health: 0
-    maxHealth: 25
-    strength: 5
-    luck: 2
-    armor: 0
-  soulsOnDeath: 0
-  attack: {fileID: 11400000, guid: 263466f647c2be5488241436d0657210, type: 2}
-  hurtSound: {fileID: 8300000, guid: 43674622a265bbf4b862163ed6ea8f0d, type: 3}
-  deathSound: {fileID: 8300000, guid: 2f1d8cc8f367ea94d8f546661cbfaaa7, type: 3}
-  soulDropSound: {fileID: 8300000, guid: 814416f1e2112ae4ca05229b48085bef, type: 3}
-  maxTurnTimer: 4
-  isEnemy: 0
 --- !u!114 &7473163189127069443
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2160,7 +2160,6 @@ GameObject:
   - component: {fileID: 2754553283525050626}
   - component: {fileID: 4981378927169857201}
   - component: {fileID: 1351809230658107806}
-  - component: {fileID: 4029604438379912246}
   m_Layer: 0
   m_Name: Fighter_Female
   m_TagString: Untagged
@@ -2224,32 +2223,6 @@ MonoBehaviour:
   moveSpeed: 2
   turnSpeed: 10
   modelYawOffset: 0
---- !u!114 &4029604438379912246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1807348482017590717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d903c97fcc8644a3c84db3d8a31100ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CharacterBehavior
-  modelPivot: {fileID: 0}
-  stats:
-    health: 0
-    maxHealth: 25
-    strength: 5
-    luck: 2
-    armor: 0
-  soulsOnDeath: 0
-  attack: {fileID: 11400000, guid: 263466f647c2be5488241436d0657210, type: 2}
-  hurtSound: {fileID: 8300000, guid: 57080de2a45aa2248b02ff5c624d2414, type: 3}
-  deathSound: {fileID: 8300000, guid: 8cf61995f176a0d48bdbf37066d2360b, type: 3}
-  soulDropSound: {fileID: 8300000, guid: 814416f1e2112ae4ca05229b48085bef, type: 3}
-  maxTurnTimer: 4
-  isEnemy: 0
 --- !u!1 &1811936908159980171
 GameObject:
   m_ObjectHideFlags: 0

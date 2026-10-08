@@ -1062,7 +1062,6 @@ GameObject:
   - component: {fileID: 1795661035721085089}
   - component: {fileID: 1276357531380910493}
   - component: {fileID: 2865667021940219807}
-  - component: {fileID: 7972087040805961729}
   m_Layer: 0
   m_Name: BloodMage
   m_TagString: Untagged
@@ -1124,32 +1123,6 @@ MonoBehaviour:
   moveSpeed: 2
   turnSpeed: 10
   modelYawOffset: 0
---- !u!114 &7972087040805961729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5259176683266117292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d903c97fcc8644a3c84db3d8a31100ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CharacterBehavior
-  modelPivot: {fileID: 1795661035721085089}
-  stats:
-    health: 0
-    maxHealth: 25
-    strength: 5
-    luck: 2
-    armor: 0
-  soulsOnDeath: 0
-  attack: {fileID: 11400000, guid: 263466f647c2be5488241436d0657210, type: 2}
-  hurtSound: {fileID: 8300000, guid: 104ca3fc68e910d4aa0a2a5b2d568649, type: 3}
-  deathSound: {fileID: 8300000, guid: 658fc6564137d89439b5de45f4af563d, type: 3}
-  soulDropSound: {fileID: 8300000, guid: 814416f1e2112ae4ca05229b48085bef, type: 3}
-  maxTurnTimer: 4
-  isEnemy: 0
 --- !u!1 &5268030683289585512
 GameObject:
   m_ObjectHideFlags: 0
