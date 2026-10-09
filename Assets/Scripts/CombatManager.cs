@@ -17,6 +17,8 @@ public class CombatManager : MonoBehaviour
     public List<CharacterBehavior> enemyCharacters;
     [HideInInspector]
     public List<CharacterBehavior> partyOrdered;
+    [HideInInspector]
+    public List<CharacterBehavior> enemyOrdered;
     
     public int EnemyCount => enemyCharacters.Count;
     
@@ -39,6 +41,8 @@ public class CombatManager : MonoBehaviour
     
     [HideInInspector]
     public CharacterBehavior pinnedTarget;
+    [HideInInspector]
+    public int pinnedIndex;
 
     public static readonly float CombatSpeed = 1f;
     public static CombatManager Instance;
@@ -120,6 +124,10 @@ public class CombatManager : MonoBehaviour
     {
         GameObject[] enemies = encounter.enemyPrefabs;
         enemyCharacters = new();
+        enemyOrdered = new List<CharacterBehavior>()
+        {
+            null, null, null, null
+        };
                 
         for (int i = 0; i < enemies.Length; i++)
         {
@@ -134,6 +142,7 @@ public class CombatManager : MonoBehaviour
                 enemyChara.isEnemy = true;
 
                 enemyCharacters.Add(enemyChara);
+                enemyOrdered[i] = enemyChara;
             }
         }
     }
@@ -161,6 +170,8 @@ public class CombatManager : MonoBehaviour
                 newCharaBehavior.DesiredRotation = 90;
                 newCharaBehavior.SetEnemyTurnTimer(0);
                 
+                enemyOrdered[i] = newCharaBehavior;
+                
                 Debug.Log($"Summoned {newCharacter.name} into battle");
                 return;
             }
@@ -181,6 +192,7 @@ public class CombatManager : MonoBehaviour
         else if (enemyCharacters.Contains(toRemove))
         {
             enemyCharacters.Remove(toRemove);
+            enemyOrdered[enemyOrdered.IndexOf(toRemove)] = null;
         }
         
         if (pinnedTarget == toRemove)
@@ -301,7 +313,30 @@ public class CombatManager : MonoBehaviour
     private void SetPinnedTargetDefault()
     {
         if (enemyCharacters.Count > 0)
+        {
             pinnedTarget = enemyCharacters[0];
+            pinnedIndex = enemyOrdered.IndexOf(pinnedTarget) + 4;
+        }
+    }
+    
+    public void TrySetTarget(int index)
+    {
+        if (index >= 4)
+        {
+            if (enemyOrdered[index - 4] != null)
+            {
+                pinnedTarget = enemyOrdered[index - 4];
+                pinnedIndex = index;
+            }
+        }
+        else
+        {
+            if (partyOrdered[index] != null)
+            {
+                pinnedTarget = partyOrdered[index];
+                pinnedIndex = index;
+            }
+        }
     }
     #endregion
 
