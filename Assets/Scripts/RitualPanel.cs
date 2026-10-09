@@ -21,7 +21,6 @@ public class RitualPanel : MonoBehaviour
     
     private void UpdatePartyButtons()
     {
-        Transform partyHolder = GameObject.Find("Party").transform;
         partyCharacters = new CharacterBehavior[PartyController.Instance.PartySize];
         
         for (int i = 0; i < partyCharacters.Length; i++)
