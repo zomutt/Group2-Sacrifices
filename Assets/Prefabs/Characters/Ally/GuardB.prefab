@@ -29,6 +29,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+      propertyPath: stats.maxHealth
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: attacks.Array.size
       value: 2
       objectReference: {fileID: 0}

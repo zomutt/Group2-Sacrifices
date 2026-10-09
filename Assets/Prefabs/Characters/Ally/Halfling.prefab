@@ -108,6 +108,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 814416f1e2112ae4ca05229b48085bef, type: 3}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+      propertyPath: stats.strength
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+      propertyPath: stats.maxHealth
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: attacks.Array.size
       value: 3
       objectReference: {fileID: 0}

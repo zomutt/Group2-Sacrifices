@@ -87,6 +87,8 @@ public class CharacterBehavior : MonoBehaviour
         
         if (damageNumberWanted)
             SpawnDamageNumber();
+        
+        modelPivot.GetChild(0).localPosition = Vector3.zero;
     }
     
     #region Rotation
