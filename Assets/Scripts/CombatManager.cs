@@ -31,6 +31,7 @@ public class CombatManager : MonoBehaviour
     public float PlayerTurnTimer => playerTurnTimer;
     private int playerTurnTriggerIndex;
     private bool waitingForPlayerTurn;
+    private int waitingTurnIndex;
     
     private GameObject combatUI;
 
@@ -214,7 +215,7 @@ public class CombatManager : MonoBehaviour
             }
         }
     }
-
+    
     #region End of Battle
     private bool TryEndBattle()
     {
@@ -346,6 +347,7 @@ public class CombatManager : MonoBehaviour
         {
             partyOrdered[index].DoTurn();
             waitingForPlayerTurn = true;
+            waitingTurnIndex = index;
         }
         else
         {
@@ -362,8 +364,13 @@ public class CombatManager : MonoBehaviour
 
     public void SkipToTurn(int toTurn)
     {
-        if (partyOrdered[toTurn] == null)
-            return;
+        if (partyOrdered[toTurn] == null) return;
+        
+        if (waitingForPlayerTurn)
+        {
+            waitingForPlayerTurn = false;
+            partyOrdered[waitingTurnIndex].CancelTurn();
+        }
         
         int breakCheck = 0;
         List<CharacterBehavior> skippedBehaviors = new();
@@ -396,5 +403,7 @@ public class CombatManager : MonoBehaviour
         playerTurnTimer = playerTurnTriggerIndex + 1;
         
         Debug.Log($"Skipped {skippedBehaviors.Count} turns.");
+        
+        
     }
 }

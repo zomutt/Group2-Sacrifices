@@ -232,6 +232,11 @@ public class CharacterBehavior : MonoBehaviour
         return CombatManager.Instance.GetRandomTarget(!isEnemy);
     }
     
+    public void CancelTurn()
+    {
+        isHoldingTurn = false;
+    }
+    
     public void EndOfBattle()
     {
         // Clear statuses
