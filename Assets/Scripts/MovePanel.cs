@@ -15,6 +15,8 @@ public class MovePanel : MonoBehaviour
 
     void Awake()
     {
+        if (Instance != null) return;
+        
         Instance = this;
         gameObject.SetActive(false);
     }
@@ -42,5 +44,10 @@ public class MovePanel : MonoBehaviour
     {
         ownerBehavior.DoMove(index);
         gameObject.SetActive(false);
+    }
+
+    void OnDestroy()
+    {
+        Debug.Log("what the fuck");
     }
 }

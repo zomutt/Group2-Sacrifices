@@ -53,14 +53,13 @@ public class CombatManager : MonoBehaviour
 
         partyCharacters = new();
         enemyCharacters = new();
-        
-        combatUI = GameObject.Find("CombatOnly");
     }
 
     private void Start()
     {
         UIController.Instance.EndBattleUI();
         
+        combatUI = UIController.Instance.combatUI;
         combatUI.SetActive(false);
     }
 
@@ -271,7 +270,6 @@ public class CombatManager : MonoBehaviour
 
     private void LoseBattle()
     {
-        combatUI.SetActive(false);
         UIController.Instance.ShowLosePanel();
     }
     #endregion

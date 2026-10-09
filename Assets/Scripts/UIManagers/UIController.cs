@@ -50,6 +50,9 @@ public class UIController : MonoBehaviour
 
     [Header("Combat UI")]
     [SerializeField] private GameObject battleStatsPanel;
+    public GameObject combatUI;
+    public GameObject movePanel;
+    public GameObject partyBar;
 
     [Header("Player Stats")]
     [FormerlySerializedAs("fadedUI")] [SerializeField] private CombatantUI fatedUI;
@@ -188,8 +191,10 @@ public class UIController : MonoBehaviour
     public void ShowLosePanel()
     {
         Time.timeScale = 0;
-        if (losePanel) losePanel.SetActive(true);
-        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(loseSound);
+        combatUI.SetActive(false);
+        Destroy(PartyHolder.Instance.gameObject);
+        losePanel.SetActive(true);
+        AudioManager.Instance.PlaySFX(loseSound);
     }
 
     public void ShowWinPanel()

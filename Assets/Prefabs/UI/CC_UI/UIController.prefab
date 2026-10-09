@@ -16724,6 +16724,7 @@ MonoBehaviour:
   - {fileID: 7775125095356942057}
   - {fileID: 4248029052805293140}
   - {fileID: 5627704176084994206}
+  - {fileID: 1608382716588103237}
   pausePanel: {fileID: 8059208405507557044}
   settingsPanel: {fileID: 2495877464055950543}
   confirmQuitPanel: {fileID: 1079412293990123554}
@@ -16749,6 +16750,7 @@ MonoBehaviour:
   mainMenuScene: MainMenuScene
   levelOneScene: Level_1
   battleStatsPanel: {fileID: 4402022360923196463}
+  combatUI: {fileID: 1608382716588103237}
   fatedUI:
     nameText: {fileID: 5150829087565233807}
     icon: {fileID: 521675415943170073}
