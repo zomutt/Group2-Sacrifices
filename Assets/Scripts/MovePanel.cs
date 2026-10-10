@@ -45,9 +45,4 @@ public class MovePanel : MonoBehaviour
         ownerBehavior.DoMove(index);
         gameObject.SetActive(false);
     }
-
-    void OnDestroy()
-    {
-        Debug.Log("what the fuck");
-    }
 }
