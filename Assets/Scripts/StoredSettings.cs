@@ -35,4 +35,7 @@ public class StoredSettings
     }
     
     public static SliderSetting exposure = new SliderSetting(0, 0, 2);
+    
+    public static SliderSetting musicVol = new SliderSetting(0.5f, 0, 1);
+    public static SliderSetting sfxVol = new SliderSetting(0.5f, 0, 1);
 }
