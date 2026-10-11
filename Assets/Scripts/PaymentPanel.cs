@@ -36,7 +36,7 @@ public class PaymentPanel : MonoBehaviour
     
     public void ConfirmPayment()
     {
-        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound);
 
         if (!payablePopup.IsAvailable)
             return;

@@ -51,7 +51,7 @@ public class RitualPanel : MonoBehaviour
     
     public void ConfirmSacrifice(int partyIndex)
     {
-        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound);
         if (AudioManager.Instance) AudioManager.Instance.PlaySFX(sacrificeSound);
 
         LevelManager.Instance.GainSouls(reward);

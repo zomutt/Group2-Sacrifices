@@ -13,7 +13,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("Volume")]
     [SerializeField] private float musVolume = 1;
-    [SerializeField] private float sfxVolume = 1;
+    [SerializeField] private float sfxVolume = .5f;
 
     private RandomMusic caveMusic;
 
@@ -42,14 +42,10 @@ public class AudioManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode) { }
 
-    public void PlaySFX(AudioClip clip, float volume)
+    public void PlaySFX(AudioClip clip, float volume = 1f)
     {
-        if (clip && audioSource) audioSource.Stop();
-        if (clip && audioSource) audioSource.PlayOneShot(clip, volume);
-    }
-
-    public void PlaySFX(AudioClip clip)
-    {
-        PlaySFX(clip, sfxVolume);
+        if (!clip || !audioSource) return;
+        audioSource.Stop();    // Prevent audio spam. It's not best, but it's better.
+        audioSource.PlayOneShot(clip, volume * sfxVolume);
     }
 }
