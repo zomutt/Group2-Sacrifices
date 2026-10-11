@@ -15,7 +15,8 @@ MonoBehaviour:
   attackName: Brace
   power: 0
   hitParticleIndex: -1
-  attackSound: {fileID: 0}
+  attackSounds:
+  - {fileID: 8300000, guid: 6d1a9a77cd5b19a4da500e6ddbed9a38, type: 3}
   targetType:
     targetsEnemies: 0
     targetsSelf: 1

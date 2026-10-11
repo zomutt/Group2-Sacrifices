@@ -15,7 +15,9 @@ MonoBehaviour:
   attackName: Revitalize
   power: 1.5
   hitParticleIndex: -1
-  attackSound: {fileID: 0}
+  attackSounds:
+  - {fileID: 8300000, guid: a124002bbdbef4942adc1ce422262897, type: 3}
+  - {fileID: 8300000, guid: a5cd49d56cd88d047ae554e66a95d01a, type: 3}
   targetType:
     targetsEnemies: 0
     targetsSelf: 0

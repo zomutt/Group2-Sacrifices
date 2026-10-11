@@ -24,11 +24,11 @@ public abstract class AttackBehavior : ScriptableObject
 
     public abstract void MoveOnTarget(CharacterBehavior from, CharacterBehavior to);
 
-    protected void OnHitSpecialFX(CharacterBehavior target)
+    protected virtual void OnHitSpecialFX(CharacterBehavior target)
     {
         if (hitParticleIndex >= 0) ParticleOnTarget(hitParticleIndex, target);
 
-        if (attackSounds != null)    // Array added
+        if (attackSounds != null && attackSounds.Length > 0)    // Array added
         {
             int sfx = UnityEngine.Random.Range(0, attackSounds.Length);
             AudioManager.Instance.PlaySFX(attackSounds[sfx]);

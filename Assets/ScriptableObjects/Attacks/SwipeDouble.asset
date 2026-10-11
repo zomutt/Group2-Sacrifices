@@ -15,7 +15,11 @@ MonoBehaviour:
   attackName: Double Strike
   power: 1.2
   hitParticleIndex: -1
-  attackSound: {fileID: 0}
+  attackSounds:
+  - {fileID: 8300000, guid: 90ed1edf80da33d43aa7af53ae0f9cad, type: 3}
+  - {fileID: 8300000, guid: 44e19ca6497d2c14d81a38846a88c03d, type: 3}
+  - {fileID: 8300000, guid: 4c4a9d1f399338345bda87129d7a20b4, type: 3}
+  - {fileID: 8300000, guid: f4d1a488432b0c04789fe47bb51ab0cc, type: 3}
   targetType:
     targetsEnemies: 1
     targetsSelf: 0
