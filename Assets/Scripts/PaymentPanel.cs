@@ -16,6 +16,8 @@ public class PaymentPanel : MonoBehaviour
     private AudioClip paySound;
     [SerializeField]
     private AudioClip clickSound;
+    [SerializeField]
+    private AudioClip deniedSound;
 
     public void SetCost(PayablePopup popup)
     {
@@ -36,16 +38,23 @@ public class PaymentPanel : MonoBehaviour
     
     public void ConfirmPayment()
     {
-        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound);
 
         if (!payablePopup.IsAvailable)
+        {
+            if (AudioManager.Instance) AudioManager.Instance.PlaySFX(deniedSound);
             return;
-        
+        }
+
         if (LevelManager.Instance.ConfirmSoulPayment(cost))
         {
             if (AudioManager.Instance) AudioManager.Instance.PlaySFX(paySound);
 
             payablePopup.PaidAction();
+        }
+        else
+        {
+            if (AudioManager.Instance) AudioManager.Instance.PlaySFX(deniedSound);
         }
     }
 }

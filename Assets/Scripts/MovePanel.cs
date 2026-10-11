@@ -9,8 +9,11 @@ public class MovePanel : MonoBehaviour
     [SerializeField]
     private List<TextMeshProUGUI> buttonTexts;
     
+    [SerializeField]
+    private AudioClip clickSound;
+
     private CharacterBehavior ownerBehavior;
-    
+
     public static MovePanel Instance;
 
     void Awake()
@@ -40,6 +43,8 @@ public class MovePanel : MonoBehaviour
     
     public void ChooseMove(int index)
     {
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound);
+
         ownerBehavior.DoMove(index);
         gameObject.SetActive(false);
     }

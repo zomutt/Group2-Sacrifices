@@ -306,8 +306,8 @@ MonoBehaviour:
   partyOrdered: []
   partyLineup: {fileID: 6130592595791658581}
   enemyLineup: {fileID: 6829241908843711979}
-  battleStartSound: {fileID: 0}
-  battleWinSound: {fileID: 0}
+  battleStartSound: {fileID: 8300000, guid: 8b8291c7d2c729f43a7aa406c5daa916, type: 3}
+  battleWinSound: {fileID: 8300000, guid: c46116d43e4aae348b148a512e12794c, type: 3}
   pinnedTarget: {fileID: 0}
 --- !u!1 &3567790994173867999
 GameObject:

@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,16 +8,18 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
 
     [Header("Sources")]
-    [SerializeField] private AudioSource audioSource;
-
-    [Header("Sounds")]
-    [SerializeField] private AudioClip music;
+    [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private AudioSource musicSource;
 
     [Header("Volume")]
-    [SerializeField] private float musVolume = 1;
-    [SerializeField] private float sfxVolume = 1;
+    [SerializeField] private float musicVolume = 1;
+    [SerializeField] private float sfxVolume = .5f;
 
-    private RandomMusic caveMusic;
+    [Header("Tracks")] 
+    [SerializeField] private AudioClip[] musicTracks;
+
+    private Dictionary<AudioClip, float> lastPlayed = new Dictionary<AudioClip, float>();
+    private const float MinRepeatGap = 0.05f;
 
     private void Awake()
     {
@@ -27,29 +31,68 @@ public class AudioManager : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(gameObject);
-
-        caveMusic = GetComponentInChildren<RandomMusic>();
+        musicSource.volume = musicVolume;
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
-
+    
     private void OnDestroy()
     {
         if (Instance == this) SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    // Cave music plays continuously and is never stopped
-    public void StopMusic() { }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode) { }
-
-    public void PlaySFX(AudioClip clip, float volume)
+    public void StartMusic()
     {
-        if (clip && audioSource) audioSource.Stop();
-        if (clip && audioSource) audioSource.PlayOneShot(clip, volume);
+        StartCoroutine(PlayMusicSequence());
     }
 
-    public void PlaySFX(AudioClip clip)
+    public void StopMusic()
     {
-        PlaySFX(clip, sfxVolume);
+        musicSource.Stop();
+    }
+
+    public void SetMusicVolume(float v)
+    {
+        musicVolume = Mathf.Clamp01(v);
+        musicSource.volume = musicVolume;
+    }
+
+    public void SetSFXVolume(float v)
+    {
+        sfxVolume = Mathf.Clamp01(v);
+        sfxSource.volume = sfxVolume;
+    }
+
+    private IEnumerator PlayMusicSequence()
+    {
+        foreach (AudioClip clip in musicTracks)
+        {
+            if (clip)
+            {
+                musicSource.clip = musicTracks[Random.Range(0, musicTracks.Length)];
+                musicSource.Play();
+
+                while (musicSource.isPlaying)
+                {
+                    yield return null;
+                }
+            }
+        }
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        StartMusic();
+    }
+
+    public void PlaySFX(AudioClip clip, float volume = 1f)
+    {
+        if (!clip || !sfxSource) return;
+
+        float last;
+        if (lastPlayed.TryGetValue(clip, out last) && Time.unscaledTime - last < MinRepeatGap)
+            return;
+
+        lastPlayed[clip] = Time.unscaledTime;
+        sfxSource.PlayOneShot(clip, volume * sfxVolume);
     }
 }

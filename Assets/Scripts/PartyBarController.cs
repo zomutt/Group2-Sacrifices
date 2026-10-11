@@ -24,7 +24,7 @@ public class PartyBarController : MonoBehaviour
 
     public void SkipTurnsButton(int toTurn)
     {
-        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound);
 
         CombatManager.Instance.SkipToTurn(toTurn);
     }

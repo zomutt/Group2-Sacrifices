@@ -15,9 +15,13 @@ MonoBehaviour:
   attackName: Swipe
   power: 2
   hitParticleIndex: -1
-  attackSound: {fileID: 8300000, guid: 83978c4046ff7b74c9e0655670b329ee, type: 3}
+  attackSounds:
+  - {fileID: 8300000, guid: 90ed1edf80da33d43aa7af53ae0f9cad, type: 3}
+  - {fileID: 8300000, guid: 44e19ca6497d2c14d81a38846a88c03d, type: 3}
+  - {fileID: 8300000, guid: 4c4a9d1f399338345bda87129d7a20b4, type: 3}
+  - {fileID: 8300000, guid: f4d1a488432b0c04789fe47bb51ab0cc, type: 3}
   targetType:
     targetsEnemies: 1
     targetsSelf: 0
-  isMelee: 1
+  isMelee: 0
   usesSoulsForPower: 0

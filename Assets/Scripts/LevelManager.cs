@@ -29,8 +29,15 @@ public class LevelManager : MonoBehaviour
     [HideInInspector]
     public float afterEncounterTimer;
     
+    [SerializeField]
+    private AudioClip soulGainSound;
+    [SerializeField]
+    private AudioClip popupOpenSound;
+    [SerializeField]
+    private AudioClip popupCloseSound;
+
     private ObjectPooler damageNumberPool;
-    
+
     private TextMeshProUGUI timerText;
     private TextMeshProUGUI soulText;
     private GameObject overworldUI;
@@ -105,6 +112,8 @@ public class LevelManager : MonoBehaviour
     public void GainSouls(int addedSouls)
     {
         souls += addedSouls;
+
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(soulGainSound);
     }
     
     public bool ConfirmSoulPayment(int amount)
@@ -128,6 +137,8 @@ public class LevelManager : MonoBehaviour
         
         paymentPanel.gameObject.SetActive(true);
         paymentPanel.SetCost(popup);
+
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(popupOpenSound);
     }
     
     public void SetSacrificePanel(RitualPopup popup)
@@ -138,12 +149,16 @@ public class LevelManager : MonoBehaviour
         
         ritualPanel.gameObject.SetActive(true);
         ritualPanel.SetReward(popup);
+
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(popupOpenSound);
     }
     
     public void ClearPopupPanel()
     {
         currentPopup = null;
         currentPopupPanel.SetActive(false);
+
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(popupCloseSound);
     }
     #endregion
     

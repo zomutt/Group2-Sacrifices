@@ -82,6 +82,7 @@ public class CharacterBehavior : MonoBehaviour
             return;
 
         ModelOrientation();
+        if (anim) anim.SetFloat("Speed", PartyController.Instance.CurrentVelocity);   // No more sliding
         
         TickTurn();
         
@@ -249,13 +250,13 @@ public class CharacterBehavior : MonoBehaviour
     #endregion
     
     #region Damage Taking
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, bool playHurtSound = true)
     {
         stats.health -= damage;
-        
+
         AddToDamageNumber(-damage);
 
-        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(hurtSound);
+        if (playHurtSound && AudioManager.Instance) AudioManager.Instance.PlaySFX(hurtSound);
         
         if (!stats.HasHealthRemaining)
         {

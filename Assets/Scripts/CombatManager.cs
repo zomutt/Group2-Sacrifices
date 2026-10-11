@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -42,6 +41,7 @@ public class CombatManager : MonoBehaviour
 
     public static readonly float CombatSpeed = 1f;
     public static CombatManager Instance;
+    
 
     void Awake()
     {
@@ -222,7 +222,7 @@ public class CombatManager : MonoBehaviour
                 Invoke("LoseBattle", 1f);
                 return true;
 
-            default:
+            default: 
                 break;
         }
 

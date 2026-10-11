@@ -52,14 +52,14 @@ public class MainMenuController : MonoBehaviour
 
     public void OnClickPlay()
     {
-        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound);
         Debug.Log("Starting level one");
         SceneManager.LoadScene(levelOne);
     }
 
     public void OnClickToggleSettings()
     {
-        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound);
         if (!settingsPanel) return;
         settingsPanel.SetActive(!settingsPanel.activeSelf);
 
@@ -68,7 +68,7 @@ public class MainMenuController : MonoBehaviour
 
     public void OnClickToggleHelp()
     {
-        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound);
         if (!helpPanel) return;
         ResetHelpPages();   // Back to the first page when you open/close the panel
         helpPanel.SetActive(!helpPanel.activeSelf);
@@ -78,21 +78,21 @@ public class MainMenuController : MonoBehaviour
 
     public void OnClickCredits()
     {
-        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound);
         Debug.Log("Loading credits");
         SceneManager.LoadScene(creditsScene);
     }
 
     public void OnClickExitGame()
     {
-        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound);
         Debug.Log("Exit Game");
         Application.Quit();
     }
 
     public void OnClickCycleHelp()
     {
-        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound);
         if (helpSubPanels.Length == 0) return;
         currentHelpPage++;
         if (currentHelpPage >= helpSubPanels.Length) currentHelpPage = 0;

@@ -10,7 +10,7 @@ public class CreditsController : MonoBehaviour
 
     public void OnClickMainMenu()
     {
-        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound, 1f);
+        if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound);
         SceneManager.LoadScene("MainMenuScene");        
     }
 }

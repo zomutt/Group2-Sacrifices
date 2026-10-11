@@ -15,7 +15,7 @@ public class DamageOverTimeEffect : StatusEffect
         
         if (damageTickTimer >= damageTickLength)
         {
-            owner.TakeDamage(power);
+            owner.TakeDamage(power, false);
             damageTickTimer -= damageTickLength;
         }
     }

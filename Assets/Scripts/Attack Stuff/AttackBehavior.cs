@@ -12,7 +12,7 @@ public abstract class AttackBehavior : ScriptableObject
     private int hitParticleIndex = -1;
 
     [SerializeField]
-    private AudioClip attackSound;
+    private AudioClip[] attackSounds;
     
     [Serializable]
     public class TargetTyping
@@ -24,11 +24,15 @@ public abstract class AttackBehavior : ScriptableObject
 
     public abstract void MoveOnTarget(CharacterBehavior from, CharacterBehavior to);
 
-    protected void OnHitSpecialFX(CharacterBehavior target)
+    protected virtual void OnHitSpecialFX(CharacterBehavior target)
     {
         if (hitParticleIndex >= 0) ParticleOnTarget(hitParticleIndex, target);
-        
-        if (attackSound != null) PlaySFX(attackSound);
+
+        if (attackSounds != null && attackSounds.Length > 0)    // Array added
+        {
+            int sfx = UnityEngine.Random.Range(0, attackSounds.Length);
+            AudioManager.Instance.PlaySFX(attackSounds[sfx]);
+        }
     }
 
     private void ParticleOnTarget(int index, CharacterBehavior target)
