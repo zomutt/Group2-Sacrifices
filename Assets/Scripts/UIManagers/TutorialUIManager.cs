@@ -31,8 +31,6 @@ public class TutorialUIManager : MonoBehaviour
         tutorialOn = true;
 
         // Close the initial prompt.
-        yesButton.SetActive(false);
-        noButton.SetActive(false);
         tutorialPanel.SetActive(false);
 
         // Resume gameplay.
@@ -58,6 +56,8 @@ public class TutorialUIManager : MonoBehaviour
         // Pause gameplay and display the first tutorial.
         tutorialPanel.SetActive(true);
         tutorialText.SetActive(true);
+        yesButton.SetActive(false);
+        noButton.SetActive(false);
         Time.timeScale = 0f;
     }
 
@@ -81,6 +81,7 @@ public class TutorialUIManager : MonoBehaviour
 
     public void CloseTutorialTwo()
     {
+        tutorialPanel.SetActive(false);
         tutorialText2.SetActive(false);
         Time.timeScale = 1f;
     }

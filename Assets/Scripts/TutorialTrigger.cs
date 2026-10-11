@@ -1,5 +1,5 @@
-
 using UnityEngine;
+using System.Collections;
 
 public class TutorialTrigger : TriggerArea
 {
@@ -20,12 +20,18 @@ public class TutorialTrigger : TriggerArea
                 break;
 
             case 2:
-                uiManager.TutorialTwo();
+                StartCoroutine(DelayedTutorialTwo());
                 break;
         }
 
         // Prevent this tutorial trigger from activating again.
         gameObject.SetActive(false);
+    }
+
+    private IEnumerator DelayedTutorialTwo()
+    {
+        yield return new WaitForSeconds(2.0f);
+        uiManager.TutorialTwo();
     }
 
     public override void OnExit() { }
