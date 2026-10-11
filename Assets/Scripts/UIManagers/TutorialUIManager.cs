@@ -5,8 +5,7 @@ public class TutorialUIManager : MonoBehaviour
 {
     [Header("Tutorial UI")]
     public GameObject tutorialPanel;
-    public GameObject tutorialText;
-    public GameObject tutorialText2;
+    public GameObject tutorialText, tutorialText2, tutorialText3;
     public GameObject yesButton, noButton;
 
     [Header("Tutorial Settings")]
@@ -83,6 +82,24 @@ public class TutorialUIManager : MonoBehaviour
     {
         tutorialPanel.SetActive(false);
         tutorialText2.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void TutorialThree()
+    {
+        if (!tutorialOn) return;
+
+        // Pause gameplay and display the second tutorial.
+        tutorialPanel.SetActive(true);
+        tutorialText3.SetActive(true);
+        Time.timeScale = 0f;
+
+    }
+
+    public void CloseTutorialThree()
+    {
+        tutorialPanel.SetActive(false);
+        tutorialText3.SetActive(false);
         Time.timeScale = 1f;
     }
 }
