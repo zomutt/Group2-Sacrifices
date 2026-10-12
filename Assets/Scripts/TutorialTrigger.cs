@@ -22,6 +22,12 @@ public class TutorialTrigger : TriggerArea
             case 2:
                 StartCoroutine(DelayedTutorialTwo());
                 break;
+            case 3:
+                uiManager.TutorialThree();
+                break;
+            case 4:
+                uiManager.TutorialFour();
+                break;
         }
 
         // Prevent this tutorial trigger from activating again.
