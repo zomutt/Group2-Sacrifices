@@ -163,16 +163,23 @@ public class LevelManager : MonoBehaviour
             encounterTimer = encounters[encounterIndex].spawnTime;
         }
     }
-    
+
+
     public void TriggerEncounter(EncounterInfo encounter)
     {
         Debug.Log("Encounter was triggered...");
-        
+
         UIController.Instance.SetOverworldUI(false);
-        
-        CombatManager.Instance.StartCombat(PartyController.Instance.GetPartyCharacters(), encounter);
+
+        CombatManager.Instance.StartCombat(
+            PartyController.Instance.GetPartyCharacters(),
+            encounter
+        );
+
+        // Show the tutorial after starting the first battle.
+        UIController.Instance.ShowBattleTutorial();
     }
-    
+
     public void ExitCombat()
     {
         Debug.Log("Returning to the real world...");

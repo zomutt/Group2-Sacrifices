@@ -51,6 +51,13 @@ public class UIController : MonoBehaviour
     [Header("Combat UI")]
     [SerializeField] private GameObject battleStatsPanel;
 
+
+    [Header("Battle Tutorial")]
+    [SerializeField] private GameObject battleTutorialPanel, battleTutorialText;
+    [SerializeField] private bool enableBattleTutorial = true;
+
+    private bool hasShownBattleTutorial = false;
+
     [Header("Player Stats")]
     [FormerlySerializedAs("fadedUI")] [SerializeField] private CombatantUI fatedUI;
 
@@ -353,4 +360,36 @@ public class UIController : MonoBehaviour
         partyUI[slot].healthBar.value = health;
     }
     #endregion
+
+
+    public void ShowBattleTutorial()
+    {
+        // Only show the tutorial once.
+        if (!enableBattleTutorial || hasShownBattleTutorial)
+            return;
+
+        if (!battleTutorialPanel)
+        {
+            Debug.LogWarning("Battle tutorial panel is not assigned!");
+            return;
+        }
+
+        hasShownBattleTutorial = true;
+
+        // Pause combat while the player reads.
+        Time.timeScale = 0f;
+
+        battleTutorialPanel.SetActive(true);
+        battleTutorialText.SetActive(true);
+    }
+
+    public void OnClickCloseBattleTutorial()
+    {
+        if (battleTutorialPanel)
+            battleTutorialPanel.SetActive(false);
+        battleTutorialText.SetActive(false);
+
+        // Resume combat.
+        Time.timeScale = 1f;
+    }
 }
