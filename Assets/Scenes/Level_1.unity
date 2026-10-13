@@ -3691,14 +3691,16 @@ MonoBehaviour:
   tutorialText3: {fileID: 1639974252}
   tutorialText4: {fileID: 745571130}
   tutorialText5: {fileID: 366238068}
-  tutorialStartText: {fileID: 0}
+  tutorialStartText: {fileID: 1890889508}
   yesButton: {fileID: 443571421}
   noButton: {fileID: 2107234091}
   nextButton: {fileID: 1840977739}
   closeButton: {fileID: 1514866377}
   tutorialOn: 0
-  tutorial2Page1: {fileID: 1268178182}
-  tutorial2Page2: {fileID: 574530147}
+  tutorial2Pages:
+  - {fileID: 1268178182}
+  - {fileID: 574530147}
+  - {fileID: 1904303254}
 --- !u!4 &226758347
 Transform:
   m_ObjectHideFlags: 0

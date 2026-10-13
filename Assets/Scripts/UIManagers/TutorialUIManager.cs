@@ -1,4 +1,5 @@
 
+
 using UnityEngine;
 using TMPro;
 
@@ -13,7 +14,6 @@ public class TutorialUIManager : MonoBehaviour
     public GameObject tutorialText5;
     public GameObject tutorialStartText;
 
-
     public GameObject yesButton;
     public GameObject noButton;
     public GameObject nextButton;
@@ -23,17 +23,15 @@ public class TutorialUIManager : MonoBehaviour
     public bool tutorialOn = false;
 
     [Header("Tutorial 2 Pages")]
-    public GameObject tutorial2Page1;
-    public GameObject tutorial2Page2;
+    public GameObject[] tutorial2Pages;
 
-    private int tutorial2Page = 1;
-
+    private int currentTutorial2Page = 0;
     private TMP_Text nextButtonText;
 
     private void Start()
     {
-        nextButtonText =
-            nextButton.GetComponentInChildren<TMP_Text>();
+        if (nextButton != null)
+            nextButtonText = nextButton.GetComponentInChildren<TMP_Text>();
 
         HideAllTutorialTexts();
 
@@ -56,8 +54,14 @@ public class TutorialUIManager : MonoBehaviour
         tutorialText4.SetActive(false);
         tutorialText5.SetActive(false);
 
-        tutorial2Page1.SetActive(false);
-        tutorial2Page2.SetActive(false);
+        if (tutorial2Pages != null)
+        {
+            foreach (GameObject page in tutorial2Pages)
+            {
+                if (page != null)
+                    page.SetActive(false);
+            }
+        }
     }
 
     private void OpenTutorial(GameObject textObject)
@@ -82,6 +86,9 @@ public class TutorialUIManager : MonoBehaviour
         textObject.SetActive(false);
         tutorialPanel.SetActive(false);
 
+        closeButton.SetActive(false);
+        nextButton.SetActive(false);
+
         Time.timeScale = 1f;
     }
 
@@ -90,6 +97,7 @@ public class TutorialUIManager : MonoBehaviour
         tutorialOn = true;
 
         tutorialPanel.SetActive(false);
+        tutorialStartText.SetActive(false);
         yesButton.SetActive(false);
         noButton.SetActive(false);
 
@@ -101,6 +109,7 @@ public class TutorialUIManager : MonoBehaviour
         tutorialOn = false;
 
         tutorialPanel.SetActive(false);
+        tutorialStartText.SetActive(false);
         yesButton.SetActive(false);
         noButton.SetActive(false);
 
@@ -116,34 +125,62 @@ public class TutorialUIManager : MonoBehaviour
     {
         if (!tutorialOn) return;
 
-        HideAllTutorialTexts();
+        if (tutorial2Pages == null || tutorial2Pages.Length == 0)
+        {
+            Debug.LogWarning("Tutorial 2 has no pages assigned!");
+            return;
+        }
 
-        tutorial2Page = 1;
+        HideAllTutorialTexts();
 
         tutorialPanel.SetActive(true);
         yesButton.SetActive(false);
         noButton.SetActive(false);
-
-        tutorial2Page1.SetActive(true);
+        closeButton.SetActive(false);
         nextButton.SetActive(true);
 
-        if (nextButtonText != null)
-            nextButtonText.text = "Next";
+        currentTutorial2Page = 0;
+        ShowCurrentTutorial2Page();
 
         Time.timeScale = 0f;
     }
 
+    private void ShowCurrentTutorial2Page()
+    {
+        foreach (GameObject page in tutorial2Pages)
+        {
+            if (page != null)
+                page.SetActive(false);
+        }
+
+        GameObject currentPage = tutorial2Pages[currentTutorial2Page];
+
+        if (currentPage == null)
+        {
+            Debug.LogWarning("A Tutorial 2 page is missing!");
+            return;
+        }
+
+        currentPage.SetActive(true);
+
+        if (nextButtonText != null)
+        {
+            nextButtonText.text =
+                currentTutorial2Page == tutorial2Pages.Length - 1
+                ? "Done"
+                : "Next";
+        }
+    }
+
     public void NextTutorialTwoPage()
     {
-        if (tutorial2Page == 1)
+        if (tutorial2Pages == null || tutorial2Pages.Length == 0)
+            return;
+
+        if (currentTutorial2Page < tutorial2Pages.Length - 1)
         {
-            tutorial2Page1.SetActive(false);
-            tutorial2Page2.SetActive(true);
-
-            tutorial2Page = 2;
-
-            if (nextButtonText != null)
-                nextButtonText.text = "Done";
+            currentTutorial2Page++;
+            ShowCurrentTutorial2Page();
         }
         else
         {
@@ -153,10 +190,17 @@ public class TutorialUIManager : MonoBehaviour
 
     public void CloseTutorialTwo()
     {
-        tutorial2Page1.SetActive(false);
-        tutorial2Page2.SetActive(false);
+        if (tutorial2Pages != null)
+        {
+            foreach (GameObject page in tutorial2Pages)
+            {
+                if (page != null)
+                    page.SetActive(false);
+            }
+        }
 
         nextButton.SetActive(false);
+        closeButton.SetActive(false);
         tutorialPanel.SetActive(false);
 
         Time.timeScale = 1f;
