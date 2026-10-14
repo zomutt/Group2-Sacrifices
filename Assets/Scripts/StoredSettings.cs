@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -16,6 +17,11 @@ public class StoredSettings
         
         public UnityEvent valueChange = new UnityEvent();
         
+        public void SetValue(float newValue)
+        {
+            value = Mathf.Clamp(newValue, minVal, maxVal);
+        }
+        
         public void SetPercentage(float newPercentage)
         {
             value = Mathf.Clamp(newPercentage * difference + minVal, minVal, maxVal);
@@ -25,12 +31,12 @@ public class StoredSettings
         
         public SliderSetting(float startValue, float min, float max)
         {
-            value = startValue;
-            
             minVal = min;
             maxVal = max;
             
             difference = max - min;
+            
+            SetValue(startValue);
         }
     }
     

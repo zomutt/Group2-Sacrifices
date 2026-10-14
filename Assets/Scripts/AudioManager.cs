@@ -33,11 +33,19 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         musicSource.volume = musicVolume;
         SceneManager.sceneLoaded += OnSceneLoaded;
+        
+        StoredSettings.musicVol.valueChange.AddListener(UpdateMusicVolume);
+        StoredSettings.sfxVol.valueChange.AddListener(UpdateSFXVolume);
     }
     
     private void OnDestroy()
     {
-        if (Instance == this) SceneManager.sceneLoaded -= OnSceneLoaded;
+        if (Instance != this) return;
+        
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        
+        StoredSettings.musicVol.valueChange.RemoveListener(UpdateMusicVolume);
+        StoredSettings.sfxVol.valueChange.RemoveListener(UpdateSFXVolume);
     }
 
     public void StartMusic()
@@ -50,16 +58,14 @@ public class AudioManager : MonoBehaviour
         musicSource.Stop();
     }
 
-    public void SetMusicVolume(float v)
+    public void UpdateMusicVolume()
     {
-        musicVolume = Mathf.Clamp01(v);
-        musicSource.volume = musicVolume;
+        musicSource.volume = musicVolume * Mathf.Clamp01(StoredSettings.musicVol.Percentage);
     }
 
-    public void SetSFXVolume(float v)
+    public void UpdateSFXVolume()
     {
-        sfxVolume = Mathf.Clamp01(v);
-        sfxSource.volume = sfxVolume;
+        sfxSource.volume = sfxVolume * Mathf.Clamp01(StoredSettings.sfxVol.Percentage);
     }
 
     private IEnumerator PlayMusicSequence()
