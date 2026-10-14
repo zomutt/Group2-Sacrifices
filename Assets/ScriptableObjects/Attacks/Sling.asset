@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sling
   m_EditorClassIdentifier: Assembly-CSharp::PlainAttack
   attackName: Sling
-  power: 0.5
+  power: 1
   hitParticleIndex: -1
   attackSound: {fileID: 0}
   targetType:

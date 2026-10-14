@@ -88,6 +88,8 @@ public class CharacterBehavior : MonoBehaviour
         
         if (damageNumberWanted)
             SpawnDamageNumber();
+        
+        modelPivot.GetChild(0).localPosition = Vector3.zero;
     }
     
     #region Rotation
@@ -229,6 +231,11 @@ public class CharacterBehavior : MonoBehaviour
         
         // Given nothing else, characters target randomly
         return CombatManager.Instance.GetRandomTarget(!isEnemy);
+    }
+    
+    public void CancelTurn()
+    {
+        isHoldingTurn = false;
     }
     
     public void EndOfBattle()

@@ -21,15 +21,17 @@ public class RitualPanel : MonoBehaviour
     
     private void UpdatePartyButtons()
     {
-        Transform partyHolder = GameObject.Find("Party").transform;
-        partyCharacters = new CharacterBehavior[partyHolder.childCount];
+        partyCharacters = new CharacterBehavior[PartyController.Instance.PartySize];
         
         for (int i = 0; i < partyCharacters.Length; i++)
         {
-            partyCharacters[i] = partyHolder.GetChild(i).GetComponent<CharacterBehavior>();
+            partyCharacters[i] = PartyController.Instance.GetPartyCharacters()[i];
+            //partyHolder.GetChild(i).GetComponent<CharacterBehavior>();
             
             if (i > 0)
             {
+                Debug.Log(i);
+                
                 selectButtons[i - 1].gameObject.SetActive(true);
                 selectButtons[i - 1].GetChild(0).GetComponent<TextMeshProUGUI>().text = "hah";
             }

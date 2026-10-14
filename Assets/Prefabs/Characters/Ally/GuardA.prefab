@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1479422132379100469, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4709240086951026532, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: m_Name
       value: GuardA
@@ -24,6 +28,10 @@ PrefabInstance:
       propertyPath: soulDropSound
       value: 
       objectReference: {fileID: 8300000, guid: 814416f1e2112ae4ca05229b48085bef, type: 3}
+    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+      propertyPath: stats.maxHealth
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: attacks.Array.size
       value: 2
@@ -108,15 +116,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8666182962877050564, guid: fa6de7b8a6813a84d9df1e9ba6e78fe2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.4
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 8666182962877050564, guid: fa6de7b8a6813a84d9df1e9ba6e78fe2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.4
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 8666182962877050564, guid: fa6de7b8a6813a84d9df1e9ba6e78fe2, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.4
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 8666182962877050564, guid: fa6de7b8a6813a84d9df1e9ba6e78fe2, type: 3}
       propertyPath: m_LocalPosition.x

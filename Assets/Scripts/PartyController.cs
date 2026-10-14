@@ -15,7 +15,6 @@ public class PartyController : MonoBehaviour
     
     private Rigidbody rb;
     
-    [SerializeField]
     private List<CharacterBehavior> characters;
     
     public int PartySize
@@ -38,12 +37,13 @@ public class PartyController : MonoBehaviour
         controls = new InputSystem_Actions();
         
         Instance = this;
-        
-        partyHolder = GameObject.Find("Party").transform;
     }
     
     void Start()
     {
+        partyHolder = PartyHolder.Instance.transform;
+        characters = CollectPartyCharacters();
+        
         ChangeTrailLength(Mathf.CeilToInt(characters.Count / trailStep) + 1);
     }
     
@@ -96,6 +96,19 @@ public class PartyController : MonoBehaviour
     #endregion
     
     #region Party Management
+    private List<CharacterBehavior> CollectPartyCharacters()
+    {
+        List<CharacterBehavior> found = new();
+        
+        for (int i = 0; i < partyHolder.childCount; i++)
+        {
+            if (partyHolder.GetChild(i).gameObject.activeSelf)
+                found.Add(partyHolder.GetChild(i).GetComponent<CharacterBehavior>());
+        }
+        
+        return found;
+    }
+    
     public void AddPartyMember(CharacterBehavior character)
     {
         characters.Add(character);

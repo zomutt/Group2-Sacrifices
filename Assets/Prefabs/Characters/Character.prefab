@@ -95,9 +95,14 @@ MonoBehaviour:
   statusesToRemove: []
   hurtSound: {fileID: 8300000, guid: b244b6d7db6c4b74f9947ef5f1afe85e, type: 3}
   deathSound: {fileID: 8300000, guid: 93854d03fa74c4d41b281decab210b44, type: 3}
+  soulDropSound: {fileID: 0}
+  deathAnimDuration: 1.5
   maxTurnTimer: 6
   isEnemy: 0
   statusDisplay: {fileID: 0}
+  brain:
+    moves: []
+  anim: {fileID: 0}
 --- !u!1 &8815762113112565051
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +220,7 @@ Transform:
   m_GameObject: {fileID: 9160832369927155960}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -293,7 +298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8265595448124953317, guid: ec76cacc840f9400ca5d2888aeded45e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.75
       objectReference: {fileID: 0}
     - target: {fileID: 8265595448124953317, guid: ec76cacc840f9400ca5d2888aeded45e, type: 3}
       propertyPath: m_LocalPosition.y
