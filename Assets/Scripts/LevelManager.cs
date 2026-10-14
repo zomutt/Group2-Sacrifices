@@ -37,23 +37,12 @@ public class LevelManager : MonoBehaviour
     private AudioClip popupCloseSound;
 
     private ObjectPooler damageNumberPool;
-
-    private TextMeshProUGUI timerText;
-    private TextMeshProUGUI soulText;
-    private GameObject overworldUI;
     
     public static GameState LevelGameState;
     public static LevelManager Instance;
     
     void Awake()
     {
-        //timerText = GameObject.Find("LevelTimer").GetComponent<TextMeshProUGUI>();
-        //soulText = GameObject.Find("SoulCount").GetComponent<TextMeshProUGUI>();
-        
-        #region Get Overworld UI
-        overworldUI = GameObject.Find("OverworldOnly");
-        #endregion
-        
         damageNumberPool = GameObject.Find("DmgNumPool").GetComponent<ObjectPooler>();
         
         LevelGameState = GameState.Exploring;
@@ -83,7 +72,7 @@ public class LevelManager : MonoBehaviour
     
     void Update()
     {
-        TickLevelTimer();
+        if (LevelGameState != GameState.Cutscene) TickLevelTimer();
         
         UpdateUI();
     }
