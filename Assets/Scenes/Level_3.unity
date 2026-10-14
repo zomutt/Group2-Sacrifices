@@ -2647,6 +2647,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1242407879}
     m_Modifications:
+    - target: {fileID: 182303919376044432, guid: faff61de66d714ebdace42abdd33977c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2348448800088054918, guid: faff61de66d714ebdace42abdd33977c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -41.000046
@@ -2693,8 +2697,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5015346381879742971, guid: faff61de66d714ebdace42abdd33977c, type: 3}
       propertyPath: forcedEncounter.enemyPrefabs.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5015346381879742971, guid: faff61de66d714ebdace42abdd33977c, type: 3}
+      propertyPath: 'forcedEncounter.enemyPrefabs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 891966489884274992, guid: 9ee37490c5b5f4723b8fbec9d27d6985, type: 3}
+    - target: {fileID: 5015346381879742971, guid: faff61de66d714ebdace42abdd33977c, type: 3}
+      propertyPath: 'forcedEncounter.enemyPrefabs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 891966489884274992, guid: 9ee37490c5b5f4723b8fbec9d27d6985, type: 3}
+    - target: {fileID: 5015346381879742971, guid: faff61de66d714ebdace42abdd33977c, type: 3}
+      propertyPath: 'forcedEncounter.enemyPrefabs.Array.data[2]'
+      value: 
+      objectReference: {fileID: 891966489884274992, guid: 9ee37490c5b5f4723b8fbec9d27d6985, type: 3}
     - target: {fileID: 7201851168676140712, guid: faff61de66d714ebdace42abdd33977c, type: 3}
       propertyPath: m_Name
       value: EncounterZone
@@ -40795,6 +40811,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1031611802159119635, guid: 43e727917f65649bcbb671de688e5727, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4122244600797576113, guid: 43e727917f65649bcbb671de688e5727, type: 3}
       propertyPath: m_LocalPosition.x
       value: 43.973812
