@@ -60,7 +60,7 @@ public class LevelManager : MonoBehaviour
         ritualPanel.gameObject.SetActive(false);
         #endregion
 
-        levelTime = 180f;
+        levelTime = 270f;
         
         souls = 0;
         
@@ -92,7 +92,7 @@ public class LevelManager : MonoBehaviour
     
     private void UpdateUI()
     {
-        UIController.Instance.SetTimer(Mathf.CeilToInt(levelTime / 2f));
+        UIController.Instance.SetTimer(Mathf.CeilToInt(levelTime / 3f));
 
         UIController.Instance.SetSouls(souls);
     }

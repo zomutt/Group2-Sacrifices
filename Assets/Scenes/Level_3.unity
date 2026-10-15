@@ -2498,6 +2498,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelDoor (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4416055863205438021, guid: 85800e535d20d40b6b3c75fb79f03e7f, type: 3}
+      propertyPath: soulCost
+      value: 750
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455399186057424700, guid: 85800e535d20d40b6b3c75fb79f03e7f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -30875,6 +30883,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5015346381879742971, guid: faff61de66d714ebdace42abdd33977c, type: 3}
+      propertyPath: hasForcedEncounter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015346381879742971, guid: faff61de66d714ebdace42abdd33977c, type: 3}
+      propertyPath: forcedEncounter.enemyPrefabs.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015346381879742971, guid: faff61de66d714ebdace42abdd33977c, type: 3}
+      propertyPath: 'forcedEncounter.enemyPrefabs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 891966489884274992, guid: 6ac92d86da1994bf49d16a45497c331f, type: 3}
+    - target: {fileID: 5015346381879742971, guid: faff61de66d714ebdace42abdd33977c, type: 3}
+      propertyPath: 'forcedEncounter.enemyPrefabs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 891966489884274992, guid: 6ac92d86da1994bf49d16a45497c331f, type: 3}
+    - target: {fileID: 5015346381879742971, guid: faff61de66d714ebdace42abdd33977c, type: 3}
+      propertyPath: 'forcedEncounter.enemyPrefabs.Array.data[2]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015346381879742971, guid: faff61de66d714ebdace42abdd33977c, type: 3}
+      propertyPath: 'forcedEncounter.enemyPrefabs.Array.data[3]'
+      value: 
+      objectReference: {fileID: 891966489884274992, guid: 6ac92d86da1994bf49d16a45497c331f, type: 3}
     - target: {fileID: 7201851168676140712, guid: faff61de66d714ebdace42abdd33977c, type: 3}
       propertyPath: m_Name
       value: EncounterZone (7)
@@ -45876,6 +45908,14 @@ PrefabInstance:
     - target: {fileID: 2348448800088054918, guid: faff61de66d714ebdace42abdd33977c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015346381879742971, guid: faff61de66d714ebdace42abdd33977c, type: 3}
+      propertyPath: hasForcedEncounter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015346381879742971, guid: faff61de66d714ebdace42abdd33977c, type: 3}
+      propertyPath: forcedEncounter.enemyPrefabs.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7201851168676140712, guid: faff61de66d714ebdace42abdd33977c, type: 3}
       propertyPath: m_Name

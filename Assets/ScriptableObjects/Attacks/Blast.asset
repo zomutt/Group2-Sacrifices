@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Blast
   m_EditorClassIdentifier: Assembly-CSharp::MagicAttack
   attackName: Magic Blast
+  attackIcon: {fileID: 21300000, guid: 5f4396c9a7e916d4ab7a42ae87759d8f, type: 3}
   power: 1.5
   hitParticleIndex: -1
   attackSounds:

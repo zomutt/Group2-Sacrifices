@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RitualPanel : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class RitualPanel : MonoBehaviour
     
     [SerializeField]
     private Transform[] selectButtons;
+    private Image[] selectIcons;
 
     [SerializeField]
     private AudioClip sacrificeSound;
@@ -18,7 +20,17 @@ public class RitualPanel : MonoBehaviour
     private AudioClip clickSound;
 
     private CharacterBehavior[] partyCharacters;
-    
+
+    void Awake()
+    {
+        selectIcons = new Image[selectButtons.Length];
+        
+        for (int i = 0; i < selectButtons.Length; i++)
+        {
+            selectIcons[i] = selectButtons[i].GetComponent<Image>();
+        }
+    }
+
     private void UpdatePartyButtons()
     {
         partyCharacters = new CharacterBehavior[PartyController.Instance.PartySize];
@@ -33,7 +45,7 @@ public class RitualPanel : MonoBehaviour
                 Debug.Log(i);
                 
                 selectButtons[i - 1].gameObject.SetActive(true);
-                selectButtons[i - 1].GetChild(0).GetComponent<TextMeshProUGUI>().text = "hah";
+                selectIcons[i - 1].sprite = PartyController.Instance.GetPartyCharacters()[i].icon; 
             }
         }
         for (int i = partyCharacters.Length; i < 4; i++)

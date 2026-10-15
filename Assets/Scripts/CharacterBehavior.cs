@@ -7,6 +7,8 @@ public class CharacterBehavior : MonoBehaviour
     [SerializeField]
     private Transform modelPivot;
     
+    public Sprite icon;
+    
     private float desiredRot;
     public float DesiredRotation
     {

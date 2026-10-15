@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Heal
   m_EditorClassIdentifier: Assembly-CSharp::HealMove
   attackName: Revitalize
+  attackIcon: {fileID: 21300000, guid: 659c0fd478a00d748a59c6dbe6003021, type: 3}
   power: 1.5
   hitParticleIndex: -1
   attackSounds:

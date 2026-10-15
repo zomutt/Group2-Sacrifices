@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: BufArmor
   m_EditorClassIdentifier: Assembly-CSharp::AddStatusMove
   attackName: Brace
+  attackIcon: {fileID: 21300000, guid: 8e1e778e7a7e83e4799c27d5ca57ed7d, type: 3}
   power: 0
   hitParticleIndex: -1
-  attackSound: {fileID: 0}
+  attackSounds: []
   targetType:
     targetsEnemies: 0
     targetsSelf: 1

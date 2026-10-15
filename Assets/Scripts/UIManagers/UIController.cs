@@ -337,7 +337,7 @@ public class UIController : MonoBehaviour
 
     public void SetTimer(int time)
     {
-        if (timerText) timerText.text = time.ToString();
+        if (timerText) timerText.text = $"Time: {time}";
     }
 
     // ===== Party =====

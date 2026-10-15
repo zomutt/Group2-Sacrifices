@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MovePanel : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class MovePanel : MonoBehaviour
     private List<GameObject> buttons;
     [SerializeField]
     private List<TextMeshProUGUI> buttonTexts;
+    [SerializeField]
+    private List<Image> buttonImages;
     
     [SerializeField]
     private AudioClip clickSound;
@@ -35,6 +38,7 @@ public class MovePanel : MonoBehaviour
             {
                 buttons[i].SetActive(true);
                 buttonTexts[i].text = attacks[i].attackName;
+                buttonImages[i].sprite = attacks[i].attackIcon;
             }
             else
             {
