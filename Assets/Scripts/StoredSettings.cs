@@ -20,6 +20,8 @@ public class StoredSettings : MonoBehaviour
         public void SetValue(float newValue)
         {
             value = Mathf.Clamp(newValue, minVal, maxVal);
+            
+            valueChange.Invoke();
         }
         
         public void SetPercentage(float newPercentage)
@@ -44,11 +46,4 @@ public class StoredSettings : MonoBehaviour
     
     public static SliderSetting musicVol = new SliderSetting(0.5f, 0, 1);
     public static SliderSetting sfxVol = new SliderSetting(0.5f, 0, 1);
-
-    private void Awake()
-    {
-        exposure = new SliderSetting(0, 0, 2);
-        musicVol = new SliderSetting(0.5f, 0, 1);
-        sfxVol = new SliderSetting(0.5f, 0, 1);
-    }
 }

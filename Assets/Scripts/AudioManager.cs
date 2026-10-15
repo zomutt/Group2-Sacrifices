@@ -63,6 +63,7 @@ public class AudioManager : MonoBehaviour
 
     public void UpdateMusicVolume()
     {
+        Debug.Log(StoredSettings.musicVol.Percentage);
         musicSource.volume = musicVolume * Mathf.Clamp01(StoredSettings.musicVol.Percentage);
     }
 
