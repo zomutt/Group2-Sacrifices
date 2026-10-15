@@ -36,6 +36,9 @@ public class AudioManager : MonoBehaviour
         
         StoredSettings.musicVol.valueChange.AddListener(UpdateMusicVolume);
         StoredSettings.sfxVol.valueChange.AddListener(UpdateSFXVolume);
+        
+        UpdateMusicVolume();
+        UpdateSFXVolume();
     }
     
     private void OnDestroy()
