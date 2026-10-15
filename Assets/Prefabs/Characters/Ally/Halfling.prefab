@@ -104,6 +104,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: eb41b1c7bb85fc845bec7f70b4b23437, type: 3}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+      propertyPath: title
+      value: Ato the Halfling Thief
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: stats.armor
       value: 1
       objectReference: {fileID: 0}

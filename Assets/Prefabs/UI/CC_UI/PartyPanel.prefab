@@ -73,6 +73,16 @@ MonoBehaviour:
   - {fileID: 203658715432506545}
   - {fileID: 8192915270229668472}
   - {fileID: 1898928449744349333}
+  icons:
+  - {fileID: 3217901177994623112}
+  - {fileID: 8462004253358028151}
+  - {fileID: 436721117476033470}
+  - {fileID: 7919236691231934803}
+  characterTitles:
+  - {fileID: 6769786343686529580}
+  - {fileID: 302938360008683475}
+  - {fileID: 8598743154671601946}
+  - {fileID: 2070973090405897207}
 --- !u!114 &1235984313262606168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,6 +378,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!114 &302938360008683475 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3139969578169385697, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
+  m_PrefabInstance: {fileID: 3433758753210101042}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &3726045762598621372 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2022885365130706318, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
@@ -378,6 +399,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7961955239392825129, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
   m_PrefabInstance: {fileID: 3433758753210101042}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8462004253358028151 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6541545993899743301, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
+  m_PrefabInstance: {fileID: 3433758753210101042}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1001 &3976391207740281110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -506,6 +538,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!114 &2070973090405897207 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3139969578169385697, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
+  m_PrefabInstance: {fileID: 3976391207740281110}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &3115436758669143192 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2022885365130706318, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
@@ -516,6 +559,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7961955239392825129, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
   m_PrefabInstance: {fileID: 3976391207740281110}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7919236691231934803 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6541545993899743301, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
+  m_PrefabInstance: {fileID: 3976391207740281110}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1001 &6685513273520163835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -633,6 +687,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
+--- !u!114 &436721117476033470 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6541545993899743301, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
+  m_PrefabInstance: {fileID: 6685513273520163835}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!224 &3655017433049449682 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7961955239392825129, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
@@ -654,6 +719,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!114 &8598743154671601946 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3139969578169385697, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
+  m_PrefabInstance: {fileID: 6685513273520163835}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &8529946879287894221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -776,6 +852,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7961955239392825129, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
   m_PrefabInstance: {fileID: 8529946879287894221}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3217901177994623112 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6541545993899743301, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
+  m_PrefabInstance: {fileID: 8529946879287894221}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!114 &6563106536872581454 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3275423017475094915, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
@@ -787,6 +874,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!114 &6769786343686529580 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3139969578169385697, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}
+  m_PrefabInstance: {fileID: 8529946879287894221}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &7670420695567539523 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2022885365130706318, guid: 1d1d429b576e3444e9482f13d0c11411, type: 3}

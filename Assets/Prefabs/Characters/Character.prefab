@@ -79,6 +79,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterBehavior
   modelPivot: {fileID: 3612160408842334496}
+  icon: {fileID: 0}
+  title: 
   stats:
     health: 0
     maxHealth: 25
@@ -306,7 +308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8265595448124953317, guid: ec76cacc840f9400ca5d2888aeded45e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8265595448124953317, guid: ec76cacc840f9400ca5d2888aeded45e, type: 3}
       propertyPath: m_LocalRotation.w

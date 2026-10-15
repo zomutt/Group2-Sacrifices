@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,6 +9,7 @@ public class CharacterBehavior : MonoBehaviour
     private Transform modelPivot;
     
     public Sprite icon;
+    public string title;
     
     private float desiredRot;
     public float DesiredRotation
@@ -178,7 +180,7 @@ public class CharacterBehavior : MonoBehaviour
         DoTurnStart();
         
         if (isEnemy)
-            DoMove(Random.Range(0, attacks.Count));
+            DoMove(UnityEngine.Random.Range(0, attacks.Count));
         else
         {
             MovePanel.Instance.OpenPanel(attacks, this);

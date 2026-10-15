@@ -100,6 +100,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 622743483039857843}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 357c61d0d575c6e4d93eea5512f9360c, type: 3}
+    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+      propertyPath: title
+      value: Karth the Blood Mage
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: attack
       value: 
       objectReference: {fileID: 11400000, guid: d2bb4f8fe47b949f795d28bbb41b1e9c, type: 2}

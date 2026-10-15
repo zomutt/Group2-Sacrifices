@@ -14,7 +14,8 @@ public class EnemyBrain
             public enum ConditionType
             {
                 RandomAOutOfB,
-                EnemyCountAToB
+                EnemyCountAToB,
+                MoveLastTurn
             }
             
             public ConditionType conditionType;
@@ -22,7 +23,7 @@ public class EnemyBrain
             public int a;
             public int b;
             
-            public bool TestCondition()
+            public bool TestCondition(int previousMoveIndex)
             {
                 switch (conditionType)
                 {
@@ -32,6 +33,9 @@ public class EnemyBrain
                     case ConditionType.EnemyCountAToB:
                         return CombatManager.Instance.EnemyCount >= a
                             && CombatManager.Instance.EnemyCount <= b;
+                        
+                    case ConditionType.MoveLastTurn:
+                        return previousMoveIndex == a;
                     
                     default:
                         return true;
@@ -41,11 +45,11 @@ public class EnemyBrain
         
         public MoveCondition[] moveConditions;
         
-        public bool TestConditions()
+        public bool TestConditions(int previousMoveIndex)
         {
             foreach (MoveCondition condition in moveConditions)
             {
-                if (!condition.TestCondition())
+                if (!condition.TestCondition(previousMoveIndex))
                     return false;
             }
             
@@ -55,14 +59,20 @@ public class EnemyBrain
     
     public UsableMove[] moves;
     
+    private int previousMoveIndex;
+    
     public int GetUsableMoveIndex()
     {
         for (int i = 0; i < moves.Length; i++)
         {
-            if (moves[i].TestConditions())
+            if (moves[i].TestConditions(previousMoveIndex))
+            {
+                previousMoveIndex = i;
                 return i;
+            }
         }
         
+        previousMoveIndex = moves.Length - 1;
         return moves.Length - 1;
     }
 }

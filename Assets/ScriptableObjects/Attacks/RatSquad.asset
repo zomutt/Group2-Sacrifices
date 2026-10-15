@@ -20,5 +20,5 @@ MonoBehaviour:
   targetType:
     targetsEnemies: 1
     targetsSelf: 0
-  summonedCharacter: {fileID: 4111861808816167372, guid: 2527b5f9c6f364ca2a455e03a5e7c839, type: 3}
+  summonedCharacter: {fileID: 891966489884274992, guid: e9ee72f1d04344b83b92319d6c91b6c8, type: 3}
   repeatCount: 2
