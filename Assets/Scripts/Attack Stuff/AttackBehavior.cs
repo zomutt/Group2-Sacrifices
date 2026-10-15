@@ -4,6 +4,7 @@ using UnityEngine;
 public abstract class AttackBehavior : ScriptableObject
 {
     public string attackName;
+    public Sprite attackIcon;
     
     [SerializeField]
     protected float power;

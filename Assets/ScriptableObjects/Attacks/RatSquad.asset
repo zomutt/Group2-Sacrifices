@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb6eecf113f794bb9b43ac13e370d7d7, type: 3}
   m_Name: RatSquad
   m_EditorClassIdentifier: Assembly-CSharp::MultiSpawn
-  attackName: 
+  attackName: Rat Squad
+  attackIcon: {fileID: 0}
   power: 0
   hitParticleIndex: -1
   attackSounds: []
   targetType:
     targetsEnemies: 1
     targetsSelf: 0
-  summonedCharacter: {fileID: 0}
+  summonedCharacter: {fileID: 4111861808816167372, guid: 2527b5f9c6f364ca2a455e03a5e7c839, type: 3}
   repeatCount: 2
