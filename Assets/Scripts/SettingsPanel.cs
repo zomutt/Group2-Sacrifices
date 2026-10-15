@@ -10,13 +10,14 @@ public class SettingsPanel : MonoBehaviour
     [SerializeField]
     private Slider sfxVol;
 
-    void Start()
+    void OnEnable()
     {
         SetSliderValues();
     }
     
     private void SetSliderValues()
     {
+        Debug.Log(brightness.value);
         brightness.value = StoredSettings.exposure.Percentage;
         musicVol.value = StoredSettings.musicVol.Percentage;
         sfxVol.value = StoredSettings.sfxVol.Percentage;

@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class StoredSettings
+public class StoredSettings : MonoBehaviour
 {
     public class SliderSetting
     {
@@ -44,4 +44,11 @@ public class StoredSettings
     
     public static SliderSetting musicVol = new SliderSetting(0.5f, 0, 1);
     public static SliderSetting sfxVol = new SliderSetting(0.5f, 0, 1);
+
+    private void Awake()
+    {
+        exposure = new SliderSetting(0, 0, 2);
+        musicVol = new SliderSetting(0.5f, 0, 1);
+        sfxVol = new SliderSetting(0.5f, 0, 1);
+    }
 }
