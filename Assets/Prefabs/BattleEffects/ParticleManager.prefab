@@ -35,6 +35,7 @@ Transform:
   - {fileID: 1912765932258394582}
   - {fileID: 7817710167801884353}
   - {fileID: 8080036881824882586}
+  - {fileID: 1751944137550443831}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-6850294340122903256
@@ -55,6 +56,7 @@ MonoBehaviour:
   - {fileID: 8432126088261217853}
   - {fileID: 3041255283040946617}
   - {fileID: 1206684865872797697}
+  - {fileID: 8675426240602312009}
 --- !u!1 &2927232008239203109
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,6 +149,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectPooler
   currentPrefab: {fileID: 1496886665476714122, guid: 6f82921ef60b04d5bae13a8833afe073, type: 3}
+  startingSize: 0
+  biomeVariants: []
+--- !u!1 &4291460888277811073
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1751944137550443831}
+  - component: {fileID: 8675426240602312009}
+  m_Layer: 0
+  m_Name: Heal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1751944137550443831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4291460888277811073}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 160950383618373605}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8675426240602312009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4291460888277811073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6837fc76312e4493b8d753c26eb7bdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectPooler
+  currentPrefab: {fileID: 1496886665476714122, guid: 6c24f7f8a15e8409896f7ec77ea5500d, type: 3}
   startingSize: 0
   biomeVariants: []
 --- !u!1 &4924684392712352047

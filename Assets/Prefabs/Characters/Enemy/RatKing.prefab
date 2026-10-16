@@ -882,7 +882,7 @@ PrefabInstance:
       objectReference: {fileID: 3591799233770036268}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: stats.magic
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: stats.strength
