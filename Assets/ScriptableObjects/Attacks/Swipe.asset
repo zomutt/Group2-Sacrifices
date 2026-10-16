@@ -24,5 +24,5 @@ MonoBehaviour:
   targetType:
     targetsEnemies: 1
     targetsSelf: 0
-  isMelee: 0
+  isMelee: 1
   usesSoulsForPower: 0

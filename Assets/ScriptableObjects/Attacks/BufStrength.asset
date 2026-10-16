@@ -15,7 +15,7 @@ MonoBehaviour:
   attackName: Strengthen
   attackIcon: {fileID: 21300000, guid: d5e0dca57b51b6c42b3df5713c349bac, type: 3}
   power: 0
-  hitParticleIndex: -1
+  hitParticleIndex: 3
   attackSounds: []
   targetType:
     targetsEnemies: 0

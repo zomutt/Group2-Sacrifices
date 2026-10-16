@@ -271,6 +271,8 @@ public class CombatManager : MonoBehaviour
 
     private void LoseBattle()
     {
+        StoredSettings.score = 0;
+        
         UIController.Instance.ShowLosePanel();
     }
     #endregion

@@ -17,7 +17,7 @@ public class ParticleManager : MonoBehaviour
         if (index >= particles.Count)
         {
             Debug.LogError("Particle index out of range, failsafe activated");
-            return particles[0].GetPooledObject();
+            return null;
         }
         
         return particles[index].GetPooledObject();

@@ -197,7 +197,9 @@ public class LevelManager : MonoBehaviour
     public void EndLevel()
     {
         Debug.Log("Put end here!");
-
+        
+        AddToScore();
+        
         UIController.Instance.ShowWinPanel();
     }
     
@@ -209,5 +211,11 @@ public class LevelManager : MonoBehaviour
         damageNumber.GetComponent<DamageNumber>().SetDamageNumber(damage);
         
         damageNumber.SetActive(true);
+    }
+    
+    private void AddToScore()
+    {
+        StoredSettings.score += Mathf.CeilToInt(levelTime * (levelDisplayTime / levelStartTime)) * 2;
+        StoredSettings.score += souls;
     }
 }

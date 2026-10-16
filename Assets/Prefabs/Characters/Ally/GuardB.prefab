@@ -129,7 +129,7 @@ PrefabInstance:
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: 'attacks.Array.data[1]'
       value: 
-      objectReference: {fileID: 11400000, guid: 4556fe0c73ce842f698b95aecf404ad5, type: 2}
+      objectReference: {fileID: 11400000, guid: 5f8960a4a414744088c6daa218f60f40, type: 2}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: 'attacks.Array.data[2]'
       value: 

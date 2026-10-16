@@ -40,6 +40,12 @@ public abstract class AttackBehavior : ScriptableObject
     {
         GameObject gameObject = ParticleManager.Instance.GetParticleObject(index);
         
+        if (gameObject == null)
+        {
+            Debug.Log($"Particle failsafe activated for {attackName} with particle index {index}");
+            return;
+        }
+        
         gameObject.transform.position = target.transform.position;
         gameObject.SetActive(true);
     }
