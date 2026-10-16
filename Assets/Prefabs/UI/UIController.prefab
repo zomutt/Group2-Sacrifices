@@ -437,7 +437,6 @@ MonoBehaviour:
   paymentPanel: {fileID: 3577592854516341284}
   ritualPanel: {fileID: 5938716276012429903}
   creditsScene: CreditsScene
-  mainMenuScene: MainMenuScene
   levelOneScene: Level_1
   battleStatsPanel: {fileID: 4402022360923196463}
   combatUI: {fileID: 1608382716588103237}
@@ -2673,11 +2672,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2670357279241664206, guid: e00386aa0512a4f399fd3b2a7d3e96ac, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2670357279241664206, guid: e00386aa0512a4f399fd3b2a7d3e96ac, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410819228628837398, guid: e00386aa0512a4f399fd3b2a7d3e96ac, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410819228628837398, guid: e00386aa0512a4f399fd3b2a7d3e96ac, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5775295533586069526, guid: e00386aa0512a4f399fd3b2a7d3e96ac, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5775295533586069526, guid: e00386aa0512a4f399fd3b2a7d3e96ac, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7462374570084029025, guid: e00386aa0512a4f399fd3b2a7d3e96ac, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7462374570084029025, guid: e00386aa0512a4f399fd3b2a7d3e96ac, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -2700,6 +2723,14 @@ PrefabInstance:
     - target: {fileID: 7770895625358112549, guid: e00386aa0512a4f399fd3b2a7d3e96ac, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -105
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326945586527246984, guid: e00386aa0512a4f399fd3b2a7d3e96ac, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326945586527246984, guid: e00386aa0512a4f399fd3b2a7d3e96ac, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8670880442837985546, guid: e00386aa0512a4f399fd3b2a7d3e96ac, type: 3}
       propertyPath: m_AnchorMax.x

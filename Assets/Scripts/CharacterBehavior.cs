@@ -57,6 +57,7 @@ public class CharacterBehavior : MonoBehaviour
     [SerializeField, Tooltip("For use as enemy")]
     private float maxTurnTimer;
     private float personalTurnTimer;
+    public float ChargePercent => personalTurnTimer / maxTurnTimer;
     
     public bool isEnemy;
     
