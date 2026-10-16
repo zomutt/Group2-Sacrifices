@@ -45,7 +45,7 @@ public class UIController : MonoBehaviour
 
     [Header("Scenes")]
     [SerializeField] private string creditsScene = "CreditsScene";
-    [SerializeField] public string mainMenuScene = "MainMenuScene";
+    public static string mainMenuScene = "MainMenuScene";
     [SerializeField] private string levelOneScene = "Level_1";
 
     [Header("Combat UI")]

@@ -16,13 +16,19 @@ public class PartyHolder : MonoBehaviour
         Instance = this;
         transform.parent = null;
         DontDestroyOnLoad(gameObject);
-        //SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
-    
+
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == UIController.Instance.mainMenuScene)
+        if (scene.name == UIController.mainMenuScene)
         {
+            Debug.Log("Party destroyed");
             Instance = null;
             Destroy(gameObject);
         }
