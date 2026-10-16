@@ -12,7 +12,7 @@ public class ParticleManager : MonoBehaviour
         Instance = this;
     }
 
-    public GameObject ParticleList(int index)
+    public GameObject GetParticleObject(int index)
     {
         return particles[index].GetPooledObject();
     }
