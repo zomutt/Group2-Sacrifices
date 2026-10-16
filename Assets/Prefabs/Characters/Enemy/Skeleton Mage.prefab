@@ -130,7 +130,7 @@ PrefabInstance:
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: 'attacks.Array.data[2]'
       value: 
-      objectReference: {fileID: 11400000, guid: ec13e539a54704c13abe12e75712459a, type: 2}
+      objectReference: {fileID: 11400000, guid: 263466f647c2be5488241436d0657210, type: 2}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: brain.moves.Array.size
       value: 2

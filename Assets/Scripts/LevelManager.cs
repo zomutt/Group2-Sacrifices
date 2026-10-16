@@ -5,6 +5,8 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     private float levelTime;
+    private float levelStartTime;
+    private readonly float levelDisplayTime = 90f;
     
     private int souls;
     public int Souls
@@ -51,16 +53,16 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        #region Get Overworld UI
-        // In Start so UIController.Instance is guaranteed to be set
-        paymentPanel = UIController.Instance.PaymentPanel;
-        paymentPanel.gameObject.SetActive(false);
-        
-        ritualPanel = UIController.Instance.RitualPanel;
-        ritualPanel.gameObject.SetActive(false);
-        #endregion
+        {
+            paymentPanel = UIController.Instance.PaymentPanel;
+            paymentPanel.gameObject.SetActive(false);
+            
+            ritualPanel = UIController.Instance.RitualPanel;
+            ritualPanel.gameObject.SetActive(false);
+        }
 
-        levelTime = 270f;
+        levelStartTime = (StoredSettings.difficulty == 2) ? 180 : 270;
+        levelTime = levelStartTime;
         
         souls = 0;
         
@@ -92,7 +94,7 @@ public class LevelManager : MonoBehaviour
     
     private void UpdateUI()
     {
-        UIController.Instance.SetTimer(Mathf.CeilToInt(levelTime / 3f));
+        UIController.Instance.SetTimer(Mathf.CeilToInt(levelTime * (levelDisplayTime / levelStartTime)));
 
         UIController.Instance.SetSouls(souls);
     }

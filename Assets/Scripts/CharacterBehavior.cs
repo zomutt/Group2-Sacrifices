@@ -77,6 +77,12 @@ public class CharacterBehavior : MonoBehaviour
     void Start()
     {
         if (!anim) anim = GetComponentInChildren<Animator>();
+        
+        // Give health based on difficulty level
+        if (!isEnemy)
+            stats.maxHealth =
+            (int)(stats.maxHealth * StoredSettings.difficultyHealthMult[StoredSettings.difficulty]);
+        
         stats.RefillHealth();
     }
 
