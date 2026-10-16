@@ -926,7 +926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: brain.moves.Array.data[1].moveConditions.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: brain.moves.Array.data[2].moveConditions.Array.size
@@ -946,7 +946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: brain.moves.Array.data[1].moveConditions.Array.data[0].a
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: brain.moves.Array.data[1].moveConditions.Array.data[0].b
@@ -954,11 +954,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: brain.moves.Array.data[1].moveConditions.Array.data[1].a
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: brain.moves.Array.data[1].moveConditions.Array.data[1].b
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: brain.moves.Array.data[2].moveConditions.Array.data[0].a
@@ -994,6 +994,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: brain.moves.Array.data[0].moveConditions.Array.data[0].conditionType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+      propertyPath: brain.moves.Array.data[1].moveConditions.Array.data[1].conditionType
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}

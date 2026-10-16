@@ -35,7 +35,7 @@ public class EnemyBrain
                             && CombatManager.Instance.EnemyCount <= b;
                         
                     case ConditionType.MoveLastTurn:
-                        return previousMoveIndex == a;
+                        return (previousMoveIndex == a) == (b == 0);
                     
                     default:
                         return true;
