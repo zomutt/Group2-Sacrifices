@@ -52,6 +52,6 @@ public class StoredSettings : MonoBehaviour
     {
         10,
         1.25f,
-        1
+        0.8f
     };
 }
