@@ -43,4 +43,9 @@ public class PartyPanel : MonoBehaviour
     {
         slider.value = character.Stats.HealthPercent;
     }
+    
+    public void PartyClicked(int index)
+    {
+        
+    }
 }

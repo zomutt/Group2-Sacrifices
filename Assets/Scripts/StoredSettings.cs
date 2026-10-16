@@ -46,4 +46,6 @@ public class StoredSettings : MonoBehaviour
     
     public static SliderSetting musicVol = new SliderSetting(0.5f, 0, 1);
     public static SliderSetting sfxVol = new SliderSetting(0.5f, 0, 1);
+    
+    public static int difficulty;
 }

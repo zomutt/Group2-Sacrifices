@@ -7,10 +7,11 @@ public class MainMenuController : MonoBehaviour
     [Tooltip("Anything in activate group is set active in start, same logic for deactivate group.")]
     [SerializeField] private GameObject[] activateGroup;
     [SerializeField] private GameObject[] deactivateGroup;
-
+    
     [Header("Panels")]
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private GameObject helpPanel;
+    [SerializeField] private GameObject difficultySelect;
 
     [Header("Help Panel")]
     [Tooltip("Help pages that get flipped through. Add more here if needed.")]
@@ -53,8 +54,8 @@ public class MainMenuController : MonoBehaviour
     public void OnClickPlay()
     {
         if (AudioManager.Instance) AudioManager.Instance.PlaySFX(clickSound);
-        Debug.Log("Starting level one");
-        SceneManager.LoadScene(levelOne);
+        
+        difficultySelect.SetActive(true);
     }
 
     public void OnClickToggleSettings()
@@ -115,5 +116,13 @@ public class MainMenuController : MonoBehaviour
             if (!panel) continue;
             panel.SetActive(false);
         }
+    }
+    
+    public void SetDifficultyValueAndStart(int value)
+    {
+        StoredSettings.difficulty = value;
+        
+        Debug.Log("Starting level one");
+        SceneManager.LoadScene(levelOne);
     }
 }

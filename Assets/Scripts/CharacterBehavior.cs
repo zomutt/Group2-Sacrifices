@@ -180,7 +180,7 @@ public class CharacterBehavior : MonoBehaviour
         DoTurnStart();
         
         if (isEnemy)
-            DoMove(UnityEngine.Random.Range(0, attacks.Count));
+            DoMove(brain.GetUsableMoveIndex());
         else
         {
             MovePanel.Instance.OpenPanel(attacks, this);

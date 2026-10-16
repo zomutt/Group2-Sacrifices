@@ -59,7 +59,7 @@ public class EnemyBrain
     
     public UsableMove[] moves;
     
-    private int previousMoveIndex;
+    private int previousMoveIndex = -1;
     
     public int GetUsableMoveIndex()
     {
