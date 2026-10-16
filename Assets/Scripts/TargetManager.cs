@@ -15,7 +15,7 @@ public class TargetManager : MonoBehaviour
 
     void OnEnable()
     {
-        SetCrosshairPosition(CombatManager.Instance.pinnedIndex);
+        lastPinnedIndex = -1;
     }
 
     void Update()
