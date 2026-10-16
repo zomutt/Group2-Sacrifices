@@ -28,7 +28,7 @@ public class EnemyBrain
                 switch (conditionType)
                 {
                     case ConditionType.RandomAOutOfB:
-                        return UnityEngine.Random.Range(0, a) < b;
+                        return UnityEngine.Random.Range(0, b) < a;
                         
                     case ConditionType.EnemyCountAToB:
                         return CombatManager.Instance.EnemyCount >= a
