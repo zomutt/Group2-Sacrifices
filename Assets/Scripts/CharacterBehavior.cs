@@ -270,7 +270,14 @@ public class CharacterBehavior : MonoBehaviour
     
     public void EndOfBattle()
     {
-        // Clear statuses
+        ClearStatuses();
+        
+        damageNumberWanted = false;
+        damageNumberValue = 0;
+    }
+    
+    private void ClearStatuses()
+    {
         for (int i = 0; i < statuses.Count; i++)
         {
             if (!statuses[i].permanent)
@@ -280,9 +287,6 @@ public class CharacterBehavior : MonoBehaviour
                 i--;
             }
         }
-        
-        damageNumberWanted = false;
-        damageNumberValue = 0;
     }
     #endregion
     
@@ -315,6 +319,8 @@ public class CharacterBehavior : MonoBehaviour
         if (isDead)
             return;
         isDead = true;
+        
+        ClearStatuses();
 
         Debug.Log(gameObject.name + " died");
 

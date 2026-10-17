@@ -42,6 +42,8 @@ public class LevelManager : MonoBehaviour
     
     private EncounterInfo setEncounter;
     
+    private SpriteRenderer encounterSprite;
+    
     public static GameState LevelGameState;
     public static bool Cutscene;
     public static LevelManager Instance;
@@ -52,6 +54,8 @@ public class LevelManager : MonoBehaviour
         
         LevelGameState = GameState.Exploring;
         Instance = this;
+        
+        encounterSprite = GameObject.Find("EncounterPopup").GetComponent<SpriteRenderer>();
     }
 
     void Start()
@@ -179,6 +183,8 @@ public class LevelManager : MonoBehaviour
         
         setEncounter = encounter;
         
+        encounterSprite.enabled = true;
+        
         UIController.Instance.battleTransitioner.StartTransition
         (
             BattleTransitioner.ScreenTransitType.CircleIn,
@@ -189,6 +195,8 @@ public class LevelManager : MonoBehaviour
     
     private void EnterCombat()
     {
+        encounterSprite.enabled = false;
+        
         UIController.Instance.SetOverworldUI(false);
         
         CombatManager.Instance.StartCombat(PartyController.Instance.GetPartyCharacters(), setEncounter);
@@ -214,7 +222,7 @@ public class LevelManager : MonoBehaviour
         UIController.Instance.battleTransitioner.StartTransition
         (
             BattleTransitioner.ScreenTransitType.CircleIn,
-            BattleTransitioner.ScreenTransitType.CircleOut
+            BattleTransitioner.ScreenTransitType.Clear
         );
         UIController.Instance.battleTransitioner.transitionInEnd.AddListener(EndLevel);
     }
@@ -226,6 +234,8 @@ public class LevelManager : MonoBehaviour
         AddToScore();
         
         UIController.Instance.ShowWinPanel();
+        
+        Cutscene = false;
     }
     
     public void SpawnDamageNumber(Vector3 position, int damage)

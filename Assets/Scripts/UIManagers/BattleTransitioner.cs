@@ -8,6 +8,7 @@ public class BattleTransitioner : MonoBehaviour
     
     public enum ScreenTransitType
     {
+        Clear,
         CircleIn,
         CircleOut
     }
