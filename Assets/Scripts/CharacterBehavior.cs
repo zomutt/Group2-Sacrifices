@@ -32,7 +32,7 @@ public class CharacterBehavior : MonoBehaviour
     public int addedStrength;
     
     [SerializeField]
-    private int soulsOnDeath;
+    public int soulsOnDeath;
     
     private CharacterBehavior currentTarget;
     [SerializeField]

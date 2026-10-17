@@ -168,6 +168,7 @@ public class CombatManager : MonoBehaviour
                 enemyCharacters.Add(newCharaBehavior);
                 newCharaBehavior.DesiredRotation = 90;
                 newCharaBehavior.SetEnemyTurnTimer(0);
+                newCharaBehavior.soulsOnDeath = 0;
                 
                 enemyOrdered[i] = newCharaBehavior;
                 

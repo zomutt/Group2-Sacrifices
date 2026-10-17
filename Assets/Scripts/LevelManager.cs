@@ -209,7 +209,17 @@ public class LevelManager : MonoBehaviour
     }
     #endregion
     
-    public void EndLevel()
+    public void StartEndLevel()
+    {
+        UIController.Instance.battleTransitioner.StartTransition
+        (
+            BattleTransitioner.ScreenTransitType.CircleIn,
+            BattleTransitioner.ScreenTransitType.CircleOut
+        );
+        UIController.Instance.battleTransitioner.transitionInEnd.AddListener(EndLevel);
+    }
+    
+    private void EndLevel()
     {
         Debug.Log("Put end here!");
         
