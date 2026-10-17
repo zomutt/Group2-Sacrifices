@@ -40,7 +40,10 @@ public class LevelManager : MonoBehaviour
 
     private ObjectPooler damageNumberPool;
     
+    private EncounterInfo setEncounter;
+    
     public static GameState LevelGameState;
+    public static bool Cutscene;
     public static LevelManager Instance;
     
     void Awake()
@@ -174,9 +177,21 @@ public class LevelManager : MonoBehaviour
     {
         Debug.Log("Encounter was triggered...");
         
+        setEncounter = encounter;
+        
+        UIController.Instance.battleTransitioner.StartTransition
+        (
+            BattleTransitioner.ScreenTransitType.CircleIn,
+            BattleTransitioner.ScreenTransitType.CircleOut
+        );
+        UIController.Instance.battleTransitioner.transitionInEnd.AddListener(EnterCombat);
+    }
+    
+    private void EnterCombat()
+    {
         UIController.Instance.SetOverworldUI(false);
         
-        CombatManager.Instance.StartCombat(PartyController.Instance.GetPartyCharacters(), encounter);
+        CombatManager.Instance.StartCombat(PartyController.Instance.GetPartyCharacters(), setEncounter);
     }
     
     public void ExitCombat()

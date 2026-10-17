@@ -168,8 +168,7 @@ public class CharacterBehavior : MonoBehaviour
     
     private void TickTurn()
     {
-        if (LevelManager.LevelGameState != GameState.Battle)
-            return;
+        if (LevelManager.LevelGameState != GameState.Battle || LevelManager.Cutscene) return;
         
         if (isEnemy)
         {

@@ -202,8 +202,8 @@ public class CombatManager : MonoBehaviour
 
     private void TickBattle()
     {
-        if (TryEndBattle())
-            return;
+        if (LevelManager.Cutscene) return;
+        if (TryEndBattle()) return;
         
         if (!waitingForPlayerTurn)
         {

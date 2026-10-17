@@ -491,6 +491,7 @@ MonoBehaviour:
   - nameText: {fileID: 0}
     portrait: {fileID: 0}
     healthBar: {fileID: 0}
+  battleTransitioner: {fileID: 1349354967824008632}
 --- !u!1001 &370387124888775696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1271,15 +1272,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8002487636016608688, guid: 86a8b690d2ae843fe826cff610e9af44, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1092.4103
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8002487636016608688, guid: 86a8b690d2ae843fe826cff610e9af44, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -538.0679
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8002487636016608688, guid: 86a8b690d2ae843fe826cff610e9af44, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 75.5953
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8002487636016608688, guid: 86a8b690d2ae843fe826cff610e9af44, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1318,8 +1319,19 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86a8b690d2ae843fe826cff610e9af44, type: 3}
---- !u!4 &8405868309128949494 stripped
-Transform:
+--- !u!114 &1349354967824008632 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 653294188635266814, guid: 86a8b690d2ae843fe826cff610e9af44, type: 3}
+  m_PrefabInstance: {fileID: 1993169028253850438}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c5a5e8994934da3bb83e9de56d2a8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BattleTransitioner
+--- !u!224 &8405868309128949494 stripped
+RectTransform:
   m_CorrespondingSourceObject: {fileID: 8002487636016608688, guid: 86a8b690d2ae843fe826cff610e9af44, type: 3}
   m_PrefabInstance: {fileID: 1993169028253850438}
   m_PrefabAsset: {fileID: 0}
