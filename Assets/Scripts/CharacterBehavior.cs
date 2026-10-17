@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -99,26 +100,36 @@ public class CharacterBehavior : MonoBehaviour
         if (damageNumberWanted) SpawnDamageNumber();
         
         modelPivot.GetChild(0).localPosition = Vector3.zero;
+        modelPivot.GetChild(0).localRotation = Quaternion.identity;
     }
     
     #region Rotation
     private void ModelOrientation()
     {
+        if (LevelManager.LevelGameState == GameState.Battle)
+            desiredRot = isEnemy ? 90 : -90;
+        
         if (LevelManager.LevelGameState == GameState.Exploring)
             RotatePivot(desiredRot, pivotRotateSpeed * Time.deltaTime * PartyController.Instance.CurrentVelocity);
         else
             RotatePivot(desiredRot, pivotRotateSpeed * Time.deltaTime * 6f);
     }
-
+    
     public void ImmedatelyReorient()
     {
         RotatePivot(desiredRot, 180f);
     }
     
+    public void ImmedatelyReorient(float newRot)
+    {
+        desiredRot = newRot;
+        ImmedatelyReorient();
+    }
+    
     void RotatePivot(float toRotation, float maxAmount)
     {
-        float difference = ((toRotation - transform.rotation.eulerAngles.y) % 360 + 540) % 360 - 180;
-        float newRotation = transform.rotation.eulerAngles.y;
+        float difference = ((toRotation - modelPivot.rotation.eulerAngles.y) % 360 + 540) % 360 - 180;
+        float newRotation = modelPivot.rotation.eulerAngles.y;
         
         if (Mathf.Abs(difference) <= maxAmount)
         {
@@ -131,13 +142,13 @@ public class CharacterBehavior : MonoBehaviour
             newRotation += normalizedDiff * maxAmount;
         }
         
-        transform.rotation = Quaternion.Euler(0, newRotation, 0);
+        modelPivot.rotation = Quaternion.Euler(0, newRotation, 0);
     }
     #endregion
     
     private void SetWalkingAnim()
     {
-        if (LevelManager.LevelGameState != GameState.Exploring)
+        if (LevelManager.LevelGameState != GameState.Exploring || LevelManager.Cutscene)
         {
             anim.SetFloat("Speed", 0);
             return;

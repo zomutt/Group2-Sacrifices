@@ -113,8 +113,7 @@ public class CombatManager : MonoBehaviour
             chara.transform.parent = partyLineup.GetChild(i);
             chara.transform.localPosition = Vector3.zero;
             
-            chara.DesiredRotation = -90;
-            chara.ImmedatelyReorient();
+            chara.ImmedatelyReorient(-90);
             
             partyOrdered[i] = chara;
         }
@@ -137,7 +136,7 @@ public class CombatManager : MonoBehaviour
                 newEnemy.transform.localPosition = Vector3.zero;
                 
                 CharacterBehavior enemyChara = newEnemy.GetComponent<CharacterBehavior>();
-                enemyChara.DesiredRotation = 90;
+                enemyChara.ImmedatelyReorient(90);
                 enemyChara.SetEnemyTurnTimer(2 - i);
                 enemyChara.isEnemy = true;
 
@@ -225,7 +224,7 @@ public class CombatManager : MonoBehaviour
                 Debug.Log("Battle won!");
                 if (AudioManager.Instance) AudioManager.Instance.PlaySFX(battleWinSound);
                 EndActiveCombat();
-                Invoke("LeaveBattle", 2f);
+                Invoke("StartLeaveBattle", 2f);
                 return true;
 
             case CombatOutcome.EnemyWin:
@@ -260,7 +259,17 @@ public class CombatManager : MonoBehaviour
             character.EndOfBattle();
         }
     }
-
+    
+    private void StartLeaveBattle()
+    {
+        UIController.Instance.battleTransitioner.StartTransition
+        (
+            BattleTransitioner.ScreenTransitType.CircleIn,
+            BattleTransitioner.ScreenTransitType.CircleOut
+        );
+        UIController.Instance.battleTransitioner.transitionInEnd.AddListener(LeaveBattle);
+    }
+    
     private void LeaveBattle()
     {
         UIController.Instance.EndBattleUI();
