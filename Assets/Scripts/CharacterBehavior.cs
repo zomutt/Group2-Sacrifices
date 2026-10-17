@@ -137,7 +137,7 @@ public class CharacterBehavior : MonoBehaviour
     
     private void SetWalkingAnim()
     {
-        if (LevelManager.LevelGameState == GameState.Exploring)
+        if (LevelManager.LevelGameState != GameState.Exploring)
         {
             anim.SetFloat("Speed", 0);
             return;
