@@ -781,6 +781,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8079663633653540926}
+    - target: {fileID: 4634699527819234877, guid: 33376a8ba317c4ecb9f3975c9424f09d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickConfirmQuit
+      objectReference: {fileID: 0}
     - target: {fileID: 4835610431007694535, guid: 33376a8ba317c4ecb9f3975c9424f09d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1541,6 +1545,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8079663633653540926}
+    - target: {fileID: 8583286132825506805, guid: 7313a463a4d694465866bdfa8431c109, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickConfirmQuit
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
