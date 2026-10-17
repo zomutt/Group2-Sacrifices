@@ -15,7 +15,7 @@ MonoBehaviour:
   attackName: Gobrote
   attackIcon: {fileID: 0}
   power: 0.5
-  hitParticleIndex: -1
+  hitParticleIndex: 0
   attackSounds: []
   targetType:
     targetsEnemies: 1
