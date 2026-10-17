@@ -89,16 +89,14 @@ public class CharacterBehavior : MonoBehaviour
 
     void Update()
     {
-        if (isDead)
-            return;
+        if (isDead) return;
 
         ModelOrientation();
-        if (anim) anim.SetFloat("Speed", PartyController.Instance.CurrentVelocity);   // No more sliding
+        SetWalkingAnim();
         
         TickTurn();
         
-        if (damageNumberWanted)
-            SpawnDamageNumber();
+        if (damageNumberWanted) SpawnDamageNumber();
         
         modelPivot.GetChild(0).localPosition = Vector3.zero;
     }
@@ -136,6 +134,17 @@ public class CharacterBehavior : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, newRotation, 0);
     }
     #endregion
+    
+    private void SetWalkingAnim()
+    {
+        if (LevelManager.LevelGameState == GameState.Exploring)
+        {
+            anim.SetFloat("Speed", 0);
+            return;
+        }
+        
+        anim.SetFloat("Speed", PartyController.Instance.CurrentVelocity);
+    }
     
     #region Party Management
     public void AddToParty()
