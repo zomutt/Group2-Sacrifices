@@ -9196,7 +9196,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1378177917}
     m_Modifications:
     - target: {fileID: 4342903309955547929, guid: 0e5709a7ddb77924090c112cf73bb98a, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
@@ -9228,15 +9228,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4984980826245493072, guid: 0e5709a7ddb77924090c112cf73bb98a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 44.05379
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4984980826245493072, guid: 0e5709a7ddb77924090c112cf73bb98a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.36105236
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4984980826245493072, guid: 0e5709a7ddb77924090c112cf73bb98a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -27.518581
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4984980826245493072, guid: 0e5709a7ddb77924090c112cf73bb98a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9244,15 +9244,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4984980826245493072, guid: 0e5709a7ddb77924090c112cf73bb98a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4984980826245493072, guid: 0e5709a7ddb77924090c112cf73bb98a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4984980826245493072, guid: 0e5709a7ddb77924090c112cf73bb98a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4984980826245493072, guid: 0e5709a7ddb77924090c112cf73bb98a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -19724,6 +19724,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4825986445395677493, guid: c788b6a8f88c99c429f23ebbeeeba117, type: 3}
   m_PrefabInstance: {fileID: 788343498}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &789641493 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4984980826245493072, guid: 0e5709a7ddb77924090c112cf73bb98a, type: 3}
+  m_PrefabInstance: {fileID: 370214566}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &790544527 stripped
 Transform:
@@ -33197,6 +33202,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1576439262231025733, guid: dfb2e7bcbf5b90f4a9837a05dc698c81, type: 3}
   m_PrefabInstance: {fileID: 749425447}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1378177917 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4122244600797576113, guid: 43e727917f65649bcbb671de688e5727, type: 3}
+  m_PrefabInstance: {fileID: 1778900203}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1378281545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36250,6 +36260,10 @@ PrefabInstance:
     - target: {fileID: 2811327282186645148, guid: 091db880053e64b078a56c4d6a27fd39, type: 3}
       propertyPath: m_Name
       value: CombatArena
+      objectReference: {fileID: 0}
+    - target: {fileID: 6246404816645188069, guid: 091db880053e64b078a56c4d6a27fd39, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -41273,7 +41287,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4122244600797576113, guid: 43e727917f65649bcbb671de688e5727, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 789641493}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43e727917f65649bcbb671de688e5727, type: 3}
 --- !u!1001 &1779790550
@@ -51159,4 +51176,3 @@ SceneRoots:
   - {fileID: 2146977556}
   - {fileID: 1242407879}
   - {fileID: 370282812}
-  - {fileID: 370214566}
