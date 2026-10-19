@@ -54,6 +54,4 @@ public class StoredSettings : MonoBehaviour
         1.25f,
         0.8f
     };
-    
-    public static int score;
 }

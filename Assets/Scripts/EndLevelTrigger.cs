@@ -10,7 +10,7 @@ public class EndLevelTrigger : TriggerArea
     {
         if (AudioManager.Instance) AudioManager.Instance.PlaySFX(endLevelSound);
 
-        LevelManager.Instance.StartEndLevel();
+        LevelManager.Instance.EndLevel();
         
         gameObject.SetActive(false);
     }

@@ -38,16 +38,8 @@ public abstract class AttackBehavior : ScriptableObject
 
     private void ParticleOnTarget(int index, CharacterBehavior target)
     {
-        GameObject gameObject = ParticleManager.Instance.GetParticleObject(index);
-        
-        if (gameObject == null)
-        {
-            Debug.Log($"Particle failsafe activated for {attackName} with particle index {index}");
-            return;
-        }
-        
-        gameObject.transform.position = target.transform.position;
-        gameObject.SetActive(true);
+        // do stuff to summon a particle on the target
+        // from the particle pooler's instance
     }
 
     private void PlaySFX(AudioClip sound)

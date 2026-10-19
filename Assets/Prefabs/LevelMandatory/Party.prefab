@@ -122,10 +122,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Farmer
       objectReference: {fileID: 0}
-    - target: {fileID: 3728073170315187494, guid: 3052ad6bace944cb99f258dd0738516a, type: 3}
-      propertyPath: title
-      value: Nolan the Farmhand
-      objectReference: {fileID: 0}
     - target: {fileID: 4458674293723006012, guid: 3052ad6bace944cb99f258dd0738516a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.00952
@@ -188,10 +184,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Farmer (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 3728073170315187494, guid: 3052ad6bace944cb99f258dd0738516a, type: 3}
-      propertyPath: title
-      value: Dave the Farmhand
-      objectReference: {fileID: 0}
     - target: {fileID: 4458674293723006012, guid: 3052ad6bace944cb99f258dd0738516a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.00952
@@ -253,10 +245,6 @@ PrefabInstance:
     - target: {fileID: 3686214468655528516, guid: 3052ad6bace944cb99f258dd0738516a, type: 3}
       propertyPath: m_Name
       value: Farmer (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3728073170315187494, guid: 3052ad6bace944cb99f258dd0738516a, type: 3}
-      propertyPath: title
-      value: Richard the Farmhand
       objectReference: {fileID: 0}
     - target: {fileID: 4458674293723006012, guid: 3052ad6bace944cb99f258dd0738516a, type: 3}
       propertyPath: m_LocalPosition.x

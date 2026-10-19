@@ -65,7 +65,7 @@ public class PartyController : MonoBehaviour
     
     void Update()
     {
-        if (LevelManager.LevelGameState == GameState.Exploring && !LevelManager.Cutscene)
+        if (LevelManager.LevelGameState == GameState.Exploring)
         {
             Move();
             

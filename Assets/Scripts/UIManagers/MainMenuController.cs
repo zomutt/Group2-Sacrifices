@@ -121,7 +121,6 @@ public class MainMenuController : MonoBehaviour
     public void SetDifficultyValueAndStart(int value)
     {
         StoredSettings.difficulty = value;
-        StoredSettings.score = 0;
         
         Debug.Log("Starting level one");
         SceneManager.LoadScene(levelOne);

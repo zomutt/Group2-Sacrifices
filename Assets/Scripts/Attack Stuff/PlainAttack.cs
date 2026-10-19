@@ -12,7 +12,7 @@ public class PlainAttack : AttackBehavior
     public override void MoveOnTarget(CharacterBehavior from, CharacterBehavior to)
     {
         if (power > 0)
-            to.TakeDamage(Mathf.Max(0, GetAttackPower(from, power) - GetArmorOf(to)));
+            to.TakeDamage(GetAttackPower(from, power));
 
         OnHitSpecialFX(to);
         

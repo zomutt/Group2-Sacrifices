@@ -69,9 +69,6 @@ public class UIController : MonoBehaviour
     [Header("Party")]
     [Tooltip("Fated1-4 in order")]
     [SerializeField] private PartyMemberUI[] partyUI;
-    
-    [Header("Other")]
-    public BattleTransitioner battleTransitioner;
 
     public static UIController Instance;
 

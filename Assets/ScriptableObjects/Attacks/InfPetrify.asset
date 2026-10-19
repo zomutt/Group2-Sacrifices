@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: InfPetrify
   m_EditorClassIdentifier: Assembly-CSharp::AddStatusMove
   attackName: Petrifying Bite
-  attackIcon: {fileID: 0}
   power: 0.5
-  hitParticleIndex: 0
-  attackSounds: []
+  hitParticleIndex: -1
+  attackSound: {fileID: 0}
   targetType:
     targetsEnemies: 1
     targetsSelf: 0

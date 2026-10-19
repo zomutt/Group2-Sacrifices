@@ -13,14 +13,13 @@ MonoBehaviour:
   m_Name: InfBleed
   m_EditorClassIdentifier: Assembly-CSharp::AddStatusMove
   attackName: Gobrote
-  attackIcon: {fileID: 0}
   power: 0.5
-  hitParticleIndex: 0
-  attackSounds: []
+  hitParticleIndex: -1
+  attackSound: {fileID: 0}
   targetType:
     targetsEnemies: 1
     targetsSelf: 0
-  isMelee: 1
+  isMelee: 0
   usesSoulsForPower: 0
   statusesToAdd:
   - {fileID: 11400000, guid: 053d4b71ee5f249b8a0cc6d1491ee302, type: 2}

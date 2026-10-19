@@ -12,14 +12,8 @@ public class ParticleManager : MonoBehaviour
         Instance = this;
     }
 
-    public GameObject GetParticleObject(int index)
+    public GameObject ParticleList(int index)
     {
-        if (index >= particles.Count)
-        {
-            Debug.LogError("Particle index out of range, failsafe activated");
-            return null;
-        }
-        
         return particles[index].GetPooledObject();
     }
 }

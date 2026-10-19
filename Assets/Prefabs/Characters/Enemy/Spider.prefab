@@ -101,10 +101,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6268199337399906276}
     - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
-      propertyPath: soulsOnDeath
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 4741800730479685638, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
       propertyPath: stats.maxHealth
       value: 40
       objectReference: {fileID: 0}

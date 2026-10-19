@@ -28,14 +28,14 @@ public class EnemyBrain
                 switch (conditionType)
                 {
                     case ConditionType.RandomAOutOfB:
-                        return UnityEngine.Random.Range(0, b) < a;
+                        return UnityEngine.Random.Range(0, a) < b;
                         
                     case ConditionType.EnemyCountAToB:
                         return CombatManager.Instance.EnemyCount >= a
                             && CombatManager.Instance.EnemyCount <= b;
                         
                     case ConditionType.MoveLastTurn:
-                        return (previousMoveIndex == a) == (b == 0);
+                        return previousMoveIndex == a;
                     
                     default:
                         return true;

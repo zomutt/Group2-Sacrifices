@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f95032806c029420ab2d2b4c2d179039, type: 3}
-  m_Name: RatUltimateCharge
+  m_Name: BufStrengthSelf
   m_EditorClassIdentifier: Assembly-CSharp::AddStatusMove
   attackName: Strength Self
   attackIcon: {fileID: 21300000, guid: d5e0dca57b51b6c42b3df5713c349bac, type: 3}
   power: 0
-  hitParticleIndex: 1
+  hitParticleIndex: -1
   attackSounds: []
   targetType:
     targetsEnemies: 0
@@ -23,6 +23,6 @@ MonoBehaviour:
   isMelee: 0
   usesSoulsForPower: 0
   statusesToAdd:
-  - {fileID: 11400000, guid: 8b6c770bcd5d9446fb4108eb71be0220, type: 2}
+  - {fileID: 11400000, guid: e4d462fdbae674dc496e2a3c4f772ee5, type: 2}
   usesMagic: 1
   magicMultiplier: 0.8

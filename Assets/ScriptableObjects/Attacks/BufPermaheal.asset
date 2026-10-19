@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: BufPermaheal
   m_EditorClassIdentifier: Assembly-CSharp::AddStatusMove
   attackName: Perma Regen
-  attackIcon: {fileID: 0}
   power: 2
-  hitParticleIndex: 3
-  attackSounds: []
+  hitParticleIndex: -1
+  attackSound: {fileID: 0}
   targetType:
     targetsEnemies: 0
     targetsSelf: 0
