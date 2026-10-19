@@ -3969,7 +3969,7 @@ GameObject:
   - component: {fileID: 236294726}
   - component: {fileID: 236294725}
   m_Layer: 5
-  m_Name: TutorialText (1)
+  m_Name: SoulText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5486,7 +5486,7 @@ GameObject:
   - component: {fileID: 317710430}
   - component: {fileID: 317710429}
   m_Layer: 5
-  m_Name: TutorialText (6)
+  m_Name: BattleText1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5531,7 +5531,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TUTORIAL TEXT 6
+  m_text: THESE ARE YOUR PARTY MEMBERS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eae9fc2179766e946b06ced94c48b0ce, type: 2}
   m_sharedMaterial: {fileID: 2009128612168470166, guid: eae9fc2179766e946b06ced94c48b0ce, type: 2}
@@ -5558,15 +5558,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 200
+  m_fontSizeBase: 200
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -8763,7 +8763,7 @@ GameObject:
   - component: {fileID: 373371667}
   - component: {fileID: 373371666}
   m_Layer: 5
-  m_Name: TutorialText (4)
+  m_Name: ChestText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10532,7 +10532,7 @@ GameObject:
   - component: {fileID: 513959695}
   - component: {fileID: 513959694}
   m_Layer: 5
-  m_Name: TutorialText (2)
+  m_Name: BattleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28395,7 +28395,7 @@ GameObject:
   - component: {fileID: 1657443604}
   - component: {fileID: 1657443603}
   m_Layer: 5
-  m_Name: TutorialText (5)
+  m_Name: DoorText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28440,10 +28440,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TUTORIAL TEXT 5
+  m_text: THIS IS A DOOR. DOORS REQUIRE SOULS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: eae9fc2179766e946b06ced94c48b0ce, type: 2}
+  m_sharedMaterial: {fileID: 2009128612168470166, guid: eae9fc2179766e946b06ced94c48b0ce, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -28467,15 +28467,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 200
+  m_fontSizeBase: 200
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -31445,7 +31445,7 @@ GameObject:
   - component: {fileID: 1927156087}
   - component: {fileID: 1927156086}
   m_Layer: 5
-  m_Name: TutorialText (7)
+  m_Name: BattleText2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31471,10 +31471,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TUTORIAL TEXT 7
+  m_text: THESE ARE THE ENEMIES
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: eae9fc2179766e946b06ced94c48b0ce, type: 2}
+  m_sharedMaterial: {fileID: 2009128612168470166, guid: eae9fc2179766e946b06ced94c48b0ce, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -31498,15 +31498,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 200
+  m_fontSizeBase: 200
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -33093,7 +33093,7 @@ GameObject:
   - component: {fileID: 2068690698}
   - component: {fileID: 2068690697}
   m_Layer: 5
-  m_Name: TutorialText (3)
+  m_Name: RitualText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
