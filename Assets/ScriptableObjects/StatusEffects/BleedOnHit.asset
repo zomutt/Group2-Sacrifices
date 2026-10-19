@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GiveStatusToMeleeEffect
   permanent: 0
   hidden: 0
-  duration: 30
+  duration: 10
   power: 0
   icon: {fileID: 21300000, guid: d578bc5f5bae3c542ad3c829a171b2d3, type: 3}
   giveOnHurt: {fileID: 11400000, guid: 053d4b71ee5f249b8a0cc6d1491ee302, type: 2}
+  particleIndex: 0
