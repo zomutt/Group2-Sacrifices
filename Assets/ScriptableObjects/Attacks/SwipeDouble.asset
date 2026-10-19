@@ -15,7 +15,7 @@ MonoBehaviour:
   attackName: Double Strike
   attackIcon: {fileID: 21300000, guid: 694274d7e7c43524d88fb09d8d480db9, type: 3}
   power: 1.2
-  hitParticleIndex: -1
+  hitParticleIndex: 2
   attackSounds:
   - {fileID: 8300000, guid: 90ed1edf80da33d43aa7af53ae0f9cad, type: 3}
   - {fileID: 8300000, guid: 44e19ca6497d2c14d81a38846a88c03d, type: 3}

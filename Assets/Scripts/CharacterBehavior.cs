@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -31,7 +32,7 @@ public class CharacterBehavior : MonoBehaviour
     public int addedStrength;
     
     [SerializeField]
-    private int soulsOnDeath;
+    public int soulsOnDeath;
     
     private CharacterBehavior currentTarget;
     [SerializeField]
@@ -80,47 +81,61 @@ public class CharacterBehavior : MonoBehaviour
         if (!anim) anim = GetComponentInChildren<Animator>();
         
         // Give health based on difficulty level
-        if (!isEnemy)
+        if (isEnemy)
+        {
+            // Stuff if we needed changes to enemies based on difficulty
+        }
+        else
+        {
             stats.maxHealth =
             (int)(stats.maxHealth * StoredSettings.difficultyHealthMult[StoredSettings.difficulty]);
+        }
         
         stats.RefillHealth();
     }
-
+    
     void Update()
     {
-        if (isDead)
-            return;
+        if (isDead) return;
 
         ModelOrientation();
-        if (anim) anim.SetFloat("Speed", PartyController.Instance.CurrentVelocity);   // No more sliding
+        SetWalkingAnim();
         
         TickTurn();
         
-        if (damageNumberWanted)
-            SpawnDamageNumber();
+        if (damageNumberWanted) SpawnDamageNumber();
         
         modelPivot.GetChild(0).localPosition = Vector3.zero;
+        modelPivot.GetChild(0).localRotation = Quaternion.identity;
     }
     
     #region Rotation
     private void ModelOrientation()
     {
+        if (LevelManager.LevelGameState == GameState.Battle)
+            desiredRot = isEnemy ? 90 : -90;
+        
         if (LevelManager.LevelGameState == GameState.Exploring)
             RotatePivot(desiredRot, pivotRotateSpeed * Time.deltaTime * PartyController.Instance.CurrentVelocity);
         else
             RotatePivot(desiredRot, pivotRotateSpeed * Time.deltaTime * 6f);
     }
-
+    
     public void ImmedatelyReorient()
     {
         RotatePivot(desiredRot, 180f);
     }
     
+    public void ImmedatelyReorient(float newRot)
+    {
+        desiredRot = newRot;
+        ImmedatelyReorient();
+    }
+    
     void RotatePivot(float toRotation, float maxAmount)
     {
-        float difference = ((toRotation - transform.rotation.eulerAngles.y) % 360 + 540) % 360 - 180;
-        float newRotation = transform.rotation.eulerAngles.y;
+        float difference = ((toRotation - modelPivot.rotation.eulerAngles.y) % 360 + 540) % 360 - 180;
+        float newRotation = modelPivot.rotation.eulerAngles.y;
         
         if (Mathf.Abs(difference) <= maxAmount)
         {
@@ -133,9 +148,20 @@ public class CharacterBehavior : MonoBehaviour
             newRotation += normalizedDiff * maxAmount;
         }
         
-        transform.rotation = Quaternion.Euler(0, newRotation, 0);
+        modelPivot.rotation = Quaternion.Euler(0, newRotation, 0);
     }
     #endregion
+    
+    private void SetWalkingAnim()
+    {
+        if (LevelManager.LevelGameState != GameState.Exploring || LevelManager.Cutscene)
+        {
+            anim.SetFloat("Speed", 0);
+            return;
+        }
+        
+        anim.SetFloat("Speed", PartyController.Instance.CurrentVelocity);
+    }
     
     #region Party Management
     public void AddToParty()
@@ -159,8 +185,7 @@ public class CharacterBehavior : MonoBehaviour
     
     private void TickTurn()
     {
-        if (LevelManager.LevelGameState != GameState.Battle)
-            return;
+        if (LevelManager.LevelGameState != GameState.Battle || LevelManager.Cutscene) return;
         
         if (isEnemy)
         {
@@ -251,7 +276,14 @@ public class CharacterBehavior : MonoBehaviour
     
     public void EndOfBattle()
     {
-        // Clear statuses
+        ClearStatuses();
+        
+        damageNumberWanted = false;
+        damageNumberValue = 0;
+    }
+    
+    private void ClearStatuses()
+    {
         for (int i = 0; i < statuses.Count; i++)
         {
             if (!statuses[i].permanent)
@@ -261,9 +293,6 @@ public class CharacterBehavior : MonoBehaviour
                 i--;
             }
         }
-        
-        damageNumberWanted = false;
-        damageNumberValue = 0;
     }
     #endregion
     
@@ -296,6 +325,8 @@ public class CharacterBehavior : MonoBehaviour
         if (isDead)
             return;
         isDead = true;
+        
+        ClearStatuses();
 
         Debug.Log(gameObject.name + " died");
 

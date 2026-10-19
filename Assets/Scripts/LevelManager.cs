@@ -40,7 +40,12 @@ public class LevelManager : MonoBehaviour
 
     private ObjectPooler damageNumberPool;
     
+    private EncounterInfo setEncounter;
+    
+    private SpriteRenderer encounterSprite;
+    
     public static GameState LevelGameState;
+    public static bool Cutscene;
     public static LevelManager Instance;
     
     void Awake()
@@ -49,6 +54,8 @@ public class LevelManager : MonoBehaviour
         
         LevelGameState = GameState.Exploring;
         Instance = this;
+        
+        encounterSprite = GameObject.Find("EncounterPopup").GetComponent<SpriteRenderer>();
     }
 
     void Start()
@@ -174,9 +181,25 @@ public class LevelManager : MonoBehaviour
     {
         Debug.Log("Encounter was triggered...");
         
+        setEncounter = encounter;
+        
+        encounterSprite.enabled = true;
+        
+        UIController.Instance.battleTransitioner.StartTransition
+        (
+            BattleTransitioner.ScreenTransitType.CircleIn,
+            BattleTransitioner.ScreenTransitType.CircleOut
+        );
+        UIController.Instance.battleTransitioner.transitionInEnd.AddListener(EnterCombat);
+    }
+    
+    private void EnterCombat()
+    {
+        encounterSprite.enabled = false;
+        
         UIController.Instance.SetOverworldUI(false);
         
-        CombatManager.Instance.StartCombat(PartyController.Instance.GetPartyCharacters(), encounter);
+        CombatManager.Instance.StartCombat(PartyController.Instance.GetPartyCharacters(), setEncounter);
     }
     
     public void ExitCombat()
@@ -194,11 +217,25 @@ public class LevelManager : MonoBehaviour
     }
     #endregion
     
-    public void EndLevel()
+    public void StartEndLevel()
+    {
+        UIController.Instance.battleTransitioner.StartTransition
+        (
+            BattleTransitioner.ScreenTransitType.CircleIn,
+            BattleTransitioner.ScreenTransitType.Clear
+        );
+        UIController.Instance.battleTransitioner.transitionInEnd.AddListener(EndLevel);
+    }
+    
+    private void EndLevel()
     {
         Debug.Log("Put end here!");
-
+        
+        AddToScore();
+        
         UIController.Instance.ShowWinPanel();
+        
+        Cutscene = false;
     }
     
     public void SpawnDamageNumber(Vector3 position, int damage)
@@ -209,5 +246,11 @@ public class LevelManager : MonoBehaviour
         damageNumber.GetComponent<DamageNumber>().SetDamageNumber(damage);
         
         damageNumber.SetActive(true);
+    }
+    
+    private void AddToScore()
+    {
+        StoredSettings.score += Mathf.CeilToInt(levelTime * (levelDisplayTime / levelStartTime)) * 2;
+        StoredSettings.score += souls;
     }
 }
