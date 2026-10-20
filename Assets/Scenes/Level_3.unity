@@ -9102,10 +9102,6 @@ PrefabInstance:
       propertyPath: 'encounters.Array.data[6].enemyPrefabs.Array.data[2]'
       value: 
       objectReference: {fileID: 891966489884274992, guid: 6ac92d86da1994bf49d16a45497c331f, type: 3}
-    - target: {fileID: 6231732118443382685, guid: 82e55e6c2f82149eca7d5a0e1f50b8f0, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 8497943642014509033, guid: 82e55e6c2f82149eca7d5a0e1f50b8f0, type: 3}
       propertyPath: musVolume
       value: 1
