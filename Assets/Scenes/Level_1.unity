@@ -16280,7 +16280,7 @@ GameObject:
   - component: {fileID: 965859257}
   - component: {fileID: 965859256}
   - component: {fileID: 965859258}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Red_Volume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16334,7 +16334,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
