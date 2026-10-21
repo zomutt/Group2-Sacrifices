@@ -343,7 +343,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.34320882, z: 0, w: 0.9392591}
   m_LocalPosition: {x: 5.6, y: 0.49999964, z: 26.7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3269511368320084736}
@@ -385,19 +385,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterBehavior
   modelPivot: {fileID: 3612160408842334496, guid: 64b67c1fa4dea4342933c73fb9493c8d, type: 3}
+  icon: {fileID: 0}
+  title: 
   stats:
     health: 0
     maxHealth: 25
     strength: 5
     luck: 2
+    magic: 0
     armor: 0
+  addedArmor: 0
+  addedStrength: 0
   soulsOnDeath: 0
-  attack: {fileID: 11400000, guid: 263466f647c2be5488241436d0657210, type: 2}
+  attacks: []
+  statuses: []
+  statusesToRemove: []
   hurtSound: {fileID: 8300000, guid: b244b6d7db6c4b74f9947ef5f1afe85e, type: 3}
   deathSound: {fileID: 8300000, guid: 93854d03fa74c4d41b281decab210b44, type: 3}
   soulDropSound: {fileID: 0}
+  deathAnimDuration: 1.5
   maxTurnTimer: 4
   isEnemy: 0
+  statusDisplay: {fileID: 0}
+  brain:
+    moves: []
+  anim: {fileID: 0}
 --- !u!1 &2060827615438445639
 GameObject:
   m_ObjectHideFlags: 0
