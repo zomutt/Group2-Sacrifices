@@ -684,6 +684,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 58
       objectReference: {fileID: 0}
+    - target: {fileID: 3962236724758773323, guid: f470e9303835149f6a0f693bc27c7764, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5790340298509863298, guid: f470e9303835149f6a0f693bc27c7764, type: 3}
       propertyPath: m_Name
       value: PartyLeader
