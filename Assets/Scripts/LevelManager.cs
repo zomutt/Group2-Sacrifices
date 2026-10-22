@@ -242,6 +242,8 @@ public class LevelManager : MonoBehaviour
     {
         Debug.Log("Put end here!");
         
+        if (FinalCutscene.Instance) FinalCutscene.Instance.PlayScene();
+        
         AddToScore();
         
         UIController.Instance.ShowWinPanel();
