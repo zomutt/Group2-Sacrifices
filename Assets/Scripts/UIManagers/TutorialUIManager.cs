@@ -22,25 +22,38 @@ public class TutorialUIManager : MonoBehaviour
 
     [Header("Tutorial 2 Pages")]
     public GameObject[] tutorial2Pages;
+    public GameObject[] tutorial2PagesB;
 
     private int currentTutorial2Page = 0;
     private TMP_Text nextButtonText;
+    
+    public static TutorialUIManager Instance;
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
+        
         if (nextButton != null)
             nextButtonText = nextButton.GetComponentInChildren<TMP_Text>();
 
         HideAllTutorialTexts();
 
-        tutorialPanel.SetActive(true);
-        tutorialStartText.SetActive(true);
-        yesButton.SetActive(true);
-        noButton.SetActive(true);
+        tutorialPanel.SetActive(false);
+        tutorialStartText.SetActive(false);
+        yesButton.SetActive(false);
+        noButton.SetActive(false);
         nextButton.SetActive(false);
         closeButton.SetActive(false);
 
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
+        
+        tutorialOn =
+            StoredSettings.difficulty == 1 && StoredSettings.playCount <= 1;
+        Debug.Log(tutorialOn);
     }
 
     private void HideAllTutorialTexts()
@@ -170,8 +183,80 @@ public class TutorialUIManager : MonoBehaviour
         }
     }
 
+    public void TutorialTwoB()
+    {
+        if (!tutorialOn) return;
+
+        if (tutorial2PagesB == null || tutorial2PagesB.Length == 0)
+        {
+            Debug.LogWarning("Tutorial 2 has no pages assigned!");
+            return;
+        }
+
+        isTutB = true;
+        HideAllTutorialTexts();
+
+        tutorialPanel.SetActive(true);
+        yesButton.SetActive(false);
+        noButton.SetActive(false);
+        closeButton.SetActive(false);
+        nextButton.SetActive(true);
+
+        currentTutorial2Page = 0;
+        ShowCurrentTutorial2PageB();
+
+        Time.timeScale = 0f;
+    }
+
+    private void ShowCurrentTutorial2PageB()
+    {
+        foreach (GameObject page in tutorial2PagesB)
+        {
+            if (page != null)
+                page.SetActive(false);
+        }
+
+        GameObject currentPage = tutorial2PagesB[currentTutorial2Page];
+
+        if (currentPage == null)
+        {
+            Debug.LogWarning("A Tutorial 2 page is missing!");
+            return;
+        }
+
+        currentPage.SetActive(true);
+
+        if (nextButtonText != null)
+        {
+            nextButtonText.text =
+                currentTutorial2Page == tutorial2PagesB.Length - 1
+                ? "Done"
+                : "Next";
+        }
+    }
+    
+    private bool isTutB;
+    
     public void NextTutorialTwoPage()
     {
+        if (isTutB)
+        {
+            if (tutorial2PagesB == null || tutorial2PagesB.Length == 0)
+            return;
+
+        if (currentTutorial2Page < tutorial2PagesB.Length - 1)
+        {
+            currentTutorial2Page++;
+            ShowCurrentTutorial2PageB();
+        }
+        else
+        {
+            CloseTutorialTwo();
+        }
+            
+            return;
+        }
+        
         if (tutorial2Pages == null || tutorial2Pages.Length == 0)
             return;
 

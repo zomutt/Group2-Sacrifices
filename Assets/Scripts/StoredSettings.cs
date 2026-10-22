@@ -56,4 +56,6 @@ public class StoredSettings : MonoBehaviour
     };
     
     public static int score;
+    
+    public static int playCount;
 }

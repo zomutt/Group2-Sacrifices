@@ -44,6 +44,9 @@ public class LevelManager : MonoBehaviour
     
     private SpriteRenderer encounterSprite;
     
+    public bool hasTutorialOn2;
+    private int battleCount;
+    
     public static GameState LevelGameState;
     public static bool Cutscene;
     public static LevelManager Instance;
@@ -195,11 +198,19 @@ public class LevelManager : MonoBehaviour
     
     private void EnterCombat()
     {
+        battleCount++;
+        if (TutorialUIManager.Instance && battleCount == 2) Invoke("InvokedTutorial", 1f);
+        
         encounterSprite.enabled = false;
         
         UIController.Instance.SetOverworldUI(false);
         
         CombatManager.Instance.StartCombat(PartyController.Instance.GetPartyCharacters(), setEncounter);
+    }
+    
+    private void InvokedTutorial()
+    {
+        TutorialUIManager.Instance.TutorialTwoB();
     }
     
     public void ExitCombat()
